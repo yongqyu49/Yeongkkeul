@@ -1,6 +1,6 @@
 package dto;
 
-public class Member {
+public class Crew {
 	private String email;
 	private String name;
 	private String password;

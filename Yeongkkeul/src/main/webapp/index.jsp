@@ -1,6 +1,6 @@
-<%@page import="dto.Member"%>
+<%@page import="dto.Crew"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.MemberDAO"%>
+<%@page import="dao.CrewDAO"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,18 +8,20 @@
 <meta charset="UTF-8">
 <title>영끌</title>
 <%
-	MemberDAO md = new MemberDAO(application);
-	List<Member> memberList = md.getMember();
+	CrewDAO cd = new CrewDAO(application);
+	List<Crew> crewList = cd.getCrew();
 %>
 </head>
 <body>
 	<h1>index</h1>
+	<a href="./view/crew/signUp.jsp">Sign Up</a>
 	<%
-		for(Member member : memberList) {
+	for(Crew crew : crewList) {
 	%>
-		<p><%=member.getEmail() %></p>
+		<p><%=crew.getEmail() %></p>
 	<%
 		}
 	%>
+	
 </body>
 </html>
