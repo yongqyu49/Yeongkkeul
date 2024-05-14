@@ -36,12 +36,12 @@
 							<div>
 								<a href="view/crew/login.jsp">
 									<i class="fa fa-heart-o"></i>
-									<span>Your Wishlist</span>
+									<span>Login</span>
 								</a>
 							</div>
 	
 							<div class="dropdown">
-								<a href="view/crew/user.jsp"><i class="fa fa-user-o"></i> My Account</a>
+								<a href="${pageContext.request.contextPath}/view/crew/user.jsp"><i class="fa fa-user-o"></i> My Account</a>
 							</div>
 	
 							<div class="menu-toggle">

@@ -14,14 +14,7 @@
 <link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
 <link rel="stylesheet" href="../../css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
- </head>
+</head>
 <style type="text/css">
 	.atm {
 		width: 169px;
@@ -29,7 +22,7 @@
 	}
 </style>
 <body>
-	<jsp:include page="/header.jsp"></jsp:include>
+	<jsp:include page="/header.jsp"/>
 		<div id="breadcrumb" class="section">
 			<div class="container">
 				<div class="row">
@@ -85,7 +78,7 @@
 		</div>
 	
 	<!-- footer -->
-	<jsp:include page="../../footer.jsp"></jsp:include>
+	<jsp:include page="../../footer.jsp"/>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">

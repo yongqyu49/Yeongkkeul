@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,82 +13,62 @@
 <link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
 <link rel="stylesheet" href="../../css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
- </head>
-<style type="text/css">
-	.atm {
-		width: 169px;
-		height: 70px;
-	}
-	
-	.mm {
-		display: flex;
-	    flex-direction: column;
-	    align-content: center;
-	    flex-wrap: wrap;
-	}
-	
-	.con {
-		width: 600px;
-		height: 800px;
-	    border: 1px solid rgb(227, 227, 227);
-    	border-radius: 6px;
-    	/* display: flex; */
-	}
-	
-	.profile {
-		width: 100%;
-		border: 1px solid rgb(227, 227, 227);
-    	border-radius: 6px;
-	}
-	
-	.comment {
-		width: 100%;
-		border: 1px solid rgb(227, 227, 227);
-    	border-radius: 6px;
-	}
-	
-	.want_movie {
-		width: 100%;
-		border: 1px solid rgb(227, 227, 227);
-    	border-radius: 6px;
-	}
-	
-	.favorite_comment {
-		width: 100%;
-		border: 1px solid rgb(227, 227, 227);
-    	border-radius: 6px;
-	}
-</style>
+<link type="text/css" rel="stylesheet" href="../../css/user.css"/>
+</head>
 <body>
-	<jsp:include page="/header.jsp"></jsp:include>
+	<jsp:include page="/header.jsp"/>
 		<div class="section">
 			<div class="container">
 				<div class="mm">
 					<div class="con">
 						<section class="profile">
+							<h2>프로필</h2>
+							<div class="background">
+								<div class="back_img"></div>
+								<div>
+									<button>비밀번호 변경</button>
+									<button class="setting_btn">Setting</button>
+								</div>
+							</div>
+							<div class="profile_img">
+							</div>
 							<div>
+								<h4>최용규</h4>
+								<span>cyk728@naver.com</span>
+								<p>소개</p>
 							</div>
 						</section>
+						
 						<section class="comment">
-							<h1>sfdf</h1>
+							<h2>나의 코멘트</h2>
 						</section>
 						<section class="want_movie">
-							<h1>sfdf</h1>
+							<h2>보고싶은 영화</h2>
+							<ul>
+								<li>
+									<div>
+										<div>
+											<img class="movie_img" src="${pageContext.request.contextPath}/img/product01.png">
+										</div>
+										<div>
+											<span>영화제목</span>
+											<span>2024.4.4</span>
+											<span>한국</span>
+										</div>
+									</div>
+								</li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
 						</section>
 						<section class="favorite_comment">
-							<h1>sfdf</h1>
+							<h2>좋아한 코멘트	</h2>
 						</section>
 					</div>
 				</div>
 			</div>
 		</div>
-	<jsp:include page="../../footer.jsp"></jsp:include>
+	<jsp:include page="../../footer.jsp"/>
 </body>
 </html>

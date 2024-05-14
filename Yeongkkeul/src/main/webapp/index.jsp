@@ -20,7 +20,7 @@
 	List<Crew> crewList = cd.getCrew();
 %>
 <body>
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="header.jsp"/>
 	<h1>index</h1>
 	<a href="./view/crew/signUp.jsp">Sign Up</a>
 	<%
@@ -30,6 +30,6 @@
 	<%
 		}
 	%>
-	
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

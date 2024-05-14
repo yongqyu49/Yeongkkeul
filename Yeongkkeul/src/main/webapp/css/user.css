@@ -1,0 +1,66 @@
+.atm {
+	width: 169px;
+	height: 70px;
+}
+
+.mm {
+	display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.con {
+	width: 600px;
+	height: 800px;
+    border: 1px solid rgb(227, 227, 227);
+   	border-radius: 6px;
+   	/* display: flex; */
+}
+
+.profile {
+	width: 100%;
+	border: 1px solid rgb(227, 227, 227);
+   	border-radius: 6px;
+   	margin-bottom: 12px;
+}
+
+.comment {
+	width: 100%;
+	border: 1px solid rgb(227, 227, 227);
+   	border-radius: 6px;
+}
+
+.want_movie {
+	width: 100%;
+	border: 1px solid rgb(227, 227, 227);
+   	border-radius: 6px;
+}
+
+.favorite_comment {
+	width: 100%;
+	border: 1px solid rgb(227, 227, 227);
+   	border-radius: 6px;
+}
+
+.background {
+	position: relative;
+	background-size: cover;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* .back_img {
+	background: url(/Yeongkkeul/img/KakaoTalk_20230920_095028252.jpg) no-repeat center;
+	background-size: cover;
+	width: 638px;
+	height: 314px;
+} */
+
+.setting_btn {
+}
+
+.movie_img {
+	width: 200px;
+	height: 400px;
+}
