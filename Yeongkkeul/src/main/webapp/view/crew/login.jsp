@@ -28,6 +28,7 @@
 				<div class="row">
 					<img src="../../img/atm.png" alt="" class="atm">
 				</div>
+				
 			</div>
 		</div>
 		<div class="section">
