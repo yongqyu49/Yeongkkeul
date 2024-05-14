@@ -27,48 +27,69 @@
 		width: 169px;
 		height: 70px;
 	}
+	
+	.mm {
+		display: flex;
+	    flex-direction: column;
+	    align-content: center;
+	    flex-wrap: wrap;
+	}
+	
+	.con {
+		width: 600px;
+		height: 800px;
+	    border: 1px solid rgb(227, 227, 227);
+    	border-radius: 6px;
+    	/* display: flex; */
+	}
+	
+	.profile {
+		width: 100%;
+		border: 1px solid rgb(227, 227, 227);
+    	border-radius: 6px;
+	}
+	
+	.comment {
+		width: 100%;
+		border: 1px solid rgb(227, 227, 227);
+    	border-radius: 6px;
+	}
+	
+	.want_movie {
+		width: 100%;
+		border: 1px solid rgb(227, 227, 227);
+    	border-radius: 6px;
+	}
+	
+	.favorite_comment {
+		width: 100%;
+		border: 1px solid rgb(227, 227, 227);
+    	border-radius: 6px;
+	}
 </style>
 <body>
-	<jsp:include page="../../header.jsp"></jsp:include>
-		<div id="breadcrumb" class="section">
-			<div class="container">
-				<div class="row">
-					<img src="../../img/atm.png" alt="" class="atm">
-				</div>
-			</div>
-		</div>
+	<jsp:include page="/header.jsp"></jsp:include>
 		<div class="section">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-7">
-						<div class="billing-details">
-							<div class="section-title">
-								<h3 class="title">로그인</h3>
+				<div class="mm">
+					<div class="con">
+						<section class="profile">
+							<div>
 							</div>
-							<form action="loginProc.jsp" method="post">
-								<div class="form-group">
-									<input class="input" type="email" name="email" placeholder="이메일">
-								</div>
-								<div class="form-group">
-									<input class="input" type="password" name="password" placeholder="비밀번호">
-								</div>
-								<hr>
-								<div class="form-group">
-									<input type="submit" value="로그인" class="primary-btn order-submit">
-								</div>
-							</form>
-							<span>비밀번호를 잊어버리셨나요?</span>
-							<a href="findPassword.jsp">비밀번호 찾기</a><br>
-							<span>회원이 아니신가요? </span>
-							<a href="signUp.jsp">회원가입</a>
-							<hr>
-						</div>
+						</section>
+						<section class="comment">
+							<h1>sfdf</h1>
+						</section>
+						<section class="want_movie">
+							<h1>sfdf</h1>
+						</section>
+						<section class="favorite_comment">
+							<h1>sfdf</h1>
+						</section>
 					</div>
 				</div>
 			</div>
 		</div>
-	
-	<!-- footer -->
 	<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>
