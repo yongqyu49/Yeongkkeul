@@ -22,7 +22,7 @@
 				<div class="mm">
 					<div class="con">
 						<section class="profile">
-							<h2>프로필</h2>
+							<h4>프로필</h4>
 							<div class="background">
 								<div class="back_img"></div>
 								<div>
@@ -40,30 +40,98 @@
 						</section>
 						
 						<section class="comment">
-							<h2>나의 코멘트</h2>
+							<h4>나의 코멘트</h4>
+							<div class="gallery_container">
+								<ul class="comment_list">
+							        <li class="comment" style="flex: 0 0 auto; width: calc(34% - 11px);">
+							        	<a href="${pageContext.request.contextPath}/index.jsp">
+								        	<article>
+								        		<div>
+								        			<div>
+								        				<span>YongQ</span>
+								        			</div>
+								        			<div style="display: flex; padding: 12px 0px;">
+								        				<div>
+								        					<img alt="영화 포스터" src="${pageContext.request.contextPath}/img/sing street.jpg">
+								        				</div>
+								        				<div>
+								        					<span>싱 스트리트</span>
+								        					<span>호재조 올리브유명재 하누언 기미종크</span>
+								        				</div>
+								        			</div>
+								        			<div>
+								        				<span>따봉</span>
+								        			</div>
+								        		</div>
+								        	</article>
+							        	</a>
+							        </li>
+							        <li class="comment" style="flex: 0 0 auto; width: calc(33.333% - 9px);">
+							        	<a href="${pageContext.request.contextPath}/index.jsp">
+								        	<article>
+								        		<div>
+								        			<div>
+								        				<span>YongQ</span>
+								        			</div>
+								        			<div style="display: flex; padding: 12px 0px;">
+								        				<div>
+								        					<img alt="영화 포스터" src="${pageContext.request.contextPath}/img/sing street.jpg">
+								        				</div>
+								        				<div>
+								        					<span>싱 스트리트</span>
+								        					<span>호재조 올리브유명재 하누언 기미종크</span>
+								        				</div>
+								        			</div>
+								        			<div>
+								        				<span>따봉</span>
+								        			</div>
+								        		</div>
+								        	</article>
+							        	</a>
+							        </li>
+							        <li class="comment" style="flex: 0 0 auto; width: calc(33.333% - 9px);">
+							        	<a href="${pageContext.request.contextPath}/index.jsp">
+								        	<article>
+								        		<div>
+								        			<div>
+								        				<span>YongQ</span>
+								        			</div>
+								        			<div style="display: flex; padding: 12px 0px;">
+								        				<div>
+								        					<img alt="영화 포스터" src="${pageContext.request.contextPath}/img/sing street.jpg">
+								        				</div>
+								        				<div>
+								        					<span>싱 스트리트</span>
+								        					<span>호재조 올리브유명재 하누언 기미종크</span>
+								        				</div>
+								        			</div>
+								        			<div style="border-top: 1px">
+								        				<span>따봉</span>
+								        			</div>
+								        		</div>
+								        	</article>
+							        	</a>
+							        </li>
+							    </ul>
+						   </div>
 						</section>
 						<section class="want_movie">
-							<h2>보고싶은 영화</h2>
-							<ul>
-								<li>
-									<div>
-										<div>
-											<img class="movie_img" src="${pageContext.request.contextPath}/img/product01.png">
-										</div>
-										<div>
-											<span>영화제목</span>
-											<span>2024.4.4</span>
-											<span>한국</span>
-										</div>
-									</div>
-								</li>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
+							<h4>보고싶은 영화</h4>
+							<div class="gallery_container">
+								<ul class="gallery">
+							        <li>
+							        	<img src="${pageContext.request.contextPath}/img/sing street.jpg">
+							        	<h5>싱 스트리트</h5>
+							        	<span>2018</span><span> 영국</span>
+							        </li>
+							        <li><img src="${pageContext.request.contextPath}/img/sing street.jpg"></li>
+							        <li><img src="${pageContext.request.contextPath}/img/sing street.jpg"></li>
+							        <li><img src="${pageContext.request.contextPath}/img/sing street.jpg"></li>
+							    </ul>
+						   </div>
 						</section>
 						<section class="favorite_comment">
-							<h2>좋아한 코멘트	</h2>
+							<h4>좋아한 코멘트</h4>
 						</section>
 					</div>
 				</div>

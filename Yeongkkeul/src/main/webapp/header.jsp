@@ -34,7 +34,7 @@
 					<div class="col-md-3 clearfix">
 						<div class="header-ctn">
 							<div>
-								<a href="view/crew/login.jsp">
+								<a href="${pageContext.request.contextPath}/view/crew/login.jsp">
 									<i class="fa fa-heart-o"></i>
 									<span>Login</span>
 								</a>
