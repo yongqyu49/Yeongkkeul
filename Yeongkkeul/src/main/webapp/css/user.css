@@ -26,6 +26,8 @@
 }
 
 .comment {
+	box-sizing:border-box;
+	flex: 0 0 auto;
 	width: 100%;
 	border: 1px solid rgb(227, 227, 227);
    	border-radius: 6px;
@@ -118,13 +120,6 @@
 	overflow: visible;
 	position: relative;
     gap: 5px;
-}
-
-.comment_list:after{
-	content:"";
-	display:block;
-	clear:both;
-	visibility: hidden;
 }
 
 .comment_list li img{

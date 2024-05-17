@@ -5,7 +5,11 @@
 <meta charset="UTF-8">
 </head>
 <body>
-	<header>
+	<header style="  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;">
 		<div id="header">
 			<div class="container">
 				<div class="row">
@@ -44,12 +48,6 @@
 								<a href="${pageContext.request.contextPath}/view/crew/user.jsp"><i class="fa fa-user-o"></i> My Account</a>
 							</div>
 	
-							<div class="menu-toggle">
-								<a href="#">
-									<i class="fa fa-bars"></i>
-									<span>Menu</span>
-								</a>
-							</div>
 						</div>
 					</div>
 				</div>
