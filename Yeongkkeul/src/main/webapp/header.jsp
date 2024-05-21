@@ -4,6 +4,12 @@
 <head>
 <meta charset="UTF-8">
 </head>
+<style>
+.atm {
+	width: 169px;
+	height: 70px;
+}
+</style>
 <body>
 	<header style="  position: fixed;
   top: 0;
@@ -16,7 +22,7 @@
 					<div class="col-md-3">
 						<div class="header-logo">
 							<a href="${pageContext.request.contextPath}/index.jsp" class="logo">
-								<img src="/img/atm.png" alt="" class="atm">
+								<img src="${pageContext.request.contextPath}/img/atm.png" alt="" class="atm">
 							</a>
 						</div>
 					</div>
@@ -43,11 +49,9 @@
 									<span>Login</span>
 								</a>
 							</div>
-	
 							<div class="dropdown">
 								<a href="${pageContext.request.contextPath}/view/crew/user.jsp"><i class="fa fa-user-o"></i> My Account</a>
 							</div>
-	
 						</div>
 					</div>
 				</div>

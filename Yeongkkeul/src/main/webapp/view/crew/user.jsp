@@ -26,7 +26,6 @@
 							<div class="background">
 								<div class="back_img"></div>
 								<div>
-									<button>비밀번호 변경</button>
 									<button class="setting_btn">Setting</button>
 								</div>
 							</div>
@@ -196,7 +195,6 @@
 								        	</article>
 							        	</a>
 							        </li>
-							        
 							    </ul>
 						   </div>
 						</section>
@@ -205,5 +203,86 @@
 			</div>
 		</div>
 	<jsp:include page="../../footer.jsp"/>
+	<div class="setting_pop">
+		<div class="modal_container">
+			<div class="modal">
+				<header class="modal_header">
+					<div class="modal_cancel_container">
+						<div>
+							<button class="cancel_button"></button>
+						</div>
+						<div></div>
+					</div>
+					<div class="modal_name1">
+						<div class="">설정</div>
+					</div>
+					<div class="modal_name2">설정</div>
+				</header>
+				<div class="modal_box">
+					<div class="">
+						<div class="modal_ul_container" style="    margin: 0px 20px;">
+							<ul>
+								<li>
+									<div class="modal_list">
+										<div class="modal_content">마케팅 정보</div>
+										<div></div>
+									</div>
+								</li>
+								<li>
+									<div class="modal_list">
+										<div class="modal_content">공개 설정</div>
+										<div></div>
+									</div>
+								</li>
+								<li>
+									<div class="modal_list">
+										<div class="modal_content">로그아웃</div>
+										<div></div>
+									</div>
+								</li>
+								<li>
+									<div class="modal_list">
+										<div class="modal_content">탈퇴하기</div>
+										<div></div>
+									</div>
+								</li>
+							</ul>
+							<section class="setting_section">
+								<div class="section_cate">고객센터</div>
+								<ul class="">
+									<li>
+										<div class="modal_list">
+											<div class="modal_content">문의하기/FAQ</div>
+											<div></div>
+										</div>
+									</li>
+									<li>
+										<div class="modal_list">
+											<div class="modal_content">공지사항</div>
+											<div></div>
+										</div>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(() => {
+		$(".setting_btn").on("click", () => {
+			$(".setting_pop").css("visibility", "visible");
+			console.log("visible")
+		})
+		
+		$(".cancel_button").on("click", () => {
+			$(".setting_pop").css("visibility", "hidden");
+		})
+		
+	});
+</script>
 </html>
