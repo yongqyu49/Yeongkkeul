@@ -2,10 +2,12 @@ package dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 
 import dto.Crew;
+import dto.Movie;
 import jdbc.JDBConnect;
 
 public class CrewDAO extends JDBConnect {
@@ -49,6 +51,24 @@ public class CrewDAO extends JDBConnect {
 			e.getMessage();
 		}
 		return result;
+	}
+	
+	public List<Map<String, Object>> autoComplete(String searchWord) {
+		List<Map<String, Object>> searchResult = null;
+		String sql = "select movie_name from movie where movie_name like '%' || ? || '%'";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, searchWord);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Movie movie = new Movie();
+				movie.setMovie_name(rs.getString(1));
+				searchResult.add(movie);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return searchResult;
 	}
 	
 }

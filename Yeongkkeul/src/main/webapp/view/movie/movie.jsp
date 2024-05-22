@@ -6,14 +6,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="../../css/slick.css"/>
 <link type="text/css" rel="stylesheet" href="../../css/slick-theme.css"/>
 <link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
 <link rel="stylesheet" href="../../css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
 <link type="text/css" rel="stylesheet" href="../../css/added/idk.css"/>
+
 </head>
 <body>
+
+<!-- header -->
+<jsp:include page="../../header.jsp"/>
+	
+
     <div id="root">
         <div class="css-tq98he-Self e1fn0aws1">
             <div class="css-126e3ta-NavContainer ed8qmey1">
@@ -449,5 +456,9 @@
             <div></div>
         </div>
     </div>
+
+
+<!-- footer -->
+<jsp:include page="../../footer.jsp"/>
 </body>
 </html>
