@@ -1,0 +1,43 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/oneline.css">
+</head>
+<body>
+    <div class="css-kgy8v7">
+        <header class="css-n89vr9">
+            <div class="css-1yerqlm"></div>
+            <em class="css-elm8sl">댓글</em>
+            <div class="css-mmlw50">
+                <button class="css-1cux2o"></button>9
+            </div>
+        </header>
+        <div class="css-16p1vvh">
+            <div class="css-1nyrhs4" style="height: 100%;">
+                <div class="css-ek159t">
+                    <div class="css-15bl2t8">
+                        <div class="css-15bl2t8">
+                            <textarea maxlength="10000" placeholder="이 퍼니 게임에 대한 생각을 자유롭게 표현해주세요." class="css-1es2t5o"></textarea>
+                            <div class="css-158g36p"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="css-1we5pxa">
+            <div class="css-p3u9eh">
+                <div class="css-197dxto"></div>
+                <div class="css-197dxto">
+                    <p class="css-1fd20im"></p>
+                    <p class="css-1tsmjw">0/10000</p>
+                    <button disabled class="css-b8wy2k">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
