@@ -20,7 +20,7 @@
                 <div class="css-ek159t">
                     <div class="css-15bl2t8">
                         <div class="css-15bl2t8">
-                            <textarea id="commentText" maxlength="10000" placeholder="이 퍼니 게임에 대한 생각을 자유롭게 표현해주세요." class="css-1es2t5o" oninput="updateCharCount()"></textarea>
+                            <textarea id="commentText" maxlength="10000" placeholder="이 댓글에 대한 생각을 자유롭게 표현해주세요." class="css-1es2t5o" oninput="updateCharCount()"></textarea>
                             <div class="css-158g36p"></div>
                         </div>
                     </div>
