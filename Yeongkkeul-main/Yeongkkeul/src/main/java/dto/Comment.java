@@ -1,6 +1,6 @@
 package dto;
 
-public class Comment {
+public class CommentDTO {
 
     public String movie_code2;      // 영화 번호
     public String email;			// 이메일
