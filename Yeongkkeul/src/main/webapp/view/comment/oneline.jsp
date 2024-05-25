@@ -32,7 +32,7 @@
                 <div class="css-197dxto"></div>
                 <div class="css-197dxto">
                     <p class="css-1fd20im"></p>
-                    <p class="css-1tsmjw" id="charCount">0/10000</p>
+                    <p class="css-1tsmjw" id="charCount">0/1000</p>
                     <button id="saveButton" class="css-b8wy2k" onclick="submitComment()">저장</button>
                 </div>
             </div>
@@ -41,7 +41,7 @@
     <script type="text/javascript">
         function updateCharCount() {
             const text = document.getElementById('commentText').value;
-            document.getElementById('charCount').innerText = text.length + "/10000";
+            document.getElementById('charCount').innerText = text.length + "/1000";
             document.getElementById('saveButton').disabled = text.trim() === '';
         }
 
