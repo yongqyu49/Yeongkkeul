@@ -22,20 +22,24 @@
 				<div class="mm">
 					<div class="con">
 						<section class="profile">
-							<h4>프로필</h4>
+							<div>
+								
+							</div>
 							<div class="background">
 								<div class="back_img"></div>
 								<div>
-									<button>비밀번호 변경</button>
-									<button class="setting_btn">Setting</button>
+									<button class="setting_btn" type="button"></button>
 								</div>
 							</div>
 							<div class="profile_img">
+								<div class="profile_photo">
+									<div></div>
+								</div>
 							</div>
-							<div>
+							<div class="introduce_container">
 								<h4>최용규</h4>
-								<span>cyk728@naver.com</span>
-								<p>소개</p>
+								<p>cyk728@naver.com</p>
+								<p>🤘🏽</p>
 							</div>
 						</section>
 						
@@ -196,7 +200,6 @@
 								        	</article>
 							        	</a>
 							        </li>
-							        
 							    </ul>
 						   </div>
 						</section>
@@ -205,5 +208,98 @@
 			</div>
 		</div>
 	<jsp:include page="../../footer.jsp"/>
+	<div class="setting_pop">
+		<div class="modal_container">
+			<div class="modal">
+				<header class="modal_header">
+					<div class="modal_cancel_container">
+						<div>
+							<button class="cancel_button"></button>
+						</div>
+						<div></div>
+					</div>
+					<div class="modal_name1">
+						<div class="">설정</div>
+					</div>
+					<div class="modal_name2">설정</div>
+				</header>
+				<div class="modal_box">
+					<div class="">
+						<div class="modal_ul_container" style="    margin: 0px 20px;">
+							<ul>
+								<li>
+									<div class="modal_list">
+										<div class="modal_content">마케팅 정보</div>
+										<div></div>
+									</div>
+								</li>
+								<li>
+									<div class="modal_list">
+										<div class="modal_content">공개 설정</div>
+										<div></div>
+									</div>
+								</li>
+								<li>
+									<div class="modal_list">
+										<div class="modal_content">로그아웃</div>
+										<div></div>
+									</div>
+								</li>
+								<li>
+									<div class="modal_list">
+										<div class="modal_content" id="secession">탈퇴하기</div>
+										<div></div>
+									</div>
+								</li>
+							</ul>
+							<section class="setting_section">
+								<div class="section_cate">고객센터</div>
+								<ul class="">
+									<li>
+										<div class="modal_list">
+											<div class="modal_content">문의하기/FAQ</div>
+											<div></div>
+										</div>
+									</li>
+									<li>
+										<div class="modal_list">
+											<div class="modal_content">공지사항</div>
+											<div></div>
+										</div>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="confirm_container">
+			<div class="confirm_block">
+				<div class="alert_container">
+					<div class="">
+						<div style="margin: 0px 20px;">
+							<div class="alert_text">알림</div>
+							<div class="confirm_logout">로그아웃 하쉴?</div>
+							<div size="2" class="" style="display: flex;">
+								<button type="button" class="logout_cancel">취소</button>
+								<button type="button" class="logout_confirm">확인</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/crew/user.js"></script>
+<script>
+$(() => {
+	$(".logout_confirm").on("click", () => {
+		let path = "${pageContext.request.contextPath}";
+		location.href = path + "/index.jsp";
+	});	
+});
+</script>
 </html>
