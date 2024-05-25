@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -53,22 +54,68 @@ public class CrewDAO extends JDBConnect {
 		return result;
 	}
 	
-	public List<Map<String, Object>> autoComplete(String searchWord) {
-		List<Map<String, Object>> searchResult = null;
-		String sql = "select movie_name from movie where movie_name like '%' || ? || '%'";
+	public List<Movie> autoComplete(String searchWord) {
+		List<Movie> resultList = new ArrayList<Movie>();
+		System.out.println("searchWord: " + searchWord);
+		String sql = "select movie_name from movie where movie_name like '%' || ? || '%'\r\n"
+				+ "union\r\n"
+				+ "select email from crew where email like '%' || ? || '%'";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, searchWord);
+			pstmt.setString(2, searchWord);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Movie movie = new Movie();
-				movie.setMovie_name(rs.getString(1));
-				searchResult.add(movie);
+				movie.setMovie_name(rs.getString("movie_name"));
+				resultList.add(movie);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		return searchResult;
+		for(Movie i : resultList) System.out.println("searchResult: " + i.getMovie_name());
+		return resultList;
 	}
+	
+	public List<Movie> csrfSelectMovie() {
+		System.out.println("csrfSelectMovie");
+		List<Movie> resultList = new ArrayList<Movie>();
+		String sql = "select * from movie";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Movie movie = new Movie();
+				movie.setMovie_code(rs.getString("movie_code"));
+				movie.setMovie_name(rs.getString("movie_name"));
+				movie.setMovie_content(rs.getString("movie_content"));
+				resultList.add(movie);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return resultList;
+	}
+	
+	public Movie csrfDetailMovie(String num) {
+		System.out.println("csrfDetailMovie");
+		Movie movie = new Movie();
+		String sql = "select * from movie where movie_code = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, num);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				movie.setMovie_code(rs.getString("movie_code"));
+				movie.setMovie_name(rs.getString("movie_name"));
+				movie.setMovie_content(rs.getString("movie_content"));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return movie;
+	}
+	
+	
 	
 }
