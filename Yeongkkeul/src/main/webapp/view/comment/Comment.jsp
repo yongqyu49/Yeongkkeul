@@ -1,39 +1,66 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.util.*, dao.CommentDAO, dto.Comment" %>
-<%
-    // 요청 파라미터에서 영화 코드를 가져옴
-    String movieCode = request.getParameter("movie_code2");
-    // ServletContext 객체를 참조하여 CommentDAO 객체를 생성
-    CommentDAO dao = new CommentDAO(application); 
-    // 해당 영화 코드에 대한 댓글 목록을 가져옴
-    List<Comment> comments = dao.MovieCode(movieCode);  
-%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>댓글</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../../css/oneline.css">
 </head>
 <body>
-    <h1>Comments for Movie: <%= movieCode %></h1>
-    <form action="addComment.jsp" method="post">
-        <!-- 영화 코드를 숨김 필드로 포함 -->
-        <input type="hidden" name="movie_code2" value="<%= movieCode %>">
-        Email: <input type="text" name="email" required><br>
-        Comment: <textarea name="content" required></textarea><br>
-        <input type="submit" value="Add Comment">
-    </form>
-    <h2>전체 댓글</h2>
-    <%
-        // 댓글 목록을 출력
-        for (Comment comment : comments) {
-    %>
-        <div>
-            <%= comment.getEmail() %> 
-            <%= comment.getRegi_Date() %>)
-            <%= comment.getContent() %>
+    <div class="css-kgy8v7">
+        <header class="css-n89vr9">
+            <div class="css-1yerqlm"></div>
+            <em class="css-elm8sl">댓글</em>
+            <div class="css-mmlw50">
+                <button class="css-1cux2o" onclick="window.close()">닫기</button>
+            </div>
+        </header>
+        <div class="css-16p1vvh">
+            <div class="css-1nyrhs4" style="height: 100%;">
+                <div class="css-ek159t">
+                    <div class="css-15bl2t8">
+                        <div class="css-15bl2t8">
+                            <textarea id="commentText" maxlength="10000" placeholder="이 퍼니 게임에 대한 생각을 자유롭게 표현해주세요." class="css-1es2t5o" oninput="updateCharCount()"></textarea>
+                            <div class="css-158g36p"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    <%
+        <div class="css-1we5pxa">
+            <div class="css-p3u9eh">
+                <div class="css-197dxto"></div>
+                <div class="css-197dxto">
+                    <p class="css-1fd20im"></p>
+                    <p class="css-1tsmjw" id="charCount">0/10000</p>
+                    <button id="saveButton" class="css-b8wy2k" onclick="submitComment()">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function updateCharCount() {
+            const text = document.getElementById('commentText').value;
+            document.getElementById('charCount').innerText = text.length + "/10000";
+            document.getElementById('saveButton').disabled = text.trim() === '';
         }
-    %>
+
+        function submitComment() {
+            const commentText = document.getElementById('commentText').value;
+            if (commentText.trim() === '') {
+                alert('댓글을 입력하세요.');
+                return;
+            }
+            // 부모 창으로 댓글을 전달
+            window.opener.receiveComment(commentText);
+            window.close();
+        }
+        function receiveComment(comment) {
+            const commentList = document.getElementById('commentList');
+            const newComment = document.createElement('li');
+            newComment.textContent = comment;
+            commentList.appendChild(newComment);
+        }
+    </script>
 </body>
 </html>
