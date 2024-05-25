@@ -3,79 +3,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>댓글</title>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-<link type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/slick.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/slick-theme.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
-<link rel="stylesheet" href="../../css/font-awesome.min.css">
-<link type="text/css" rel="stylesheet" href="../../css/style.css"/>
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/likeComments.css"/>
+    <meta charset="UTF-8">
+    <title>영끌</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/oneline2.css"/>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/likeComments.css"/>
 </head>
 <body>
-	<div id="header">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="header-logo">
-						<a href="/Yeongkkeul/index.jsp" class="logo">
-							<img src="/img/atm.png" alt="" class="atm">
-						</a>
-					</div>
-				</div>
-				
-					<div class="col-md-6">
-						<div class="header-search">
-							<form>
-								<select class="input-select">
-									<option value="0">All Categories</option>
-									<option value="1">Category 01</option>
-									<option value="1">Category 02</option>
-								</select>
-								<input class="input" placeholder="Search here">
-								<button class="search-btn">Search</button>
-							</form>
-						</div>
-					</div>
-					
-					
-	
-					<div class="col-md-3 clearfix">
-						<div class="header-ctn">
-							<div>
-								<a href="/Yeongkkeul/view/crew/login.jsp">
-									<i class="fa fa-heart-o"></i>
-									<span>Login</span>
-								</a>
-							</div>
-	
-							<div class="dropdown">
-								<a href="/Yeongkkeul/view/crew/user.jsp"><i class="fa fa-user-o"></i> My Account</a>
-							</div>
-						</div>
-						
-					</div>
-					
-				</div>
-			</div>
-			
-		</div>
-		
+    <jsp:include page="/header.jsp"/>
+    <section class="comment_section">
+        <div>
+            <header class="like_header">
+                <div class="go_back_container">
+                    <div>
+                        <button type="button" class="go_back"></button>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="current_category">
+                    <div>코멘트</div>
+                </div>
+                <div class="v">코멘트</div>
+            </header>
+            <div class="like_category"></div>
+            
+            <div class="comment_container">
+                <ul class="comment_ul" id="commentList">
+                    <!-- 댓글 목록 -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <ul>
+            <li>
+                <div class="user_container">
+                    <div class="comment_user">
+                        <a href="/Yeongkkeul/view/crew/user.jsp">
+                            <div class="photo_container">
+                                <div class="photo"></div>
+                            </div>
+                            <div class="user_name">이돈주인</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="comment_content">
+                    <div class="comment_display">
+                        <a href="">
+                            <img alt="movie_poster" src="/Yeongkkeul/img/sing street.jpg">
+                        </a>
+                        <div class="comment_text">
+                            <p class="movie_title">싱 스트리트</p>
+                            <p>영화 ・ 2023</p>
+                            <a href="">
+                                <div>
+                                    <span>아아아아아앙라ㅣ넝ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ미ㅏㅓ이퓌ㅏㄴㅇㄻㄴㅇㄻㄴㄹㄴㅇㅁㄿㄴㅁㅇㅍㅌㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊ퍼미퍼ㅐㅁ너ㅔ버절ㅇㄴ햐ㅐㅔㅔ매ㅓㅍ멒ㅁ;</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="css-s4pmq2 e9erukb13">
+                            <img alt="star" height="16px" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9IiM0QTRBNEEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEyIDE3Ljk4bC02LjAxNSA0LjM5MmMtLjUwOC4zNzItMS4xOTQtLjEyNi0uOTk4LS43MjVsMi4zMTctNy4wODEtNi4wMzUtNC4zNjdjLS41MS0uMzY5LS4yNDctMS4xNzUuMzgyLTEuMTc0bDcuNDQ3LjAxNiAyLjI4Ni03LjA5MWMuMTkyLS42IDEuMDQtLjYgMS4yMzMgMGwyLjI4NiA3LjA5IDcuNDQ3LS4wMTVjLjYyOS0uMDAxLjg5LjgwNS4zOCAxLjE3NGwtNi4wMzMgNC4zNjcgMi4zMTYgNy4wOGMuMTk2LjYtLjQ5IDEuMDk4LS45OTkuNzI2TDEyIDE3Ljk4eiIvPgo8L3N2Zz4K" width="16px">
+                            <span>4.0</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="css-hevnjk e9erukb9"><span class="css-1gnqu05 e9erukb8">좋아요 81</span><span>댓글 0</span></div>
+    </section>
+    <div class="css-0 e1689zdh0">
+        <div class="css-1saqk7d emmoxnt0">
+            <div class="css-1eky56k e9erukb11">
+                <button class="css-f3rywo e19d4hrp1" id="deckLike">
+                    <div class="css-zjik7 e19d4hrp0">
+                        <svg viewBox="0 0 20 20" class="css-1m1anpb e8utsm10">
+                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
+                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
+                        </svg>
+                    </div> 좋아요
+                </button>
+                <button class="css-f3rywo e19d4hrp1" onclick="openCommentPopup()">
+                    <div class="css-zjik7 e19d4hrp0">
+                        <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
+                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
+                        </svg>
+                    </div> 댓글
+                </button>
+                <button class="css-f3rywo e19d4hrp1">
+                    <div class="css-zjik7 e19d4hrp0">
+                        <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
+                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
+                        </svg>
+                    </div> 공유
+                </button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function openCommentPopup() {
+            window.open('Comment.jsp', '댓글 작성', 'width=530,height=500');
+        }
+
+        function receiveComment(comment) {
+            const commentList = document.getElementById('commentList');
+            const newComment = document.createElement('li');
+            newComment.textContent = comment;
+            commentList.appendChild(newComment);
+        }
+    </script>
 </body>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-<script type="text/javascript">
-	$(".go_back").click(() => {
-		history.back();
-	})
-</script>
-<div class="go_back_container">
-		<div>
-			<button type="button" class="go_back"></button>
-		</div>
-	</div>
-<div class="current_category">
-					<div>코멘트</div>
-				</div>
 </html>
