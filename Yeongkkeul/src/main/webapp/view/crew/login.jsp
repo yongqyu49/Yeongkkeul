@@ -48,7 +48,7 @@
 								</div>
 								<hr>
 								<div class="form-group">
-									<input type="submit" value="로그인" class="primary-btn order-submit">
+									<input type="submit" value="로그인" class="primary-btn order-submit" onclick="return loginCheck()">
 								</div>
 							</form>
 							<span>비밀번호를 잊어버리셨나요?</span>

@@ -10,21 +10,21 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-  <context-param>
-  	<param-name>oracleDriver</param-name>
-  	<param-value>oracle.jdbc.OracleDriver</param-value>
-  </context-param>
-  <context-param>
-  	<param-name>oracleUrl</param-name>
-  	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
-  </context-param>
-  <context-param>
-  	<param-name>oracleId</param-name>
-  	<param-value>yeongkkeul</param-value>
-  </context-param>
-  <context-param>
-  	<param-name>oraclePassword</param-name>
-  	<param-value>movie</param-value>
-  </context-param>
+  <!--Controller 등록  -->
+  <servlet>
+  	<servlet-name>Controller</servlet-name>
+  	<servlet-class>control.Controller</servlet-class>
+  	<init-param>
+  		<param-name>config</param-name>
+  		<param-value>/WEB-INF/command.properties</param-value>		
+  	</init-param>
+  </servlet>
+  
+  <!--url 맵핑 -->
+  <servlet-mapping>
+  	<servlet-name>Controller</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  	<!-- <url-pattern>/</url-pattern> -->
+  </servlet-mapping>
   
 </web-app>

@@ -1,0 +1,196 @@
+.css-f3rywo, .css-f3rywo .fill-target {
+    transition: all 70ms linear 0s;
+}
+
+.css-f3rywo {   	/* 좋아요, 댓글, 공유 버튼 */
+    background: none;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(103, 104, 106);
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    line-height: 18px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.css-1eky56k {					/* 좋아요, 댓글, 공유 부분*/
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    height: 43px;
+}
+
+.css-wfqwg3 {    /* 댓글 칸 부분*/
+    text-align: center;
+    padding: 16px 0px 32px;
+}
+
+.css-cmdgal {  /* 말풍선 이미지 칸*/
+    display: block;
+    color: rgb(212, 212, 212);
+    width: 72px;
+    height: 72px;
+    margin: 0px auto;
+}
+
+.css-1sf3l5l { /* "처음으로 댓글을 남겨보세요" 칸 */
+    color: rgb(160, 160, 160);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 20px;
+    white-space: pre-wrap;
+    margin-top: 12px;
+}
+
+.css-1gnqu05 {  /* 좋아요 칸 */
+    margin-right: 18px;
+}
+
+.css-hevnjk { /* 좋아요, 댓글 칸 부분 */
+    color: rgb(120, 120, 120);
+    font-size: 12px;
+    letter-spacing: -0.2px;
+    line-height: 16px;
+}
+
+.css-wpoqyp { /* 좋아요, 댓글 줄 부분 */
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 40px;
+    margin-top: 32px;
+}
+
+.css-6ekpp6 {  /* 댓글 출력 부분 */
+    white-space: pre-wrap;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 24px;
+    overflow: hidden;
+    opacity: 1;
+    transition: all 400ms ease 0s;
+}
+
+.css-s4pmq2 {  /* 별점 부분 */
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    color: rgb(74, 74, 74);
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    font-size: 13px;
+    line-height: 16px;
+    box-sizing: border-box;
+    height: 24px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 13px;
+}
+
+.css-1kcjsi3 {   /* 카테고리 분류 칸 */
+    color: rgb(120, 120, 120);
+    font-size: 12px;
+    letter-spacing: -0.2px;
+    line-height: 16px;
+    margin-top: 3px;
+}
+
+.css-79llui {   /* 영화 제목 칸 */
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    letter-spacing: -0.6px;
+    line-height: 21px;
+    margin-top: 3px;
+}
+
+.css-drz8qh > a {  /* 영화 제목, 카테고리 줄 부분 */
+    display: flex;
+    flex: 1 1 0%;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.css-zs0wsg-ProfilePhotoImage {   /* 프로필 칸 */
+    position: relative;
+    z-index: 1;
+    background: url(https://an2-img.amz.wtchn.net/image/v2/hDoqtm4gKYBf7DI9aYpcqA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1UQXdlREV3TUNKZExDSndJam9pTDNZeUwzTjBiM0psTDNWelpYSXZlVXRhZURONWVXdEVkalJrU2k5d2NtOW1hV3hsTHpVNE56RXpNalkxTXpBNU9EUXdOU0o5LnBmejhjLUE1TGlXZThXdWxVNzVGbDBvTFptQklDY1BVakhIcXZyYU1yZGc) center center / cover no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.css-19lar51 {  /* 닉네임 칸 */
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(74, 74, 74);
+    line-height: 16px;
+}
+
+.css-1yib9vf {   /* 작성 시간 */
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    color: rgb(120, 120, 120);
+    line-height: 16px;
+    margin-left: 4px;
+}
+
+section {   /* 전체 칸 */
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.css-1xpzh1r {    /* 로고 부분 */
+    width: 151px;
+    height: 29px;
+}
+
+.css-17jpe4g-ProfilePhotoImage-ProfilePhotoImage {   /* 프로필 칸 부분 */
+    position: relative;
+    z-index: 1;
+    background: url(https://an2-glx.amz.wtchn.net/assets/default/user/photo_file_name_small-ab0a7f6….jpg) no-repeat center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.css-3aqb9g {   /* 소식 부분 */
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    background: rgb(255, 221, 99);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+.css-10vf2kd {  /* 전체 칸 */
+    margin: 18px 0px 16px;
+}
+.go_back_container {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}

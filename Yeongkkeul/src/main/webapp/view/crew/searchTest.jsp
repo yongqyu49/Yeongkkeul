@@ -97,8 +97,26 @@ a {
 .pkgPadding {
 	margin-top: 50px;
 }
-</style>
 
+.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+  height: auto;
+}
+.ui-menu-item div.ui-state-hover,
+.ui-menu-item div.ui-state-active {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #f6B664;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  background-image: none;
+  border:none;
+}
+</style>
 <!-- 이 페이지에 참고하는 부트스트랩의 index 코드가 전부 있습니다 -->
 </head>
 <body>
@@ -236,25 +254,24 @@ a {
 	$('#input_search').autocomplete({
 		source : function(request, response) { //source: 입력시 보일 목록
 		     $.ajax({
-		           url : path + "/view/crew/autoComplete.jsp", 
-		           type : "POST", 
-		           dataType: "JSON", 
-		           data : {"search_word": request.term},	// 검색 키워드
-		           success : function(data){ 	// 성공
+		           url : path + "/view/crew/autoComplete.jsp"   
+		         , type : "POST"
+		         , dataType: "JSON"
+		         , data : {"searchWord": request.term}	// 검색 키워드
+		         , success : function(data) { 	// 성공
 		        	 console.log('data -> ' + data);
 		             response(
 		                 $.map(data.resultList, function(item) {
-		                     console.log('item.search_word -> ' + item.search_word);
-		                	 console.log('city_name -> ' + item.city_name);
+		                	 console.log('movie_name -> ' + item.movie_name);
 		                     return {
-		                    	     label : item.city_name    	// 목록에 표시되는 값
-		                           , "search_word" : item.SEARCH_WORD 		// 선택 시 input창에 표시되는 값
+		                    	     label : item.movie_name    	// 목록에 표시되는 값
+		                           /* , "search_word" : item.SEARCH_WORD */ 		// 선택 시 input창에 표시되는 값
 		                     };
 		                 })
-		             );    //response
+		             );
 		         }
-		         ,error : function(){ //실패
-		             alert("오류가 발생했습니다.");
+		         ,error : function(item){ //실패
+		             alert("오류가 발생했습니다." + item);
 		         }
 		     });
 		}

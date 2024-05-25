@@ -7,13 +7,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>영끌</title>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-<link type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/slick.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/slick-theme.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
-<link rel="stylesheet" href="../../css/font-awesome.min.css">
-<link type="text/css" rel="stylesheet" href="../../css/style.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/user.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/slick.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/slick-theme.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/nouislider.min.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/user.css"/>
 </head>
 <body>
 	<jsp:include page="/header.jsp"/>
@@ -22,19 +22,24 @@
 				<div class="mm">
 					<div class="con">
 						<section class="profile">
-							<h4>프로필</h4>
+							<div>
+								
+							</div>
 							<div class="background">
 								<div class="back_img"></div>
 								<div>
-									<button class="setting_btn">Setting</button>
+									<button class="setting_btn" type="button"></button>
 								</div>
 							</div>
 							<div class="profile_img">
+								<div class="profile_photo">
+									<div></div>
+								</div>
 							</div>
-							<div>
+							<div class="introduce_container">
 								<h4>최용규</h4>
-								<span>cyk728@naver.com</span>
-								<p>소개</p>
+								<p>cyk728@naver.com</p>
+								<p>🤘🏽</p>
 							</div>
 						</section>
 						
@@ -242,7 +247,7 @@
 								</li>
 								<li>
 									<div class="modal_list">
-										<div class="modal_content">탈퇴하기</div>
+										<div class="modal_content" id="secession">탈퇴하기</div>
 										<div></div>
 									</div>
 								</li>
@@ -269,20 +274,32 @@
 				</div>
 			</div>
 		</div>
+		<div class="confirm_container">
+			<div class="confirm_block">
+				<div class="alert_container">
+					<div class="">
+						<div style="margin: 0px 20px;">
+							<div class="alert_text">알림</div>
+							<div class="confirm_logout">로그아웃 하쉴?</div>
+							<div size="2" class="" style="display: flex;">
+								<button type="button" class="logout_cancel">취소</button>
+								<button type="button" class="logout_confirm">확인</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-<script type="text/javascript">
-	$(() => {
-		$(".setting_btn").on("click", () => {
-			$(".setting_pop").css("visibility", "visible");
-			console.log("visible")
-		})
-		
-		$(".cancel_button").on("click", () => {
-			$(".setting_pop").css("visibility", "hidden");
-		})
-		
-	});
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/crew/user.js"></script>
+<script>
+$(() => {
+	$(".logout_confirm").on("click", () => {
+		let path = "${pageContext.request.contextPath}";
+		location.href = path + "/index.jsp";
+	});	
+});
 </script>
 </html>

@@ -1,0 +1,122 @@
+package control;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Map;
+import java.util.Properties;
+import java.util.HashMap;
+import java.util.Iterator;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+/**
+ * Servlet implementation class Controller
+ */
+@WebServlet("/Controller")
+public class Controller extends HttpServlet {
+   private static final long serialVersionUID = 1L;
+   private Map<String, Object> commandMap = new HashMap<String, Object>();
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Controller() {
+        super();
+    }
+
+   /**
+    * @see Servlet#init(ServletConfig)
+    */
+   public void init(ServletConfig config) throws ServletException {
+      String props = config.getInitParameter("config");
+      // WEB-INF/command.properties
+      System.out.println("String props->"+ props); // ch16/com
+      
+      Properties pr = new Properties();
+      FileInputStream f = null;
+      try {
+         String configFilePath = config.getServletContext().getRealPath(props);
+         System.out.println("String configFilePath=>"+ configFilePath);// /och16/com
+         f = new FileInputStream(configFilePath);
+         pr.load(f);
+      }catch(FileNotFoundException e)   {
+         e.printStackTrace();
+      }catch(IOException e) {
+         e.printStackTrace();
+      }finally {
+         if(f != null)
+            try {
+               f.close();
+            }catch(IOException ex)   {
+               
+            }
+      }   
+            
+         Iterator keyIter = pr.keySet().iterator();
+         while(keyIter.hasNext())   {
+            String command = (String)keyIter.next();
+            String className = pr.getProperty(command);
+            System.out.println("3.command=>"+ command);
+            System.out.println("4.className  =>"+ className);
+            try {
+//               Class commandClass = Class.forName(className);
+//               Object commandInstance = commandClass.newInstance();
+            	Class<?> commandClass = Class.forName(className);
+            	CommandProcess commandInstance =(CommandProcess)commandClass.getDeclaredConstructor().newInstance();
+               commandMap.put(command, commandInstance);
+            } catch (Exception e) {
+               e.printStackTrace();
+            } 
+         }
+   }
+
+   /**
+    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    */
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      // TODO Auto-generated method stub
+      requestServletPro(request,response);
+   }
+
+   /**
+    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+    */
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      // TODO Auto-generated method stub
+      requestServletPro(request,response);
+   }
+   
+   protected void requestServletPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      if(request.getMethod().equals("POST"))   {
+         request.setCharacterEncoding("UTF-8");
+      }// if
+      
+      String view = null;
+      CommandProcess com = null;
+      String command = request.getServletPath();
+      System.out.println("2. command substring=>"+command);
+      
+      try{
+         com = (CommandProcess)commandMap.get(command);
+         System.out.println("3. command=> "+command);
+         System.out.println("commandMap=> "+commandMap);
+         System.out.println("4. com "+com);
+         view = com.requestProc(request, response);
+         System.out.println("5. requestServletPro view=>"+view);
+      }catch(Exception e) {
+         throw new ServletException();
+      }
+      RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+      dispatcher.forward(request, response);
+   }
+   
+   
+}
