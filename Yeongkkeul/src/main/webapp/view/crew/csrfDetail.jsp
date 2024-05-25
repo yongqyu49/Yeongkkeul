@@ -13,7 +13,6 @@
 	request.setAttribute("movie_code", num);
 	CrewDAO cd = new CrewDAO(application);
 	Movie movie = cd.csrfDetailMovie(num);
-	
 %>
 <body>
 	<span>번호: ${movie_code}</span>
