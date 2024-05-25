@@ -15,21 +15,10 @@
 <link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="css/style.css"/>
-<%
-	CrewDAO cd = new CrewDAO(application);
-	List<Crew> crewList = cd.getCrew();
-%>
 <body>
 	<jsp:include page="header.jsp"/>
 	<h1>index</h1>
 	<a href="./view/crew/signUp.jsp">Sign Up</a>
-	<%
-		for(Crew crew : crewList) {
-	%>
-			<p><%=crew.getEmail() %></p>
-	<%
-		}
-	%>
 	<jsp:include page="footer.jsp"/>
 </body>
 </html>
