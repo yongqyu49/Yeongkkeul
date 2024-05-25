@@ -189,3 +189,8 @@ section {   /* 전체 칸 */
 .css-10vf2kd {  /* 전체 칸 */
     margin: 18px 0px 16px;
 }
+.go_back_container {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}

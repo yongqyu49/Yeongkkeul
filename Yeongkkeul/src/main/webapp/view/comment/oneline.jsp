@@ -12,7 +12,7 @@
             <div class="css-1yerqlm"></div>
             <em class="css-elm8sl">댓글</em>
             <div class="css-mmlw50">
-                <button class="css-1cux2o"></button>9
+                <button class="css-1cux2o"></button>
             </div>
         </header>
         <div class="css-16p1vvh">
@@ -40,4 +40,3 @@
     </div>
 </body>
 </html>
-
