@@ -20,7 +20,7 @@
                 <div class="css-ek159t">
                     <div class="css-15bl2t8">
                         <div class="css-15bl2t8">
-                            <textarea id="commentText" maxlength="10000" placeholder="이 댓글에 대한 생각을 자유롭게 표현해주세요." class="css-1es2t5o" oninput="updateCharCount()"></textarea>
+                            <textarea id="commentText" maxlength="10000" placeholder="이 영화에 대한 생각을 자유롭게 표현해주세요." class="css-1es2t5o" oninput="updateCharCount()"></textarea>
                             <div class="css-158g36p"></div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                 <div class="css-197dxto"></div>
                 <div class="css-197dxto">
                     <p class="css-1fd20im"></p>
-                    <p class="css-1tsmjw" id="charCount">0/1000</p>
+                    <p class="css-1tsmjw" id="charCount">0/10000</p>
                     <button id="saveButton" class="css-b8wy2k" onclick="submitComment()">저장</button>
                 </div>
             </div>
@@ -41,7 +41,7 @@
     <script type="text/javascript">
         function updateCharCount() {
             const text = document.getElementById('commentText').value;
-            document.getElementById('charCount').innerText = text.length + "/1000";
+            document.getElementById('charCount').innerText = text.length + "/10000";
             document.getElementById('saveButton').disabled = text.trim() === '';
         }
 
@@ -54,12 +54,6 @@
             // 부모 창으로 댓글을 전달
             window.opener.receiveComment(commentText);
             window.close();
-        }
-        function receiveComment(comment) {
-            const commentList = document.getElementById('commentList');
-            const newComment = document.createElement('li');
-            newComment.textContent = comment;
-            commentList.appendChild(newComment);
         }
     </script>
 </body>

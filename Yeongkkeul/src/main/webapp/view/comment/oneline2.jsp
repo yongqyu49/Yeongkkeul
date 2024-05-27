@@ -143,7 +143,7 @@
     <div id="commentModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <iframe src="/Yeongkkeul/view/comment/oneline.jsp" style="width:500px; height:500px;"></iframe>
+            <iframe src="/Yeongkkeul/view/comment/Comment.jsp" style="width:500px; height:500px;"></iframe>
         </div>
     </div>
 
