@@ -20,7 +20,7 @@
                 <div class="css-ek159t">
                     <div class="css-15bl2t8">
                         <div class="css-15bl2t8">
-                            <textarea id="commentText" maxlength="10000" placeholder="이 영화에 대한 생각을 자유롭게 표현해주세요." class="css-1es2t5o" oninput="updateCharCount()"></textarea>
+                            <textarea id="commentText" maxlength="10000" placeholder="이 댓글에 대한 생각을 자유롭게 표현해주세요." class="css-1es2t5o" oninput="updateCharCount()"></textarea>
                             <div class="css-158g36p"></div>
                         </div>
                     </div>
@@ -54,6 +54,12 @@
             // 부모 창으로 댓글을 전달
             window.opener.receiveComment(commentText);
             window.close();
+        }
+        function receiveComment(comment) {
+            const commentList = document.getElementById('commentList');
+            const newComment = document.createElement('li');
+            newComment.textContent = comment;
+            commentList.appendChild(newComment);
         }
     </script>
 </body>

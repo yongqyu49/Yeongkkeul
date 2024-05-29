@@ -55,6 +55,12 @@
             window.opener.receiveComment(commentText);
             window.close();
         }
+        function receiveComment(comment) {
+            const commentList = document.getElementById('commentList');
+            const newComment = document.createElement('li');
+            newComment.textContent = comment;
+            commentList.appendChild(newComment);
+        }
     </script>
 </body>
 </html>
