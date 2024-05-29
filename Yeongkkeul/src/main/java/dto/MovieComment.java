@@ -1,18 +1,20 @@
 package dto;
 
-public class Comment {
+import java.sql.Timestamp;
 
-    public String movie_code2;      // 영화 번호
+public class MovieComment {
+
+    public String movie_code;      // 영화 번호
     public String email;			// 이메일
-    public String regi_Date;		// 등록날짜
+    public Timestamp regi_Date;		// 등록날짜
     public String content;			// 댓글 내용
 
-    public String getMovie_code2() {
-        return movie_code2;
+    public String getMovie_code() {
+        return movie_code;
     }
 
-    public void setMovie_code2(String movie_code2) {
-        this.movie_code2 = movie_code2;
+    public void setMovie_code(String movie_code) {
+        this.movie_code = movie_code;
     }
 
     public String getEmail() {
@@ -23,11 +25,11 @@ public class Comment {
         this.email = email;
     }
 
-    public String getRegi_Date() {
+    public Timestamp getRegi_Date() {
         return regi_Date;
     }
 
-    public void setRegi_Date(String regi_Date) {
+    public void setRegi_Date(Timestamp regi_Date) {
         this.regi_Date = regi_Date;
     }
 

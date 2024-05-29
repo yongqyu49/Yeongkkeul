@@ -14,6 +14,39 @@
     <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
     <link type="text/css" rel="stylesheet" href="../../css/oneline2.css"/>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/likeComments.css"/>
+    <style>
+        /* 모달 스타일 추가 */
+        .modal {
+            display: none; 
+            position: fixed; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 550px; 
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <jsp:include page="/header.jsp"/>
@@ -63,7 +96,7 @@
                             <p>영화 ・ 2023</p>
                             <a href="">
                                 <div>
-                                    <span>아아아아아앙라ㅣ넝ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ미ㅏㅓ이퓌ㅏㄴㅇㄻㄴㅇㄻㄴㄹㄴㅇㅁㄿㄴㅁㅇㅍㅌㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊ퍼미퍼ㅐㅁ너ㅔ버절ㅇㄴ햐ㅐㅔㅔ매ㅓㅍ멒ㅁ;</span>
+                                    <span>테스트 테스트 테스트 테스트 테스트 테스트 테스트</span>
                                 </div>
                             </a>
                         </div>
@@ -88,7 +121,7 @@
                         </svg>
                     </div> 좋아요
                 </button>
-                <button class="css-f3rywo e19d4hrp1" onclick="openCommentPopup()">
+                <button class="css-f3rywo e19d4hrp1" id="commentButton">
                     <div class="css-zjik7 e19d4hrp0">
                         <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
                             <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
@@ -105,6 +138,36 @@
             </div>
         </div>
     </div>
+
+    <!-- 모달 구조 추가 -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe src="/Yeongkkeul/view/comment/Comment.jsp" style="width:500px; height:500px;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // 모달 열기
+        var modal = document.getElementById("commentModal");
+        var btn = document.getElementById("commentButton");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // 댓글 추가 기능 구현
     <script type="text/javascript">
         function openCommentPopup() {
             window.open('Comment.jsp', '댓글 작성', 'width=530,height=500');
@@ -115,6 +178,17 @@
             const newComment = document.createElement('li');
             newComment.textContent = comment;
             commentList.appendChild(newComment);
+        }
+
+        function submitComment() {
+            const commentText = document.getElementById('commentText').value;
+            if (commentText.trim() === '') {
+                alert('댓글을 입력하세요.');
+                return;
+            }
+            // 부모 창으로 댓글을 전달
+            window.opener.receiveComment(commentText);
+            window.close();
         }
     </script>
 </body>
