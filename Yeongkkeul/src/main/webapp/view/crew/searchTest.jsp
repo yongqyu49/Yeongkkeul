@@ -253,27 +253,24 @@ a {
 	// 검색 자동완성
 	$('#input_search').autocomplete({
 		source : function(request, response) { //source: 입력시 보일 목록
-		     $.ajax({
-		           url : path + "/view/crew/autoComplete.jsp"   
-		         , type : "POST"
-		         , dataType: "JSON"
-		         , data : {"searchWord": request.term}	// 검색 키워드
-		         , success : function(data) { 	// 성공
-		        	 console.log('data -> ' + data);
-		             response(
-		                 $.map(data.resultList, function(item) {
-		                	 console.log('movie_name -> ' + item.movie_name);
-		                     return {
-		                    	     label : item.movie_name    	// 목록에 표시되는 값
-		                           /* , "search_word" : item.SEARCH_WORD */ 		// 선택 시 input창에 표시되는 값
-		                     };
-		                 })
-		             );
-		         }
-		         ,error : function(item){ //실패
-		             alert("오류가 발생했습니다." + item);
-		         }
-		     });
+			$.ajax({
+			    url: path + "/view/crew/search.do",
+			    type: "POST",
+			    dataType: "json",
+			    data: {"searchWord": request.term},
+			    success: function(data) {
+			        console.log('data -> ' + JSON.stringify(data));
+			        response($.map(data, function(item) {
+			            return {
+			                label: item.movie_name
+			            };
+			        }));
+			    },
+			    error: function(item) {
+			        console.log("오류가 발생했습니다." + item.status);
+			    }
+			});
+
 		}
 		,focus : function(event, ui) { // 방향키로 자동완성단어 선택 가능하게 만들어줌	
 				return false;

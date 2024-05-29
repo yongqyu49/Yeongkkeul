@@ -122,7 +122,6 @@
                     </div> 좋아요
                 </button>
                 <button class="css-f3rywo e19d4hrp1" id="commentButton">
-                <button class="css-f3rywo e19d4hrp1" onclick="openCommentPopup()">
                     <div class="css-zjik7 e19d4hrp0">
                         <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
                             <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>

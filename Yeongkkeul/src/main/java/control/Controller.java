@@ -114,8 +114,14 @@ public class Controller extends HttpServlet {
       }catch(Exception e) {
          throw new ServletException();
       }
-      RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-      dispatcher.forward(request, response);
+      // Ajax String를 포함하고 있으면
+   		if (view == null) {
+   			System.out.println("ajax -> " + command);
+   		} else {
+   			// 일반적인 경우
+   			RequestDispatcher dispatcher =  request.getRequestDispatcher(view);
+   			dispatcher.forward(request, response);
+   		}
    }
    
    
