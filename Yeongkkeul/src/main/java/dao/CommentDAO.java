@@ -43,9 +43,9 @@ public class CommentDAO {
 
         try {
             conn = getConnection();
-            String sql = "INSERT INTO comments (movie_code2, email, regi_date, content) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO comments (movie_code, email, regi_date, content) VALUES (?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, comment.getMovie_code2());
+            pstmt.setString(1, comment.getMovie_code());
             pstmt.setString(2, comment.getEmail());
             pstmt.setString(3, comment.getRegi_Date());
             pstmt.setString(4, comment.getContent());
@@ -70,14 +70,14 @@ public class CommentDAO {
 
         try {
             conn = getConnection();
-            String sql = "SELECT * FROM comments WHERE movie_code2 = ? ORDER BY regi_date DESC";
+            String sql = "SELECT * FROM comments WHERE movie_code = ? ORDER BY regi_date DESC";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, movie_code2);
+            pstmt.setString(1, movie_code2);  // 수정 항목
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
                 Comment comment = new Comment();
-                comment.setMovie_code2(rs.getString("movie_code2"));
+                comment.setMovie_code(rs.getString("movie_code"));
                 comment.setEmail(rs.getString("email"));
                 comment.setRegi_Date(rs.getString("regi_date"));
                 comment.setContent(rs.getString("content"));
@@ -112,8 +112,8 @@ public class CommentDAO {
     // 특정 사용자의 댓글 목록 조회
     public List<Comment> getCommentsByUser(String email) {
         Connection conn = getConnection();
-        PreparedStatement pstmt = null;
         ResultSet rs = null;
+        PreparedStatement pstmt = null;
         List<Comment> commentList = new ArrayList<>();
 
         try {
@@ -125,7 +125,7 @@ public class CommentDAO {
 
             while (rs.next()) {
                 Comment comment = new Comment();
-                comment.setMovie_code2(rs.getString("movie_code2"));
+                comment.setMovie_code(rs.getString("movie_code"));
                 comment.setEmail(rs.getString("email"));
                 comment.setRegi_Date(rs.getString("regi_date"));
                 comment.setContent(rs.getString("content"));
