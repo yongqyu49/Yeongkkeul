@@ -173,6 +173,18 @@
         }
 
         // 댓글 추가 기능 구현
+    <script type="text/javascript">
+        function openCommentPopup() {
+            window.open('Comment.jsp', '댓글 작성', 'width=530,height=500');
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // 댓글 추가 기능 구현
         function receiveComment(comment) {
             const commentList = document.getElementById('commentList');
             const newComment = document.createElement('li');

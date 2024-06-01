@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.text.SimpleDateFormat, java.util.Date, dao.CommentDAO, dto.Comment" %>
+<%@ page import="java.text.SimpleDateFormat, java.util.Date, dao.CommentDAO,dto.MovieComment" %>
 <%
-    // 폼 데이터에서 영화 코드, 이메일, 댓글 내용을 가져옴
+// 폼 데이터에서 영화 코드, 이메일, 댓글 내용을 가져옴
     String movieCode = request.getParameter("movie_code2");
     String email = request.getParameter("email");
     String content = request.getParameter("content");
@@ -9,7 +9,7 @@
     String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 
     // CommentDTO 객체를 생성하고 데이터 설정
-    Comment comment = new Comment();
+    MovieComment comment = new MovieComment();
     comment.setMovie_code2(movieCode);
     comment.setEmail(email);
     comment.setRegi_Date(date);
