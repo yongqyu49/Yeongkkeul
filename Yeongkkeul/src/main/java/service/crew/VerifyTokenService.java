@@ -1,6 +1,9 @@
 package service.crew;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -8,21 +11,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import control.CommandProcess;
 import dao.CrewDAO;
+import dto.EmailToken;
 
-public class SignUpCrewService implements CommandProcess {
+public class VerifyTokenService implements CommandProcess {
 
 	@Override
 	public String requestProc(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String email = request.getParameter("email");
-		String name = request.getParameter("name");
-		String password = request.getParameter("password");
 		String token = request.getParameter("email_token");
-		System.out.println("email_token: " + token);
+		String email = request.getParameter("email");
+		
 		CrewDAO cd = CrewDAO.getInstance();
-		int result = cd.signUpCrew(email, name, password);
-		if(result == 1) return "index.jsp";
-		else return "";
+		List<EmailToken> et = cd.verifyToken(email, token);
+		Map<String, String> etMap = new HashMap<String, String>();
+		for(EmailToken i : et) {
+			etMap.put(i.getEmail(), i.getEmail_code());
+		}
+		request.setAttribute("tokenList", etMap);
+		return null;
 	}
 
 }

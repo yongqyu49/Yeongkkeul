@@ -11,6 +11,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import dto.Crew;
+import dto.EmailToken;
 import dto.Movie;
 
 public class CrewDAO  {
@@ -97,8 +98,6 @@ public class CrewDAO  {
 		return searchList;
 	}
 	
-	
-
 	public int signUpCrew(String email, String name, String password) {
 		int result = 0;
 		Connection conn = getConnection();
@@ -116,6 +115,50 @@ public class CrewDAO  {
 			close(conn, pstmt);
 		}
 		return result;
+	}
+
+	public int checkId(String email) {
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int count = 0;
+		String sql = "select email from crew where email = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()) count++; 
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return count;
+	}
+
+	public List<EmailToken>verifyToken(String email, String token) {
+		List<EmailToken> tokenList = new ArrayList<EmailToken>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from email_token where email = ? and email_token = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, token);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				EmailToken et = new EmailToken();
+				et.setEmail(rs.getString(1));
+				et.setEmail_code(rs.getString(2));
+				tokenList.add(et);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return tokenList;
 	}
 	
 }
