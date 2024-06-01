@@ -1,2 +1,0 @@
-# Yeongkkeul
-Hoseo jsp Project

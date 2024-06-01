@@ -5,24 +5,23 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import control.CommandProcess;
-import dao.CrewDAO;
 
-public class SignUpCrewService implements CommandProcess {
+public class LoginService implements CommandProcess {
 
 	@Override
 	public String requestProc(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		String email = request.getParameter("email");
-		String name = request.getParameter("name");
 		String password = request.getParameter("password");
-		String token = request.getParameter("email_token");
-		System.out.println("email_token: " + token);
-		CrewDAO cd = CrewDAO.getInstance();
-		int result = cd.signUpCrew(email, name, password);
-		if(result == 1) return "index.jsp";
-		else return "";
+		System.out.println("email: " + email);
+		System.out.println("password: " + password);
+		
+		return null;
 	}
 
 }
