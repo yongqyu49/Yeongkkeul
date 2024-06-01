@@ -135,13 +135,31 @@ public class CrewDAO  {
 		}
 		return count;
 	}
+	
+	public int setEmailToken(String email, String uuid) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "insert into email_token values(?, ?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, uuid);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(pstmt, conn);
+		}
+		return result;
+	}
 
 	public List<EmailToken>verifyToken(String email, String token) {
 		List<EmailToken> tokenList = new ArrayList<EmailToken>();
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from email_token where email = ? and email_token = ?";
+		String sql = "select * from email_token where email = ? and email_code = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, email);
@@ -160,5 +178,22 @@ public class CrewDAO  {
 		}
 		return tokenList;
 	}
-	
+
+	public int deleteEmailToken(String email) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "delete from email_token where email = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(pstmt, conn);
+		}
+		return result;
+	}
+
 }

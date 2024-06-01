@@ -39,7 +39,7 @@
 							<div class="section-title">
 								<h3 class="title">로그인</h3>
 							</div>
-							<form action="loginProc.jsp" method="post">
+							<form action="${pageContext.request.contextPath}/view/crew/login.do" method="post">
 								<div class="form-group">
 									<input class="input" type="email" name="email" placeholder="이메일">
 								</div>

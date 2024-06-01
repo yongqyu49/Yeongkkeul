@@ -1,4 +1,4 @@
-$(() => {
+$(function() {
     // 이메일 중복 검사
     $('[name="email"]').keyup(() => {
         let email = $('[name="email"]').val();
@@ -23,24 +23,31 @@ $(() => {
             }
         });
     });
-
     // 회원가입 버튼 클릭 시
     $("#check_token_button").on("click", async () => {
+		const email = $('[name="email"]').val();
+		console.log("gen email: " + email)
         try {
             // 이메일 인증 코드 생성
-            const response = await fetch("/Yeongkkeul/view/crew/generateToken.do");
+            const response = await fetch("/Yeongkkeul/view/crew/generateToken.do", {
+				method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ sendEmail: email })
+			});
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             const result = await response.json();
-            console.log("fetchData: " + result);
+            console.log("fetchData: " + result.token);
 
             // emailjs 초기화 및 이메일 발송
             emailjs.init("zO39lu4x1E-liKbwc");
             const emailResponse = await emailjs.send("service_66o0d7r", "template_fhfy3fd", {
                 from_name: "Yeongkkeul",
                 message: "Copy the Code",
-                token: result,
+                token: result.token,
             });
             console.log("SUCCESS. status=%d, text=%s", emailResponse.status, emailResponse.text);
 
@@ -59,6 +66,9 @@ $(() => {
     // 인증하기 버튼 클릭 시
     $(".submit_token_button").on("click", async () => {
         const inputToken = $('[name="email_token"]').val();
+        const email = $('[name="email"]').val();
+		console.log("ver email: " + email)
+		console.log("ver token: " + inputToken)
 		
 		try {
             const response = await fetch("/Yeongkkeul/view/crew/verifyToken.do", {
@@ -66,7 +76,10 @@ $(() => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ token: inputToken })
+                body: JSON.stringify({ 
+					token: inputToken,
+					sendEmail: email,
+				})
             });
 
             if (response.ok) {
@@ -76,7 +89,7 @@ $(() => {
                     // 인증 성공 시 폼 제출
                     $("#contact-form").submit();
                 } else {
-                    alert("인증 코드가 일치하지 않습니다.");
+                    alert("인증 코드가 일치하지 않습니다. 111");
                 }
             } else {
                 alert("토큰 확인 중 오류가 발생했습니다.");
@@ -84,21 +97,12 @@ $(() => {
         } catch (error) {
             console.error('There has been a problem with your fetch operation:', error);
         }
-        
-        // 인증 코드 확인
-        if (inputToken === token) {
-            alert("인증 코드를 확인했습니다.");
-            // 인증 성공 시 폼 제출
-            $("#contact-form").submit();
-        } else {
-            alert("인증 코드가 일치하지 않습니다.");
-        }
     });
     
     // 폼 제출 방지
-    $("#contact-form").on("submit", (e) => {
+    /*$("#contact-form").on("submit", (e) => {
         e.preventDefault();
-    });
+    });*/
 });
 
 
