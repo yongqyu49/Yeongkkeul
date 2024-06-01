@@ -46,6 +46,11 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .comment_text {
+				    /* 기존 스타일 유지 */
+				    /* 다음의 스타일 추가 */
+				    word-wrap: break-word; /* 긴 단어의 줄 바꿈 */
+				}
     </style>
 </head>
 <body>
@@ -96,7 +101,7 @@
                             <p>영화 ・ 2023</p>
                             <a href="">
                                 <div>
-                                    <span>테스트 테스트 테스트 테스트 테스트 테스트 테스트</span>
+                                    <span>테스트 테스트 테스트 테스트 테스트 테스트 테스트ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span>
                                 </div>
                             </a>
                         </div>
@@ -173,6 +178,13 @@
             window.open('Comment.jsp', '댓글 작성', 'width=530,height=500');
         }
 
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // 댓글 추가 기능 구현
         function receiveComment(comment) {
             const commentList = document.getElementById('commentList');
             const newComment = document.createElement('li');
