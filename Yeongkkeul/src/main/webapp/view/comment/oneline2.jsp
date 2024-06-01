@@ -172,6 +172,7 @@
 
         span.onclick = function() {
             modal.style.display = "none";
+            //ㄷㄷ
         }
 
         window.onclick = function(event) {
