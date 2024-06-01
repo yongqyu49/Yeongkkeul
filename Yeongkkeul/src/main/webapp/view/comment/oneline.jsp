@@ -1,32 +1,44 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../../css/oneline.css">
+<style>
+    .placeholder-text {
+        color: #000; /* 텍스트 색상 */
+        opacity: 0.5; /* 투명도 */
+        position: center; /* 위치 지정 */
+        pointer-events: none; 
+    }
+
+    #commentText {
+        position: relative; /* 부모 요소로 설정 */
+    }
+</style>
 </head>
 <body>
     <div class="css-kgy8v7">
         <header class="css-n89vr9">
             <div class="css-1yerqlm"></div>
             <em class="css-elm8sl">한줄평</em>
-            <div class="css-mmlw50">
-                <button class="css-1cux2o" onclick="window.close()">닫기</button>
-            </div>
         </header>
         <div class="css-16p1vvh">
             <div class="css-1nyrhs4" style="height: 100%;">
                 <div class="css-ek159t">
                     <div class="css-15bl2t8">
                         <div class="css-15bl2t8">
-                            <textarea id="commentText" maxlength="10000" placeholder="이 영화에 대한 생각을 자유롭게 표현해주세요." class="css-1es2t5o" oninput="updateCharCount()"></textarea>
+                            <textarea id="commentText" maxlength="10000" class="css-1es2t5o" oninput="updateCharCount()" placeholder=""></textarea>
                             <div class="css-158g36p"></div>
+                            <span class="placeholder-text">이 영화에 대한 생각을 자유롭게 표현해주세요.</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        //ㄷㄷ
         <div class="css-1we5pxa">
             <div class="css-p3u9eh">
                 <div class="css-197dxto"></div>
@@ -42,7 +54,7 @@
         function updateCharCount() {
             const text = document.getElementById('commentText').value;
             document.getElementById('charCount').innerText = text.length + "/10000";
-            document.getElementById('saveButton').disabled = text.trim() === '';
+            // document.getElementById('saveButton').disabled = text.trim() === '';
         }
 
         function submitComment() {

@@ -15,7 +15,6 @@
     <link type="text/css" rel="stylesheet" href="../../css/oneline2.css"/>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/likeComments.css"/>
     <style>
-        /* 모달 스타일 추가 */
         .modal {
             display: none; 
             position: fixed; 
@@ -32,7 +31,7 @@
             margin: 10% auto; 
             padding: 20px;
             border: 1px solid #888;
-            width: 550px; 
+            width: 580px; 
         }
         .close {
             color: #aaa;
@@ -47,10 +46,26 @@
             cursor: pointer;
         }
         .comment_text {
-				    /* 기존 스타일 유지 */
-				    /* 다음의 스타일 추가 */
-				    word-wrap: break-word; /* 긴 단어의 줄 바꿈 */
-				}
+            word-wrap: break-word; 
+        }
+        .like-dislike-btns {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .like-dislike-btns button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px; /* 크기를 줄였습니다 */
+            padding: 5px; /* 버튼의 패딩을 줄였습니다 */
+        }
+        .like-dislike-btns .like-btn {
+            color: #007bff;
+        }
+        .like-dislike-btns .dislike-btn {
+            color: #dc3545;
+        }
     </style>
 </head>
 <body>
@@ -101,7 +116,7 @@
                             <p>영화 ・ 2023</p>
                             <a href="">
                                 <div>
-                                    <span>테스트 테스트 테스트 테스트 테스트 테스트 테스트ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span>
+                                    <span>테스트 테스트 테스트 테스트 테스트 테스트 테스트ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span>
                                 </div>
                             </a>
                         </div>
@@ -113,19 +128,14 @@
                 </div>
             </li>
         </ul>
-        <div class="css-hevnjk e9erukb9"><span class="css-1gnqu05 e9erukb8">좋아요 81</span><span>댓글 0</span></div>
     </section>
     <div class="css-0 e1689zdh0">
         <div class="css-1saqk7d emmoxnt0">
             <div class="css-1eky56k e9erukb11">
-                <button class="css-f3rywo e19d4hrp1" id="deckLike">
-                    <div class="css-zjik7 e19d4hrp0">
-                        <svg viewBox="0 0 20 20" class="css-1m1anpb e8utsm10">
-                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
-                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
-                        </svg>
-                    </div> 좋아요
-                </button>
+                <div class="like-dislike-btns">
+                            <button class="like-btn" onclick="likeComment(this)">좋아요 <span class="like-count">0</span></button>
+                            <button class="dislike-btn" onclick="dislikeComment(this)">싫어요 <span class="dislike-count">0</span></button>
+                        </div>
                 <button class="css-f3rywo e19d4hrp1" id="commentButton">
                     <div class="css-zjik7 e19d4hrp0">
                         <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
@@ -144,7 +154,6 @@
         </div>
     </div>
 
-    <!-- 모달 구조 추가 -->
     <div id="commentModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -153,7 +162,6 @@
     </div>
 
     <script>
-        // 모달 열기
         var modal = document.getElementById("commentModal");
         var btn = document.getElementById("commentButton");
         var span = document.getElementsByClassName("close")[0];
@@ -164,6 +172,7 @@
 
         span.onclick = function() {
             modal.style.display = "none";
+            //ㄷㄷ
         }
 
         window.onclick = function(event) {
@@ -172,6 +181,8 @@
             }
         }
 
+<<<<<<< HEAD
+=======
         // 댓글 추가 기능 구현
     <script type="text/javascript">
         function openCommentPopup() {
@@ -185,6 +196,7 @@
         }
 
         // 댓글 추가 기능 구현
+>>>>>>> branch 'main' of https://github.com/Leejeseong/Yeongkkeul.git
         function receiveComment(comment) {
             const commentList = document.getElementById('commentList');
             const newComment = document.createElement('li');
@@ -198,10 +210,24 @@
                 alert('댓글을 입력하세요.');
                 return;
             }
-            // 부모 창으로 댓글을 전달
             window.opener.receiveComment(commentText);
             window.close();
+        }
+
+        function likeComment(button) {
+            const likeCountSpan = button.querySelector('.like-count');
+            let likeCount = parseInt(likeCountSpan.textContent);
+            likeCount++;
+            likeCountSpan.textContent = likeCount;
+        }
+
+        function dislikeComment(button) {
+            const dislikeCountSpan = button.querySelector('.dislike-count');
+            let dislikeCount = parseInt(dislikeCountSpan.textContent);
+            dislikeCount++;
+            dislikeCountSpan.textContent = dislikeCount;
         }
     </script>
 </body>
 </html>
+

@@ -202,4 +202,17 @@
     letter-spacing: -0.3px;
     line-height: 19px;
     padding: 5px 0px;
+    
+}.like-dislike-btns button {   /* 좋아요, 싫어요 부분 */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px; /* 크기를 줄였습니다 */
+    padding: 5px; /* 버튼의 패딩을 줄였습니다 */
 }
+.like-dislike-btns .like-btn {
+    color: #007bff;
+}
+.like-dislike-btns .dislike-btn {
+    color: #dc3545;
+}																/* 좋아요, 싫어요  부분*/
