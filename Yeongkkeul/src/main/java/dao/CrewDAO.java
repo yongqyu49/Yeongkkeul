@@ -11,6 +11,8 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import dto.Crew;
+import dto.EmailToken;
+import dto.Movie;
 
 public class CrewDAO  {
 	
@@ -36,14 +38,25 @@ public class CrewDAO  {
 		return conn;
 	}
 	
+	// 자원해제
+	private void close(AutoCloseable... ac) {
+		try {
+			for(AutoCloseable a : ac) if(a != null) a.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	// 멤버 불러오기
 	public List<Crew> getCrew() {
 		List<Crew> memberList = new ArrayList<Crew>();
 		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		String sql = "select * from crew";
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-			ResultSet rs = pstmt.executeQuery();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Crew member = new Crew();
 				member.setEmail(rs.getString("email"));
@@ -53,9 +66,99 @@ public class CrewDAO  {
 			}
 		} catch (Exception e) {
 			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
 		}
-		System.out.println(memberList);
 		return memberList;
+	}
+	
+	// 영화검색
+	public List<Movie> searchMovie(String searchWord) {
+		List<Movie> searchList = new ArrayList<Movie>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select movie_name from movie where movie_name like '%' || ? || '%'";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, searchWord);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Movie movie = new Movie();
+				movie.setMovie_name(rs.getString(1));
+				searchList.add(movie);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		System.out.println("DAO searchWord: " + searchWord);
+		System.out.println("DAO searchList: " + searchList);
+		return searchList;
+	}
+	
+	public int signUpCrew(String email, String name, String password) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "insert into crew values(?, ?, ?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, name);
+			pstmt.setString(3, password);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(conn, pstmt);
+		}
+		return result;
+	}
+
+	public int checkId(String email) {
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int count = 0;
+		String sql = "select email from crew where email = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()) count++; 
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return count;
+	}
+
+	public List<EmailToken>verifyToken(String email, String token) {
+		List<EmailToken> tokenList = new ArrayList<EmailToken>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from email_token where email = ? and email_token = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, token);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				EmailToken et = new EmailToken();
+				et.setEmail(rs.getString(1));
+				et.setEmail_code(rs.getString(2));
+				tokenList.add(et);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return tokenList;
 	}
 	
 }

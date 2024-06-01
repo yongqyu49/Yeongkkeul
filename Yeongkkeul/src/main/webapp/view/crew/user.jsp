@@ -13,7 +13,7 @@
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/nouislider.min.css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/user.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/crew/user.css"/>
 </head>
 <body>
 	<jsp:include page="/header.jsp"/>

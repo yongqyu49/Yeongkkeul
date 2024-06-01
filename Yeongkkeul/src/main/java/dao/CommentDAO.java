@@ -10,7 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import dto.Comment;
+import dto.MovieComment;
 
 public class CommentDAO {
     private static CommentDAO instance;
@@ -36,7 +36,7 @@ public class CommentDAO {
     }
 
     // 댓글 작성
-    public boolean insertComment(Comment comment) {
+    public boolean insertComment(MovieComment comment) {
         Connection conn = getConnection();
         PreparedStatement pstmt = null;
         boolean result = false;
@@ -62,11 +62,11 @@ public class CommentDAO {
     }
 
     // 특정 영화의 댓글 목록 조회
-    public List<Comment> getCommentsByMovie(String movie_code2) {
+    public List<MovieComment> getCommentsByMovie(String movie_code2) {
         Connection conn = getConnection();
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        List<Comment> commentList = new ArrayList<>();
+        List<MovieComment> commentList = new ArrayList<>();
 
         try {
             conn = getConnection();
@@ -76,8 +76,13 @@ public class CommentDAO {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
+<<<<<<< HEAD
                 Comment comment = new Comment();
                 comment.setMovie_code(rs.getString("movie_code"));
+=======
+                MovieComment comment = new MovieComment();
+                comment.setMovie_code2(rs.getString("movie_code2"));
+>>>>>>> branch 'main' of https://github.com/Leejeseong/Yeongkkeul.git
                 comment.setEmail(rs.getString("email"));
                 comment.setRegi_Date(rs.getString("regi_date"));
                 comment.setContent(rs.getString("content"));
@@ -110,11 +115,15 @@ public class CommentDAO {
     }
 
     // 특정 사용자의 댓글 목록 조회
-    public List<Comment> getCommentsByUser(String email) {
+    public List<MovieComment> getCommentsByUser(String email) {
         Connection conn = getConnection();
         ResultSet rs = null;
+<<<<<<< HEAD
         PreparedStatement pstmt = null;
         List<Comment> commentList = new ArrayList<>();
+=======
+        List<MovieComment> commentList = new ArrayList<>();
+>>>>>>> branch 'main' of https://github.com/Leejeseong/Yeongkkeul.git
 
         try {
             conn = getConnection();
@@ -124,8 +133,13 @@ public class CommentDAO {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
+<<<<<<< HEAD
                 Comment comment = new Comment();
                 comment.setMovie_code(rs.getString("movie_code"));
+=======
+                MovieComment comment = new MovieComment();
+                comment.setMovie_code2(rs.getString("movie_code2"));
+>>>>>>> branch 'main' of https://github.com/Leejeseong/Yeongkkeul.git
                 comment.setEmail(rs.getString("email"));
                 comment.setRegi_Date(rs.getString("regi_date"));
                 comment.setContent(rs.getString("content"));
