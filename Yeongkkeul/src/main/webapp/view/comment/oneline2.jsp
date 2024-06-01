@@ -31,7 +31,7 @@
             margin: 10% auto; 
             padding: 20px;
             border: 1px solid #888;
-            width: 550px; 
+            width: 580px; 
         }
         .close {
             color: #aaa;
