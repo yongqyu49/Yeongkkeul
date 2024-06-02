@@ -6,13 +6,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css"/>
-	<link type="text/css" rel="stylesheet" href="../../css/slick.css"/>
-	<link type="text/css" rel="stylesheet" href="../../css/slick-theme.css"/>
-	<link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
-	<link rel="stylesheet" href="../../css/font-awesome.min.css">
-	<link type="text/css" rel="stylesheet" href="../../css/added/index.css"/>
-	<link type="text/css" rel="stylesheet" href="../../css/style.css"/>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/slick.css"/>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/slick-theme.css"/>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/nouislider.min.css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/added/index.css"/>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
 <body>
 	
@@ -20,7 +20,7 @@
         <div class="css-tq98he-Self e1fn0aws1">
             <div class="css-126e3ta-NavContainer ed8qmey1">
         <!-- header -->
-	<jsp:include page="../../header.jsp"/>
+	<jsp:include page="${pageContext.request.contextPath}/header.jsp"/>
         
                 <section class="css-1utdjx5-Main-setMainPaddingForXs-setMainPaddingForOverSm ed8qmey0">
                     <div class="css-lifknt-Self e8cv88g3">
@@ -884,7 +884,7 @@
                             <div class="e8cv88g0 css-1fixqbv eu826xw0"></div>
                         </section>
                         	<!-- footer -->
-	<jsp:include page="../../footer.jsp"/>
+	<jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
 </div>
                 </section>
             </div>
