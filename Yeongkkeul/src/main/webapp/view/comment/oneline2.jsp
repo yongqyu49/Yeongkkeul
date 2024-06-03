@@ -76,7 +76,7 @@
                 <div class="go_back_container">
                     <div>
                         <button type="button" class="go_back">
-                        	<a href="/Yeongkkeul/view/comment/likeComments.jsp" class="go_back"></a>
+                            <a href="/Yeongkkeul/view/comment/likeComments.jsp" class="go_back"></a>
                         </button>
                     </div>
                     <div></div>
@@ -97,28 +97,29 @@
     </section>
     <section>
         <ul>
-            <li>
+            <li data-comment-id="1">
                 <div class="user_container">
-                    <div class="comment_user">
-                        <a href="/Yeongkkeul/view/crew/user.jsp">
-                            <div class="photo_container">
-                                <div class="photo"></div>
-                            </div>
-                            <div class="user_name">이돈주인</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="comment_content">
-                    <div class="comment_display">
-                        <a href="">
-                            <img alt="movie_poster" src="/Yeongkkeul/img/sing street.jpg">
-                        </a>
+					        <div class="comment_user">
+					            <a href="/Yeongkkeul/view/crew/user.jsp">
+					                <div class="photo_container">
+					                    <div class="photo"></div>
+					                </div>
+					                <div class="user_name">이돈주인</div>
+					            </a>
+					        </div>
+					    </div>
+					    <div class="comment_content">
+					                <div class="comment_content">
+					                    <div class="comment_display">
+					                        <a href="">
+					                            <img alt="movie_poster" src="/Yeongkkeul/img/sing street.jpg">
+					                        </a>
                         <div class="comment_text">
                             <p class="movie_title">싱 스트리트</p>
                             <p>영화 ・ 2023</p>
                             <a href="">
                                 <div>
-                                    <span>테스트 테스트 테스트 테스트 테스트 테스트 테스트ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span>
+                                    <span>테스트 테스트 테스트 테스트 테스트 테스트 테스</span>
                                 </div>
                             </a>
                         </div>
@@ -128,34 +129,34 @@
                         </div>
                     </div>
                 </div>
+                <div class="like-dislike-btns">
+                    <button class="like-btn" data-comment-id="1" onclick="likeComment(this)">좋아요 <span class="like-count">0</span></button>
+                    <button class="dislike-btn" data-comment-id="1" onclick="dislikeComment(this)">싫어요 <span class="dislike-count">0</span></button>
+                 <div class="css-0 e1689zdh0">
+					        <div class="css-1saqk7d emmoxnt0">
+					            <div class="css-1eky56k e9erukb11">
+					                <button class="css-f3rywo e19d4hrp1" id="commentButton">
+					                    <div class="css-zjik7 e19d4hrp0">
+					                        <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
+					                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
+					                        </svg>
+					                    </div> 댓글
+					                </button>
+								                <button class="css-f3rywo e19d4hrp1">
+								                    <div class="css-zjik7 e19d4hrp0">
+								                        <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
+								                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
+								                        </svg>
+								                    </div> 공유
+								                </button>
+								            </div>
+								        </div>
+								    </div>	
+                
+                </div>
             </li>
         </ul>
     </section>
-    <div class="css-0 e1689zdh0">
-        <div class="css-1saqk7d emmoxnt0">
-            <div class="css-1eky56k e9erukb11">
-                <div class="like-dislike-btns">
-                    <button class="like-btn" onclick="likeComment(this)">좋아요 <span class="like-count">0</span></button>
-                    <button class="dislike-btn" onclick="dislikeComment(this)">싫어요 <span class="dislike-count">0</span></button>
-                </div>
-                <button class="css-f3rywo e19d4hrp1" id="commentButton">
-                    <div class="css-zjik7 e19d4hrp0">
-                        <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
-                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
-                        </svg>
-                    </div> 댓글
-                </button>
-                <button class="css-f3rywo e19d4hrp1">
-                    <div class="css-zjik7 e19d4hrp0">
-                        <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
-                            <path class="fill-target" clip-rule="evenodd" fill="#87898B" fill-rule="evenodd"></path>
-                        </svg>
-                    </div> 공유
-                </button>
-            </div>
-        </div>
-    </div>
-
     <div id="commentModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -204,16 +205,62 @@
         }
 
         function likeComment(button) {
+            const commentId = button.getAttribute('data-comment-id');
             const likeCountSpan = button.querySelector('.like-count');
+            const dislikeButton = button.nextElementSibling;
+            const dislikeCountSpan = dislikeButton.querySelector('.dislike-count');
+            
             let likeCount = parseInt(likeCountSpan.textContent);
-            likeCount++;
+            let dislikeCount = parseInt(dislikeCountSpan.textContent);
+            
+            const userAction = localStorage.getItem(`comment-${commentId}`);
+            
+            // 좋아요가 이미 클릭된 상태에서 다시 클릭하면 취소되도록 처리
+            if (userAction === 'liked') {
+                likeCount--; // 좋아요 취소
+                localStorage.removeItem(`comment-${commentId}`);
+            } else if (userAction === 'disliked') {
+                // 싫어요를 클릭한 상태에서 좋아요를 클릭하면 싫어요 취소 후 좋아요 반영
+                dislikeCount--; // 싫어요 취소
+                likeCount++; // 좋아요 반영
+                localStorage.setItem(`comment-${commentId}`, 'liked');
+            } else {
+                likeCount++; // 새로운 좋아요 반영
+                localStorage.setItem(`comment-${commentId}`, 'liked');
+            }
+
             likeCountSpan.textContent = likeCount;
+            dislikeCountSpan.textContent = dislikeCount;
         }
 
         function dislikeComment(button) {
+            const commentId = button.getAttribute('data-comment-id');
             const dislikeCountSpan = button.querySelector('.dislike-count');
+            const likeButton = button.previousElementSibling;
+            const likeCountSpan = likeButton.querySelector('.like-count');
+            
             let dislikeCount = parseInt(dislikeCountSpan.textContent);
-            dislikeCount++;
+            let likeCount = parseInt(likeCountSpan.textContent);
+            
+            const userAction = localStorage.getItem(`comment-${commentId}`);
+            
+            if (userAction === 'disliked') {
+                dislikeCount--; // 싫어요 취소
+                localStorage.removeItem(`comment-${commentId}`);
+            } else if (userAction === 'liked') {
+                // 좋아요를 클릭한 상태에서 싫어요를 클릭하면 좋아요 취소 후 싫어요 반영
+                likeCount--; // 좋아요 취소
+                dislikeCount++; // 싫어요 반영
+                localStorage.setItem(`comment-${commentId}`, 'disliked');
+            } else {
+                dislikeCount++; // 새로운 싫어요 반영
+                localStorage.setItem(`comment-${commentId}`, 'disliked');
+            }
+            
+            // 좋아요와 싫어요가 모두 클릭된 상태에서 싫어요를 클릭했을 때 발생하는 문제 수정
+            if (likeCount < 0) likeCount = 0;
+
+            likeCountSpan.textContent = likeCount;
             dislikeCountSpan.textContent = dislikeCount;
         }
     </script>
