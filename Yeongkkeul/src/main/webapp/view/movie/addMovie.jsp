@@ -28,8 +28,8 @@
 <h2>addmovie</h2>
 </div>
 <div class="padding">
-<form name="writeFrm" method="post" action="${pageContext.request.contextPath}/view//movie/addmovie.do"
-      onsubmit="return validateForm(this);">
+<form name="writeFrm" method="post" action="${pageContext.request.contextPath}/view/movie/addmovie.do"
+      onsubmit="return validateForm(this);" enctype="multipart/form-data">
     <table border="1" width="90%">
         <tr>
             <td>title</td>
@@ -40,7 +40,7 @@
         <tr>
             <td>release_date</td>
             <td>
-                <input type="text" name="release_date" style="width: 90%;" />
+                <input type="date" name="release_date" style="width: 90%;" />
             </td>
         </tr>
         <tr>
@@ -50,8 +50,14 @@
             </td>
         </tr>
         <tr>
+            <td>포스터</td>
+            <td>
+                <input type="file" name="poster"/>
+            </td>
+        </tr>
+        <tr>
             <td colspan="2" align="center">
-                <input type="submit" value="submit">submit</input>
+                <input type="submit" value="submit"/>
                 <button type="reset">reset</button>
             </td>
         </tr>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/nouislider.min.css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/user.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/crew/user.css"/>
 </head>
 <body>
 	<jsp:include page="/header.jsp"/>
@@ -37,8 +38,8 @@
 								</div>
 							</div>
 							<div class="introduce_container">
-								<h4>최용규</h4>
-								<p>cyk728@naver.com</p>
+								<h4>${crew.name}</h4>
+								<p>${crew.email}</p>
 								<p>🤘🏽</p>
 							</div>
 						</section>
@@ -124,26 +125,14 @@
 							<a href="${pageContext.request.contextPath}/view/crew/wantMovie.jsp">더 보기</a>
 							<div class="gallery_container">
 								<ul class="gallery">
-							        <li>
-							        	<img src="${pageContext.request.contextPath}/img/sing street.jpg">
-							        	<p>싱 스트리트</p>
-							        	<span>2018</span><span> 영국</span>
-							        </li>
-							        <li>
-							        	<img src="${pageContext.request.contextPath}/img/sing street.jpg">
-							        	<p>싱 스트리트</p>
-							        	<span>2018</span><span> 영국</span>
-							        </li>
-							        <li>
-							        	<img src="${pageContext.request.contextPath}/img/sing street.jpg">
-							        	<p>싱 스트리트</p>
-							        	<span>2018</span><span> 영국</span>
-							        </li>
-							        <li>
-							        	<img src="${pageContext.request.contextPath}/img/sing street.jpg">
-							        	<p>싱 스트리트</p>
-							        	<span>2018</span><span> 영국</span>
-							        </li>
+									<c:forEach items="${likeMovie}" var="likeMovie" begin="0" end="3">
+								        <li>
+								        	<img src="${pageContext.request.contextPath}/img/${likeMovie.fileName}${likeMovie.fileExtension}">
+								        	<p>${likeMovie.movie_name}</p>
+								        	<span>2018</span><span> 영국</span>
+								        </li>									
+									</c:forEach>
+							        
 							    </ul>
 						   </div>
 						</section>
@@ -241,13 +230,13 @@
 								</li>
 								<li>
 									<div class="modal_list">
-										<div class="modal_content">로그아웃</div>
+										<div class="modal_content" id="logout">로그아웃</div>
 										<div></div>
 									</div>
 								</li>
 								<li>
 									<div class="modal_list">
-										<div class="modal_content" id="secession">탈퇴하기</div>
+										<div class="modal_content">탈퇴하기</div>
 										<div></div>
 									</div>
 								</li>
@@ -283,7 +272,9 @@
 							<div class="confirm_logout">로그아웃 하쉴?</div>
 							<div size="2" class="" style="display: flex;">
 								<button type="button" class="logout_cancel">취소</button>
-								<button type="button" class="logout_confirm">확인</button>
+								<button type="button" class="logout_confirm">
+									<a href="/view/crew/logout.do">확인</a>
+								</button>
 							</div>
 						</div>
 					</div>

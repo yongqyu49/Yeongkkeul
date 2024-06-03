@@ -7,7 +7,7 @@ $(() => {
 		$(".setting_pop").css("visibility", "hidden");
 	});
 	
-	$("#secession").on("click", () => {
+	$("#logout").on("click", () => {
 		$(".confirm_container").css("visibility", "visible");
 	});
 		
