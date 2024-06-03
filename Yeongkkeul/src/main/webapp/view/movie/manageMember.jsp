@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<%String a =request.getAttribute(crewList); %>
 <div style=margin-top:90px height=2300px;>
         <!-- header -->
 	<jsp:include page="../../header.jsp"/>

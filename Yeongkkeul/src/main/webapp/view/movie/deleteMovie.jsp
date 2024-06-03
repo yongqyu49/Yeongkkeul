@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<form name="writeFrm" method="post" action="${pageContext.request.contextPath}/view//movie/delmovie.do?movie_code=2"
+      onsubmit="return validateForm(this);">
+<input type="submit" value="submit"/>
+</form>
 </body>
 </html>
