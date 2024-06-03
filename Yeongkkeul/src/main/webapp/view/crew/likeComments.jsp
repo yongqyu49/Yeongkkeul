@@ -127,6 +127,37 @@
 							</div>
 						</div>
 					</li>
+					<li>
+						<div class="user_container">
+							<div class="comment_user">
+								<a href="${pageContext.request.contextPath}/view/crew/user.jsp">
+									<div class="photo_container">
+										<div class="photo"></div>
+									</div>
+									<div class="user_name">이돈주인</div>
+								</a>
+							</div>
+							<div class="evaluation">
+								<img alt="star" src="${pageContext.request.contextPath}/img/sing street.jpg"/>
+							</div>
+						</div>
+						<div class="comment_content">
+							<div class="comment_display">
+								<a href="">
+									<img alt="movie_poster" src="${pageContext.request.contextPath}/img/sing street.jpg">
+								</a>
+								<div class="comment_text">
+									<p class="movie_title">싱 스트리트</p>
+									<p>영화 ・ 2023</p>
+									<a href="">
+										<div>
+											<span>테스트2222</span>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>

@@ -75,7 +75,9 @@
             <header class="like_header">
                 <div class="go_back_container">
                     <div>
-                        <button type="button" class="go_back"></button>
+                        <button type="button" class="go_back">
+                        	<a href="/Yeongkkeul/view/comment/likeComments.jsp" class="go_back"></a>
+                        </button>
                     </div>
                     <div></div>
                 </div>
@@ -134,7 +136,7 @@
             <div class="css-1eky56k e9erukb11">
                 <div class="like-dislike-btns">
                             <button class="like-btn" onclick="likeComment(this)">좋아요 <span class="like-count">0</span></button>
-                            <button class="dislike-btn" onclick="dislikeComment(this)">싫어요 <span class="dislike-count">0</span></button>
+														<button class="dislike-btn" onclick="dislikeComment(this)">싫어요 <span class="dislike-count">0</span></button>
                         </div>
                 <button class="css-f3rywo e19d4hrp1" id="commentButton">
                     <div class="css-zjik7 e19d4hrp0">
@@ -172,7 +174,6 @@
 
         span.onclick = function() {
             modal.style.display = "none";
-            //ㄷㄷ
         }
 
         window.onclick = function(event) {
@@ -180,9 +181,6 @@
                 modal.style.display = "none";
             }
         }
-
-<<<<<<< HEAD
-=======
         // 댓글 추가 기능 구현
     <script type="text/javascript">
         function openCommentPopup() {
@@ -196,7 +194,6 @@
         }
 
         // 댓글 추가 기능 구현
->>>>>>> branch 'main' of https://github.com/Leejeseong/Yeongkkeul.git
         function receiveComment(comment) {
             const commentList = document.getElementById('commentList');
             const newComment = document.createElement('li');
@@ -213,7 +210,8 @@
             window.opener.receiveComment(commentText);
             window.close();
         }
-
+      
+        // 좋아요, 싫어요 
         function likeComment(button) {
             const likeCountSpan = button.querySelector('.like-count');
             let likeCount = parseInt(likeCountSpan.textContent);
