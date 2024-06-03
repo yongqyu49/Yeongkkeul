@@ -26,8 +26,8 @@
     }
 
     .comment-box {
-        width: 70%; /* 원하는 너비 설정 */
-        max-width: 400px; /* 최대 너비 설정 */
+        width: 100%; /* 원하는 너비 설정 */
+        max-width: 100%; /* 최대 너비 설정 */
         padding: 20px 0; /* 위아래 여백 조절 */
     }
 </style>
@@ -46,7 +46,7 @@
                             <div class="css-15bl2t8">
                                 <textarea id="commentText" maxlength="10000" class="css-1es2t5o" oninput="updateCharCount()" placeholder=""></textarea>
                                 <div class="css-158g36p"></div>
-                                <span class="placeholder-text">이 영화에 대한 생각을 자유롭게 표현해주세요.</span>
+                                <span class="placeholder-text">이 코멘트에 대한 생각을 자유롭게 표현해주세요.</span>
                             </div>
                         </div>
                     </div>

@@ -118,7 +118,7 @@
                             <p>영화 ・ 2023</p>
                             <a href="">
                                 <div>
-                                    <span>테스트 테스트 테스트 테스트 테스트 테스트 테스트ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span>
+                                    <span>테스트 테스트 테스트 테스트 테스트 테스트 테스트ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span>
                                 </div>
                             </a>
                         </div>
@@ -135,9 +135,9 @@
         <div class="css-1saqk7d emmoxnt0">
             <div class="css-1eky56k e9erukb11">
                 <div class="like-dislike-btns">
-                            <button class="like-btn" onclick="likeComment(this)">좋아요 <span class="like-count">0</span></button>
-														<button class="dislike-btn" onclick="dislikeComment(this)">싫어요 <span class="dislike-count">0</span></button>
-                        </div>
+                    <button class="like-btn" onclick="likeComment(this)">좋아요 <span class="like-count">0</span></button>
+                    <button class="dislike-btn" onclick="dislikeComment(this)">싫어요 <span class="dislike-count">0</span></button>
+                </div>
                 <button class="css-f3rywo e19d4hrp1" id="commentButton">
                     <div class="css-zjik7 e19d4hrp0">
                         <svg viewBox="0 0 20 20" class="css-1m1anpb edw4p4t0">
@@ -159,7 +159,7 @@
     <div id="commentModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <iframe src="/Yeongkkeul/view/comment/Comment.jsp" style="width:500px; height:500px;"></iframe>
+            <iframe src="/Yeongkkeul/view/comment/Comment.jsp" style="width:550px; height:550px;"></iframe>
         </div>
     </div>
 
@@ -181,19 +181,11 @@
                 modal.style.display = "none";
             }
         }
-        // 댓글 추가 기능 구현
-    <script type="text/javascript">
+
         function openCommentPopup() {
             window.open('Comment.jsp', '댓글 작성', 'width=530,height=500');
         }
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // 댓글 추가 기능 구현
         function receiveComment(comment) {
             const commentList = document.getElementById('commentList');
             const newComment = document.createElement('li');
@@ -210,8 +202,7 @@
             window.opener.receiveComment(commentText);
             window.close();
         }
-      
-        // 좋아요, 싫어요 
+
         function likeComment(button) {
             const likeCountSpan = button.querySelector('.like-count');
             let likeCount = parseInt(likeCountSpan.textContent);
@@ -228,4 +219,3 @@
     </script>
 </body>
 </html>
-
