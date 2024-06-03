@@ -26,8 +26,8 @@
     }
 
     .comment-box {
-        width: 70%; /* 원하는 너비 설정 */
-        max-width: 400px; /* 최대 너비 설정 */
+        width: 100%; /* 원하는 너비 설정 */
+        max-width: 100%; /* 최대 너비 설정 */
         padding: 20px 0; /* 위아래 여백 조절 */
     }
 </style>
