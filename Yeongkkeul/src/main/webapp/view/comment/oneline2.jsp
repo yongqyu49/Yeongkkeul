@@ -210,7 +210,7 @@
             window.opener.receiveComment(commentText);
             window.close();
         }
-
+      
         // 좋아요, 싫어요 
         function likeComment(button) {
             const likeCountSpan = button.querySelector('.like-count');

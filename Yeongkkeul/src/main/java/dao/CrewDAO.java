@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 
 import dto.Crew;
 import dto.EmailToken;
+import dto.LikeMovie;
 import dto.Movie;
 
 public class CrewDAO  {
@@ -135,13 +136,31 @@ public class CrewDAO  {
 		}
 		return count;
 	}
+	
+	public int setEmailToken(String email, String uuid) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "insert into email_token values(?, ?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, uuid);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(pstmt, conn);
+		}
+		return result;
+	}
 
 	public List<EmailToken>verifyToken(String email, String token) {
 		List<EmailToken> tokenList = new ArrayList<EmailToken>();
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from email_token where email = ? and email_token = ?";
+		String sql = "select * from email_token where email = ? and email_code = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, email);
@@ -160,5 +179,100 @@ public class CrewDAO  {
 		}
 		return tokenList;
 	}
-	
+
+	public int deleteEmailToken(String email) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "delete from email_token where email = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(pstmt, conn);
+		}
+		return result;
+	}
+
+	public Crew checkCrew(String email, String password) {
+		Crew crew = new Crew();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from crew where email = ? and password = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, password);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				crew.setEmail(rs.getString(1));
+				crew.setPassword(rs.getString(2));
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return crew;
+	}
+
+	public Crew showUser(String sessionEmail) {
+		Crew crew = new Crew();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from crew where email = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, sessionEmail);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				crew.setEmail(rs.getString(1));
+				crew.setName(rs.getString(2));
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return crew;
+	}
+
+	public List<LikeMovie> myLikeMoive(String sessionEmail) {
+		List<LikeMovie> likeMovieList = new ArrayList<LikeMovie>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select lm.email email , lm.movie_code movie_code, lm.like_date like_date, m.movie_name movie_name, p.file_code file_code, p.file_path file_path, p.file_name file_name, p.file_extenstion  file_extension\r\n"
+				+ "from like_movie lm, movie m, poster p where lm.movie_code = m.movie_code and m.movie_code = p.movie_code\r\n"
+				+ "and email = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, sessionEmail);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				LikeMovie lm = new LikeMovie();
+				lm.setEmail(rs.getString(1));
+				lm.setMovie_code(rs.getString(2));
+				lm.setLikeDate(rs.getTimestamp(3));
+				lm.setMovie_name(rs.getString(4));
+				lm.setFileCode(rs.getString(5));
+				lm.setFilePath(rs.getString(6));
+				lm.setFileName(rs.getString(7));
+				lm.setFileExtension(rs.getString(8));
+				likeMovieList.add(lm);
+				System.out.println("fileName: " + lm.getFileName());
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return likeMovieList;
+	}
+
 }

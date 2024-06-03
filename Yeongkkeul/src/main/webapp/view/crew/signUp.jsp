@@ -102,6 +102,5 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/crew/signUp.js?ver=1"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/crew/user.js?ver=1"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/crew/signUp.js"></script>
 </html>

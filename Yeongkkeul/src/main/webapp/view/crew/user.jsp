@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +38,8 @@
 								</div>
 							</div>
 							<div class="introduce_container">
-								<h4>최용규</h4>
-								<p>cyk728@naver.com</p>
+								<h4>${crew.name}</h4>
+								<p>${crew.email}</p>
 								<p>🤘🏽</p>
 							</div>
 						</section>
@@ -124,26 +125,14 @@
 							<a href="${pageContext.request.contextPath}/view/crew/wantMovie.jsp">더 보기</a>
 							<div class="gallery_container">
 								<ul class="gallery">
-							        <li>
-							        	<img src="${pageContext.request.contextPath}/img/sing street.jpg">
-							        	<p>싱 스트리트</p>
-							        	<span>2018</span><span> 영국</span>
-							        </li>
-							        <li>
-							        	<img src="${pageContext.request.contextPath}/img/sing street.jpg">
-							        	<p>싱 스트리트</p>
-							        	<span>2018</span><span> 영국</span>
-							        </li>
-							        <li>
-							        	<img src="${pageContext.request.contextPath}/img/sing street.jpg">
-							        	<p>싱 스트리트</p>
-							        	<span>2018</span><span> 영국</span>
-							        </li>
-							        <li>
-							        	<img src="${pageContext.request.contextPath}/img/sing street.jpg">
-							        	<p>싱 스트리트</p>
-							        	<span>2018</span><span> 영국</span>
-							        </li>
+									<c:forEach items="${likeMovie}" var="likeMovie" begin="0" end="3">
+								        <li>
+								        	<img src="${pageContext.request.contextPath}/img/${likeMovie.fileName}${likeMovie.fileExtension}">
+								        	<p>${likeMovie.movie_name}</p>
+								        	<span>2018</span><span> 영국</span>
+								        </li>									
+									</c:forEach>
+							        
 							    </ul>
 						   </div>
 						</section>

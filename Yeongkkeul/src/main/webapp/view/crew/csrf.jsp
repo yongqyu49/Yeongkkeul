@@ -11,9 +11,6 @@
 <title>Insert title here</title>
 </head>
 <%
-	CrewDAO cd = new CrewDAO(application);
-	List<Movie> list = cd.csrfSelectMovie();
-	request.setAttribute("movieList", list);
 %>
 <body>
 	<h1>CSRF Test</h1>
