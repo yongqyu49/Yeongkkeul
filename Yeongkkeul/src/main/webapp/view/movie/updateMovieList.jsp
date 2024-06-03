@@ -25,38 +25,13 @@
 
 <div class="main">
 <div >
-<h2>editmovie</h2>
+<h2>addmovie</h2>
 </div>
 <div class="padding">
-<form name="writeFrm" method="post" action="${pageContext.request.contextPath}/view//movie/editmovie.do?movie_code=2"
-      onsubmit="return validateForm(this);">
-    <table border="1" width="90%">
-        <tr>
-            <td>title</td>
-            <td>
-                <input type="text" name="movie_name" style="width: 90%;">${movielist.name}</input>
-            </td>
-             </tr>
-        <tr>
-            <td>release_date</td>
-            <td>
-                <input type="text" name="release_date" style="width: 90%;" />
-            </td>
-        </tr>
-        <tr>
-            <td>content</td>
-            <td>
-                <textarea name="movie_content" style="width: 90%; height: 100px;"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" align="center">
-                <input type="submit" value="submit">submit</input>
-                <button type="reset">reset</button>
-            </td>
-        </tr>
-    </table>
-</form>
+
+      <a href="updateMovieProc.jsp?movie_code=2">fdffdfsfsd</a>
+      <input type="submit" value="submit"> 
+
 </div>
 </div>
 <!-- footer -->
