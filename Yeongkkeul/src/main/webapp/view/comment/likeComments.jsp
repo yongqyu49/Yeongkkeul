@@ -20,12 +20,11 @@
 		<div>
 			<header class="like_header">
 				<div class="go_back_container">
-					<div>
-						<button type="button" class="go_back"></button>
-					</div>
-					<div></div>
-				</div>
-				<div class="current_category">
+              <div>
+                <button type="button" class="go_back" onclick="goBack()"></button>
+              </div>
+             </div>
+					 <div class="current_category">
 					<div>좋아요</div>
 				</div>
 				<div class="v">좋아요</div>
@@ -137,5 +136,9 @@
 	$(".go_back").click(() => {
 		history.back();
 	})
+	
+	function goBack() {
+    window.location.href = "/Yeongkkeul/index.jsp";
+}
 </script>
 </html>
