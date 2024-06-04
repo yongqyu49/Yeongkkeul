@@ -18,7 +18,7 @@
 }
 
 
-/*---모텔 2로 진행해야함 --
+/*---모텔 2로 진행해야함 -- 작업대기
 <div class="user-list">
     <c:forEach var="user" items="${userList}">
         <div class="user-profile">
