@@ -16,3 +16,20 @@
 .css-g070ko {
     margin: 30px 0px 20px;
 }
+
+
+/*---모텔 2로 진행해야함 --
+<div class="user-list">
+    <c:forEach var="user" items="${userList}">
+        <div class="user-profile">
+            <img src="${user.profileImageUrl}" alt="Profile Image">
+            <div class="user-info">
+                <h2>${user.username}</h2>
+                <p>평가 수: ${user.ratingCount}</p>
+                <p>코멘트 수: ${user.commentCount}</p>
+                <button class="follow-button">팔로우</button>
+            </div>
+        </div>
+    </c:forEach>
+</div>
+---- 웹 사이트 코드 조사 결과 ---- */
