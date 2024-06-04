@@ -4,55 +4,79 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/header2.css"/>
 </head>
+<style>
+.atm {
+	width: 169px;
+	height: 70px;
+}
+</style>
 <body>
-	<header class="css-1j05y9v">
-		<nav>
-			<div>
-				<div class="header_content">
-					<ul class="header_ul">
-						<li class="css-omez1o-NavLogo">
-							<a href="#">로고 자리</a>
-						</li>
-						<li class="categories">
-							<a href="#" class="css-rocs30">영화</a>
-						</li>
-						<li class="search_container">
-							<div class="search_div">
-								<div class="search_box">
-									<form>
-										<label class="css-hfu8tx">
-											<input class="css-1qwgl6x" id="input_search" placeholder="영화, 유저를 검색해보세요.">
-											<div class="css-1sojl3h-StyledClearButtonBlock">
-												<span class="css-1b5ngmb-ClearButton"></span>
-											</div>
-										</label>
-									</form>
+	<header style="  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;">
+		<div id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="header-logo">
+							<a href="${pageContext.request.contextPath}/index.jsp" class="logo">
+								<img src="${pageContext.request.contextPath}/img/atm.png" alt="" class="atm">
+							</a>
+						</div>
+					</div>
+	
+					<div class="col-md-6">
+						<div class="header-search">
+							<form>
+								<select class="input-select">
+									<option value="0">All Categories</option>
+									<option value="1">Category 01</option>
+									<option value="1">Category 02</option>
+								</select>
+								<input class="input" id="input_search" placeholder="Search here">
+								<button class="search-btn">Search</button>
+							</form>
+						</div>
+					</div>
+	
+					<div class="col-md-3 clearfix">
+						<c:if test="${empty sessionScope.sessionEmail}">
+							<div class="header-ctn">
+								<div>
+									<a href="${pageContext.request.contextPath}/view/crew/login.jsp">
+										<i class="fa fa-heart-o"></i>
+										<span>로그인</span>
+									</a>
+								</div>
+								<div class="dropdown">
+									<a href="${pageContext.request.contextPath}/view/crew/signUp.jsp">
+										<i class="fa fa-user-o"></i>회원가입
+									</a>								
 								</div>
 							</div>
-						</li>
-						<li class="right_categories">
-							<a href="">
-								<span class="css-zrw42n">평가하기</span>
-							</a>
-						</li>
-						<li class="right_categories">
-							<a href="">
-								<span class="css-zrw42n">소식</span>
-							</a>
-						</li>
-						<li class="right_categories">
-							<a href="">
-								<div class="profile_container">
-									<div class="profie_img"></div>
+						</c:if>
+						<c:if test="${not empty sessionScope.sessionEmail}">
+							<div class="header-ctn">
+								<div>
+									<a href="${pageContext.request.contextPath}/view/crew/wantMovie.do">
+										<i class="fa fa-heart-o"></i>
+										<span>끌린 영화</span>
+									</a>
 								</div>
-							</a>
-						</li>
-					</ul>
+								<div class="dropdown">
+									<a href="${pageContext.request.contextPath}/view/crew/user.do">
+										<i class="fa fa-user-o"></i>내 정보
+									</a>								
+								</div>
+							</div>
+						</c:if>
+					</div>
 				</div>
 			</div>
-		</nav>
+		</div>
 	</header>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>

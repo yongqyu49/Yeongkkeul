@@ -13,7 +13,7 @@
 				<div class="header_content">
 					<ul class="header_ul">
 						<li class="css-omez1o-NavLogo">
-							<a href="#">로고 자리</a>
+							<a href="${pageContext.request.contextPath}/index.jsp">로고 자리</a>
 						</li>
 						<li class="categories">
 							<a href="#" class="css-rocs30">영화</a>
