@@ -1476,7 +1476,8 @@ button:focus-visible {
     flex-wrap: nowrap;
     overflow: visible;
     gap: 16px;
-}</style>
+}
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
