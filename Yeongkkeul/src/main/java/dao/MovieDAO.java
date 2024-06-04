@@ -4,14 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import dto.Crew;
-import dto.Movie;
+import dto.LikeMovie;
 
 public class MovieDAO {
 	private static MovieDAO instance;
@@ -114,12 +115,22 @@ public class MovieDAO {
 	
 
 	//managemember
-	public Vector<Crew> manageMember(){
-		Vector<Crew> v= new Vector<>();
+	public List<Crew> manageMember(){
+		List<Crew> v= new ArrayList<Crew>();
 	Connection conn = getConnection();
+	ResultSet rs = null;
 	PreparedStatement pstmt = null;
+	String sql = "select * from crew";
 	try {
-		String sql = "select * from crew";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		while(rs.next()) {
+			Crew mem = new Crew();
+			mem.setEmail(rs.getString("email"));
+			mem.setName(rs.getString("name"));
+			mem.setPassword(rs.getString("password"));
+			v.add(mem);
+			}
 	}catch(Exception e) {
 		e.getMessage();		
 	}finally {
@@ -128,6 +139,20 @@ public class MovieDAO {
 	return v;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public String selectLatestMovie() {
 		String movie_code = "";
 		Connection conn = getConnection();
@@ -167,4 +192,32 @@ public class MovieDAO {
 		}
 		return result;
 	}
+	
+	public List<LikeMovie> selectMovie() {
+		List<LikeMovie> movielist = new ArrayList<LikeMovie>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select m.movie_name,m.release_date, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code = p.movie_code";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				LikeMovie movie = new LikeMovie();
+				movie.setMovie_name(rs.getString(1));
+				movie.setRelease_date(rs.getDate(2));
+				movie.setFilePath(rs.getString(3));
+				movie.setFileName(rs.getString(4));
+				movie.setFileExtension(rs.getString(5));
+				movielist.add(movie);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return movielist;
+	}
+
+	
 }	
