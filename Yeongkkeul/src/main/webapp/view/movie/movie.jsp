@@ -103,9 +103,8 @@
                                             <li class="css-1rek3lz ed9lsm83">
                                                 <div class="css-37nj2c egj9y8a4">
                                                     <div class="css-jqudug egj9y8a3">
-                                                        <div class="css-drz8qh egj9y8a2"><a title="신상훈남"
-                                                                class="css-g65o95 eovgsd00"
-                                                                href="/ko-KR/users/87Gv7mmwDxE6o">
+                                                        <div class="css-drz8qh egj9y8a2">
+                                                        	<a title="신상훈남" class="css-g65o95 eovgsd00" href="${pageContext.request.contextPath}/view/crew/user.jsp">
                                                                 <div class="css-k8a4hh euge2161">
                                                                     <div class="css-i0f2gg-ProfilePhotoImage euge2162">
                                                                     </div>
@@ -115,15 +114,16 @@
                                                                         class="css-14xwmiz e10cf2lr0"></span></div>
                                                             </a></div>
                                                     </div>
-                                                    <div class="css-1rrs19f egj9y8a1"><a class="css-g65o95 eovgsd00"
-                                                            href="/ko-KR/comments/69oMvdPGXdEal">
+                                                    <div class="css-1rrs19f egj9y8a1">
+                                                    	<a class="css-g65o95 eovgsd00" href="${pageContext.request.contextPath}/view/comment/oneline2.jsp">
                                                             <div class="e1hvy88215 css-1lpz2ty eb5y16b1">
                                                                 <div class="css-1ei7xdp eb5y16b0">나도 저런 배구를 하고 싶다. 저렇게
                                                                     최선을 다해 싸우고 싶다. ‘배구에 흥미를 느끼지 못 하는 켄마'와 그것을 '안타깝게 바라보는
                                                                     듯한 히나타의 표정' 켄마는 아마 이 경기가 끝나기 전까지 '자신을 왜 그렇게 바...
                                                                 </div>
                                                             </div>
-                                                        </a></div>
+                                                        </a>
+                                                    </div>
                                                     <div class="css-kt2ht6 e1hvy88211"><span height="18px"
                                                             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iIzc4Nzg3OCI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik02Ljc1IDkuNDg1aC0zYTEgMSAwIDAgMC0xIDF2MTBhMSAxIDAgMCAwIDEgMWgzYTEgMSAwIDAgMCAxLTF2LTEwYTEgMSAwIDAgMC0xLTFNMjAuNjU3IDguNTY2YTIuMzYzIDIuMzYzIDAgMCAwLTEuNzc5LS44MTNIMTYuNjJsLjE2NC0uNjI3Yy4xMzctLjUyOC4yMDEtMS4xMi4yMDEtMS44NjMgMC0xLjkxOS0xLjM3NS0yLjc3OC0yLjczOC0yLjc3OC0uNDQ0IDAtLjc2Ni4xMjMtLjk4Ni4zNzYtLjIuMjI3LS4yODIuNTMtLjI0My45MzVsLjAzIDEuMjMtMi45MDMgMi45NGMtLjU5My42LS44OTQgMS4yMy0uODk0IDEuODcydjkuNjQ3YS41LjUgMCAwIDAgLjUuNWg3LjY4N2EyLjM4OCAyLjM4OCAwIDAgMCAyLjM0OC0yLjA3bDEuNDQ1LTcuNDUyYTIuNDQgMi40NCAwIDAgMC0uNTc0LTEuODk3Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
                                                             width="18px"
