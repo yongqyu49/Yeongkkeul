@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,6 @@
 </head>
 
 <body>
-<%String a =request.getAttribute(crewList); %>
 <div style=margin-top:90px height=2300px;>
         <!-- header -->
 	<jsp:include page="../../header.jsp"/>
@@ -32,10 +32,18 @@
 			<select name="searchField" class="custom-select" style="width:10%; display:inline-block;">
 				<option value="name">NAME</option>
 				<option value="email">EMAIL</option>
+				<option value="password">PASSWORD</option>
 			</select>
 			<input type="text" name="searchWord"  class="form-control" style="width:30%; display:inline-block;"/>
 			<input type="submit" value="검색하기" class="btn btn-primary" style="width:10%; display:inline-block;"/>
 		</td>
+		<c:forEach items="${mem}" var="md" begin="0" end="3">
+		<td>
+			<div class="name">${md.name}</div>
+			<div class="email">${md.email}</div>
+			<div class="password">${md.password}</div>
+		</td>
+		</c:forEach>
 	</tr>
 </table>	
 </form>
