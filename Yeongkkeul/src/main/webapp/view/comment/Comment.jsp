@@ -39,6 +39,7 @@
                 <div class="css-1yerqlm"></div>
                 <em class="css-elm8sl">댓글</em>
             </header>
+            
             <div class="css-16p1vvh">
                 <div class="css-1nyrhs4" style="height: 100%;">
                     <div class="css-ek159t">
@@ -52,6 +53,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="css-1we5pxa">
                 <div class="css-p3u9eh">
                     <div class="css-197dxto"></div>

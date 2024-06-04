@@ -39,31 +39,34 @@
                 <div class="css-1yerqlm"></div>
                 <em class="css-elm8sl">한줄평</em>
             </header>
-            <div class="css-16p1vvh">
-                <div class="css-1nyrhs4" style="height: 100%;">
-                    <div class="css-ek159t">
-                        <div class="css-15bl2t8">
-                            <div class="css-15bl2t8">
-                                <textarea id="commentText" maxlength="10000" class="css-1es2t5o" oninput="updateCharCount()" placeholder=""></textarea>
-                                <div class="css-158g36p"></div>
-                                <span class="placeholder-text">이 코멘트에 대한 생각을 자유롭게 표현해주세요.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
+         <div class="css-16p1vvh">
+         	<div class="css-1nyrhs4" style="height: 100%;">
+         		<div class="css-ek159t">
+            	<div class="css-15bl2t8">
+              	<div class="css-15bl2t8">
+              		<textarea id="commentText" maxlength="10000" class="css-1es2t5o" oninput="updateCharCount()" placeholder=""></textarea>
+                		<div class="css-158g36p"></div>
+                		<span class="placeholder-text">이 코멘트에 대한 생각을 자유롭게 표현해주세요.</span>
+              	</div>
+              </div>
             </div>
+          </div>
+         </div>
+         
             <div class="css-1we5pxa">
-                <div class="css-p3u9eh">
-                    <div class="css-197dxto"></div>
-                    <div class="css-197dxto">
-                        <p class="css-1fd20im"></p>
-                        <p class="css-1tsmjw" id="charCount">0/10000</p>
-                        <button id="saveButton" class="css-b8wy2k" onclick="submitComment()">저장</button>
-                    </div>
+            	<div class="css-p3u9eh">
+              	<div class="css-197dxto"></div>
+                	<div class="css-197dxto">
+                  	<p class="css-1fd20im"></p>
+                    <p class="css-1tsmjw" id="charCount">0/10000</p>
+                    <button id="saveButton" class="css-b8wy2k" onclick="submitComment()">저장</button>
+                  </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <script type="text/javascript">
         function updateCharCount() {
             const text = document.getElementById('commentText').value;

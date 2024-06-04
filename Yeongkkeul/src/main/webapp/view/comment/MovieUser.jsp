@@ -1,139 +1,218 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>영끌</title>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-<link type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/slick.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/slick-theme.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
-<link rel="stylesheet" href="../../css/font-awesome.min.css">
-<link type="text/css" rel="stylesheet" href="../../css/style.css"/>
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/likeComments.css"/>
+    <meta charset="UTF-8">
+    <title>영끌</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/comment/MovieUser.css"/>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/likeComments.css"/>
+    <style>
+        .two-column-list {
+				    display: flex;
+				    justify-content: space-between;
+				    list-style: none;
+				    padding: 0;
+				    align-items: center;
+				    margin: 31px;
+				}
+				
+				.left-item,
+				.right-item {
+				    padding: 0px 15px;
+				    margin: 50px; /* li 요소들 간의 마진 제거 */
+				    width: calc(50% - 10px); /* 여백 고려하여 50%의 너비 할당 */
+				}
+        .follow-button {
+            margin-right: 0; /* 오른쪽 여백 제거 */
+        }
+        .css-1jr50mw {
+				    list-style: none;
+				    padding: 0px;
+				    margin: 0px -15px;
+				    display: flex;
+				    flex-flow: wrap;
+				    align-items: flex-start;
+				}
+				.list-item {
+				    flex: 1 1 calc(50% - 20px); /* 너비를 조정합니다. */
+				    margin: 10px; /* 간격을 넓혀줍니다. */
+				    padding: 20px; /* 안쪽 여백을 더합니다. */
+				    box-sizing: border-box;
+				    border: 1px solid #ccc; /* 테두리를 추가하여 각 항목을 시각적으로 분리합니다. */
+				}
+				.css-11a9a8l [class*="ProfilePhotoImage"] {
+				    border-radius: 50%;
+				    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset;
+				}
+    </style>
 </head>
 <body>
-	<jsp:include page="/header.jsp"/>
-	<div class="css-1x6fzl1 e1szkzar0">
-		<div hidden="" class="css-1hyfx7x e1pww8ij0"></div>
-		<div hidden="" class="css-1hyfx7x e1pww8ij0"></div>
-		<div hidden="" class="css-1hyfx7x e1pww8ij0"></div>
-		<div class="css-13o7eu2 e1pww8ij0">
-			<div class="css-erbzy0 eeq1br70">
-				<section class="css-r1096k edsy68u0">
-					<a href="https://pedia.watcha.com/notices/748" rel="noreferrer" target="_blank">
-						<div class="css-pfk2ko e147tj4w3">
-				<ul class="css-1jr50mw e1m42n8s2">
-				
-					<li class="eysnieg5 css-11a9a8l e4f2vpe2">
-						<a title="데드풀 애청자" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/OkexJBMZmxdbw">
-										<div class="css-bjn8wh e1ic68ft2">
-											<div class="eysnieg2 css-1kh7r2p euge2161">
-												<div class="css-1t4ifvc-ProfilePhotoImage euge2162"></div>
-											</div>
-										</div>	
-							<div class="css-1pkjqps e1ic68ft0">
-								<div class="css-m5a6g e1ic68ft1">
-									<div class="css-16sgdn2 e4f2vpe1">
-										<div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자<span src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuNzcwNDYgMC41NjI0NTlDNS4yNDMyOCAtMC4xNTY0MzIgNi4zMTE0NyAtMC4xOTMwNyA2LjgzNTM1IDAuNDkyMTU1QzcuMTczMzcgMC45MzM3ODggNy43NzM4NSAxLjEwMTEzIDguMzAxODEgMC45MDAxMjFDOS4xMTk4IDAuNTg4MjA1IDEwLjAwNjIgMS4xNjc0OCAxMC4wMTQ0IDIuMDIxMDRDMTAuMDE5NSAyLjU2OTYxIDEwLjQwNTUgMy4wNDc4OCAxMC45NTM5IDMuMTg1NTJDMTEuODA0NiAzLjM5OTQxIDEyLjE3MDIgNC4zNzQ3NiAxMS42NjA2IDUuMDY4OUMxMS4zMzE4IDUuNTE2NDggMTEuMzUzMiA2LjEyMTQ5IDExLjcxMzcgNi41NDYyOUMxMi4yNzIzIDcuMjA0NzggMTEuOTc3MiA4LjIwMTkyIDExLjE0MzggOC40NzIyNUMxMC42MDY3IDguNjQ3NTIgMTAuMjU3NCA5LjE1MDU0IDEwLjI5MTEgOS42OTkxMkMxMC4zNDQyIDEwLjU0OTcgOS41MDE3NCAxMS4xODc0IDguNjYzMzIgMTAuOTMxOUM4LjEyMjA4IDEwLjc2NzYgNy41MzQ4OCAxMC45NzQ1IDcuMjI5NTQgMTEuNDM3OUM2Ljc1NjcyIDEyLjE1NjggNS42ODc1MSAxMi4xOTI1IDUuMTY0NjUgMTEuNTA4MkM0LjgyNjYzIDExLjA2NTYgNC4yMjYxNSAxMC44OTgzIDMuNjk4MTkgMTEuMTAwM0MyLjg4MDIgMTEuNDEyMiAxLjk5Mzc4IDEwLjgzMTkgMS45ODQ1OSA5Ljk4MDM0QzEuOTgwNTEgOS40Mjk3OCAxLjU5NTUxIDguOTUyNSAxLjA0NjEgOC44MTM4N0MwLjE5NTQyOCA4LjU5OTk5IC0wLjE3MDE2NiA3LjYyNjYxIDAuMzM5NDE5IDYuOTMyNDdDMC42NjgyNDkgNi40ODM5MSAwLjY0NjgwNCA1Ljg3NzkgMC4yODYzMTYgNS40NTMxQy0wLjI3MjI4NyA0Ljc5NDYxIDAuMDIyODQzIDMuNzk5NDUgMC44NTYxNTIgMy41MjcxNUMxLjM5MzMxIDMuMzUyODcgMS43NDM1OSAyLjg1MDgzIDEuNzA4ODYgMi4zMDEyN0MxLjY1NTc2IDEuNDUwNjggMi40OTgyNiAwLjgxMTk5MiAzLjMzNjY4IDEuMDY4NDZDMy44Nzc5MiAxLjIzMjgzIDQuNDY1MTIgMS4wMjU4OCA0Ljc3MDQ2IDAuNTYyNDU5WiIgZmlsbD0iIzBFMEYxMCIvPgogIDxwYXRoIGQ9Ik03LjY5NzMzIDIuNDUwMkw3LjI4NjEyIDcuNzkzOTJMNy4xNzc3NCA3Ljc5ODI4TDYuNDUyMjYgMy45Nzk3NUg1LjI2MTIzTDQuNjY1NTggNy44OTE1N0w0LjUzNTc1IDcuODk2OEwzLjk1MDk2IDMuOTc5NzVIMi41TDMuODEwMjcgOS43MTU4Mkw1LjMxNTI4IDkuNjE0MzlMNS44NDU3NCA1Ljk3MTdINS45NjQ5OEw2LjU2MDM1IDkuNTMwMTFMOC4wNzY1MSA5LjQyNzIzTDkuMTA1MTEgMi40NTAySDcuNjk3MzNaIiBmaWxsPSIjRkYwNTU4Ii8+Cjwvc3ZnPgo=" class="css-14xwmiz e10cf2lr0"></span>
-										</div>
-									</div>
-									<div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-										<div class="eysnieg4 css-wgm2hr etyqkvq0">평가 780 • 코멘트 45</div>
-									</div>
-								</div>
-								<div>
-									<button class="css-1echrkx eysnieg1">팔로우</button>
-								</div>
-							</div>
-						</a>
-					</li>
-					
-				<li class="eysnieg5 css-11a9a8l e4f2vpe2">
-					<a title="데드풀" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/7gdxdWDQ3p5GY">
-							<div class="css-bjn8wh e1ic68ft2">
-								<div class="eysnieg2 css-1kh7r2p euge2161">
-									<div class="css-18jnfey-ProfilePhotoImage euge2162"></div>
-								</div>
-							</div>
-						<div class="css-1pkjqps e1ic68ft0">
-							<div class="css-m5a6g e1ic68ft1">
-								<div class="css-16sgdn2 e4f2vpe1">
-									<div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀<span src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuNzcwNDYgMC41NjI0NTlDNS4yNDMyOCAtMC4xNTY0MzIgNi4zMTE0NyAtMC4xOTMwNyA2LjgzNTM1IDAuNDkyMTU1QzcuMTczMzcgMC45MzM3ODggNy43NzM4NSAxLjEwMTEzIDguMzAxODEgMC45MDAxMjFDOS4xMTk4IDAuNTg4MjA1IDEwLjAwNjIgMS4xNjc0OCAxMC4wMTQ0IDIuMDIxMDRDMTAuMDE5NSAyLjU2OTYxIDEwLjQwNTUgMy4wNDc4OCAxMC45NTM5IDMuMTg1NTJDMTEuODA0NiAzLjM5OTQxIDEyLjE3MDIgNC4zNzQ3NiAxMS42NjA2IDUuMDY4OUMxMS4zMzE4IDUuNTE2NDggMTEuMzUzMiA2LjEyMTQ5IDExLjcxMzcgNi41NDYyOUMxMi4yNzIzIDcuMjA0NzggMTEuOTc3MiA4LjIwMTkyIDExLjE0MzggOC40NzIyNUMxMC42MDY3IDguNjQ3NTIgMTAuMjU3NCA5LjE1MDU0IDEwLjI5MTEgOS42OTkxMkMxMC4zNDQyIDEwLjU0OTcgOS41MDE3NCAxMS4xODc0IDguNjYzMzIgMTAuOTMxOUM4LjEyMjA4IDEwLjc2NzYgNy41MzQ4OCAxMC45NzQ1IDcuMjI5NTQgMTEuNDM3OUM2Ljc1NjcyIDEyLjE1NjggNS42ODc1MSAxMi4xOTI1IDUuMTY0NjUgMTEuNTA4MkM0LjgyNjYzIDExLjA2NTYgNC4yMjYxNSAxMC44OTgzIDMuNjk4MTkgMTEuMTAwM0MyLjg4MDIgMTEuNDEyMiAxLjk5Mzc4IDEwLjgzMTkgMS45ODQ1OSA5Ljk4MDM0QzEuOTgwNTEgOS40Mjk3OCAxLjU5NTUxIDguOTUyNSAxLjA0NjEgOC44MTM4N0MwLjE5NTQyOCA4LjU5OTk5IC0wLjE3MDE2NiA3LjYyNjYxIDAuMzM5NDE5IDYuOTMyNDdDMC42NjgyNDkgNi40ODM5MSAwLjY0NjgwNCA1Ljg3NzkgMC4yODYzMTYgNS40NTMxQy0wLjI3MjI4NyA0Ljc5NDYxIDAuMDIyODQzIDMuNzk5NDUgMC44NTYxNTIgMy41MjcxNUMxLjM5MzMxIDMuMzUyODcgMS43NDM1OSAyLjg1MDgzIDEuNzA4ODYgMi4zMDEyN0MxLjY1NTc2IDEuNDUwNjggMi40OTgyNiAwLjgxMTk5MiAzLjMzNjY4IDEuMDY4NDZDMy44Nzc5MiAxLjIzMjgzIDQuNDY1MTIgMS4wMjU4OCA0Ljc3MDQ2IDAuNTYyNDU5WiIgZmlsbD0iIzBFMEYxMCIvPgogIDxwYXRoIGQ9Ik03LjY5NzMzIDIuNDUwMkw3LjI4NjEyIDcuNzkzOTJMNy4xNzc3NCA3Ljc5ODI4TDYuNDUyMjYgMy45Nzk3NUg1LjI2MTIzTDQuNjY1NTggNy44OTE1N0w0LjUzNTc1IDcuODk2OEwzLjk1MDk2IDMuOTc5NzVIMi41TDMuODEwMjcgOS43MTU4Mkw1LjMxNTI4IDkuNjE0MzlMNS44NDU3NCA1Ljk3MTdINS45NjQ5OEw2LjU2MDM1IDkuNTMwMTFMOC4wNzY1MSA5LjQyNzIzTDkuMTA1MTEgMi40NTAySDcuNjk3MzNaIiBmaWxsPSIjRkYwNTU4Ii8+Cjwvc3ZnPgo=" class="css-14xwmiz e10cf2lr0"></span>
-									</div>
-								</div>
-								<div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-									<div class="eysnieg4 css-wgm2hr etyqkvq0">평가 1,499 • 코멘트 95</div>
-								</div>
-							</div>
-							<div>
-								<button class="css-1echrkx eysnieg1">팔로우</button>
-							</div>
-						</div>
-					</a>
-				</li>
-				
-				<li class="eysnieg5 css-11a9a8l e4f2vpe2">
-					<a title="데드풀" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/WwRqoVXaWxlzB">
-						<div class="css-bjn8wh e1ic68ft2">
-							<div class="eysnieg2 css-1kh7r2p euge2161">
-								<div class="css-1h0atx2-ProfilePhotoImage euge2162"></div>
-							</div>
-						</div>
-						<div class="css-1pkjqps e1ic68ft0">
-							<div class="css-m5a6g e1ic68ft1">
-								<div class="css-16sgdn2 e4f2vpe1">
-									<div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀</div>
-								</div>
-								<div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-									<div class="eysnieg4 css-wgm2hr etyqkvq0">마이클 베이 베리 스트로베리</div>
-								</div>
-							</div>
-							<div>
-								<button class="css-1echrkx eysnieg1">팔로우</button>
-							</div>
-						</div>
-					</a>
-				</li>
-				
-				<li class="eysnieg5 css-11a9a8l e4f2vpe2">
-					<a title="데드풀" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/6ADvG4EWm5zZl">
-						<div class="css-bjn8wh e1ic68ft2">
-							<div class="eysnieg2 css-1kh7r2p euge2161">
-								<div class="css-gd8cly-ProfilePhotoImage euge2162"></div>
-							</div>
-						</div>
-						<div class="css-1pkjqps e1ic68ft0">
-							<div class="css-m5a6g e1ic68ft1">
-								<div class="css-16sgdn2 e4f2vpe1">
-									<div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀<span src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuNzcwNDYgMC41NjI0NTlDNS4yNDMyOCAtMC4xNTY0MzIgNi4zMTE0NyAtMC4xOTMwNyA2LjgzNTM1IDAuNDkyMTU1QzcuMTczMzcgMC45MzM3ODggNy43NzM4NSAxLjEwMTEzIDguMzAxODEgMC45MDAxMjFDOS4xMTk4IDAuNTg4MjA1IDEwLjAwNjIgMS4xNjc0OCAxMC4wMTQ0IDIuMDIxMDRDMTAuMDE5NSAyLjU2OTYxIDEwLjQwNTUgMy4wNDc4OCAxMC45NTM5IDMuMTg1NTJDMTEuODA0NiAzLjM5OTQxIDEyLjE3MDIgNC4zNzQ3NiAxMS42NjA2IDUuMDY4OUMxMS4zMzE4IDUuNTE2NDggMTEuMzUzMiA2LjEyMTQ5IDExLjcxMzcgNi41NDYyOUMxMi4yNzIzIDcuMjA0NzggMTEuOTc3MiA4LjIwMTkyIDExLjE0MzggOC40NzIyNUMxMC42MDY3IDguNjQ3NTIgMTAuMjU3NCA5LjE1MDU0IDEwLjI5MTEgOS42OTkxMkMxMC4zNDQyIDEwLjU0OTcgOS41MDE3NCAxMS4xODc0IDguNjYzMzIgMTAuOTMxOUM4LjEyMjA4IDEwLjc2NzYgNy41MzQ4OCAxMC45NzQ1IDcuMjI5NTQgMTEuNDM3OUM2Ljc1NjcyIDEyLjE1NjggNS42ODc1MSAxMi4xOTI1IDUuMTY0NjUgMTEuNTA4MkM0LjgyNjYzIDExLjA2NTYgNC4yMjYxNSAxMC44OTgzIDMuNjk4MTkgMTEuMTAwM0MyLjg4MDIgMTEuNDEyMiAxLjk5Mzc4IDEwLjgzMTkgMS45ODQ1OSA5Ljk4MDM0QzEuOTgwNTEgOS40Mjk3OCAxLjU5NTUxIDguOTUyNSAxLjA0NjEgOC44MTM4N0MwLjE5NTQyOCA4LjU5OTk5IC0wLjE3MDE2NiA3LjYyNjYxIDAuMzM5NDE5IDYuOTMyNDdDMC42NjgyNDkgNi40ODM5MSAwLjY0NjgwNCA1Ljg3NzkgMC4yODYzMTYgNS40NTMxQy0wLjI3MjI4NyA0Ljc5NDYxIDAuMDIyODQzIDMuNzk5NDUgMC44NTYxNTIgMy41MjcxNUMxLjM5MzMxIDMuMzUyODcgMS43NDM1OSAyLjg1MDgzIDEuNzA4ODYgMi4zMDEyN0MxLjY1NTc2IDEuNDUwNjggMi40OTgyNiAwLjgxMTk5MiAzLjMzNjY4IDEuMDY4NDZDMy44Nzc5MiAxLjIzMjgzIDQuNDY1MTIgMS4wMjU4OCA0Ljc3MDQ2IDAuNTYyNDU5WiIgZmlsbD0iIzBFMEYxMCIvPgogIDxwYXRoIGQ9Ik03LjY5NzMzIDIuNDUwMkw3LjI4NjEyIDcuNzkzOTJMNy4xNzc3NCA3Ljc5ODI4TDYuNDUyMjYgMy45Nzk3NUg1LjI2MTIzTDQuNjY1NTggNy44OTE1N0w0LjUzNTc1IDcuODk2OEwzLjk1MDk2IDMuOTc5NzVIMi41TDMuODEwMjcgOS43MTU4Mkw1LjMxNTI4IDkuNjE0MzlMNS44NDU3NCA1Ljk3MTdINS45NjQ5OEw2LjU2MDM1IDkuNTMwMTFMOC4wNzY1MSA5LjQyNzIzTDkuMTA1MTEgMi40NTAySDcuNjk3MzNaIiBmaWxsPSIjRkYwNTU4Ii8+Cjwvc3ZnPgo=" class="css-14xwmiz e10cf2lr0"></span>
-									</div>
-								</div>
-								<div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-									<div class="eysnieg4 css-wgm2hr etyqkvq0">평가 569 • 코멘트 329</div>
-								</div>
-							</div>
-							<div>
-								<button class="css-1echrkx eysnieg1">팔로우</button>
-							</div>
-						</div>
-					</a>
-				</li>
-				
-				<li class="eysnieg5 css-11a9a8l e4f2vpe2">
-					<a title="데드풀" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/WwRqo0oAJ0vlz">
-						<div class="css-bjn8wh e1ic68ft2">
-							<div class="eysnieg2 css-1kh7r2p euge2161">
-								<div class="css-18jnfey-ProfilePhotoImage euge2162"></div>
-							</div>
-						</div>
-						<div class="css-1pkjqps e1ic68ft0">
-							<div class="css-m5a6g e1ic68ft1"><div class="css-16sgdn2 e4f2vpe1"><div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀<span src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuNzcwNDYgMC41NjI0NTlDNS4yNDMyOCAtMC4xNTY0MzIgNi4zMTE0NyAtMC4xOTMwNyA2LjgzNTM1IDAuNDkyMTU1QzcuMTczMzcgMC45MzM3ODggNy43NzM4NSAxLjEwMTEzIDguMzAxODEgMC45MDAxMjFDOS4xMTk4IDAuNTg4MjA1IDEwLjAwNjIgMS4xNjc0OCAxMC4wMTQ0IDIuMDIxMDRDMTAuMDE5NSAyLjU2OTYxIDEwLjQwNTUgMy4wNDc4OCAxMC45NTM5IDMuMTg1NTJDMTEuODA0NiAzLjM5OTQxIDEyLjE3MDIgNC4zNzQ3NiAxMS42NjA2IDUuMDY4OUMxMS4zMzE4IDUuNTE2NDggMTEuMzUzMiA2LjEyMTQ5IDExLjcxMzcgNi41NDYyOUMxMi4yNzIzIDcuMjA0NzggMTEuOTc3MiA4LjIwMTkyIDExLjE0MzggOC40NzIyNUMxMC42MDY3IDguNjQ3NTIgMTAuMjU3NCA5LjE1MDU0IDEwLjI5MTEgOS42OTkxMkMxMC4zNDQyIDEwLjU0OTcgOS41MDE3NCAxMS4xODc0IDguNjYzMzIgMTAuOTMxOUM4LjEyMjA4IDEwLjc2NzYgNy41MzQ4OCAxMC45NzQ1IDcuMjI5NTQgMTEuNDM3OUM2Ljc1NjcyIDEyLjE1NjggNS42ODc1MSAxMi4xOTI1IDUuMTY0NjUgMTEuNTA4MkM0LjgyNjYzIDExLjA2NTYgNC4yMjYxNSAxMC44OTgzIDMuNjk4MTkgMTEuMTAwM0MyLjg4MDIgMTEuNDEyMiAxLjk5Mzc4IDEwLjgzMTkgMS45ODQ1OSA5Ljk4MDM0QzEuOTgwNTEgOS40Mjk3OCAxLjU5NTUxIDguOTUyNSAxLjA0NjEgOC44MTM4N0MwLjE5NTQyOCA4LjU5OTk5IC0wLjE3MDE2NiA3LjYyNjYxIDAuMzM5NDE5IDYuOTMyNDdDMC42NjgyNDkgNi40ODM5MSAwLjY0NjgwNCA1Ljg3NzkgMC4yODYzMTYgNS40NTMxQy0wLjI3MjI4NyA0Ljc5NDYxIDAuMDIyODQzIDMuNzk5NDUgMC44NTYxNTIgMy41MjcxNUMxLjM5MzMxIDMuMzUyODcgMS43NDM1OSAyLjg1MDgzIDEuNzA4ODYgMi4zMDEyN0MxLjY1NTc2IDEuNDUwNjggMi40OTgyNiAwLjgxMTk5MiAzLjMzNjY4IDEuMDY4NDZDMy44Nzc5MiAxLjIzMjgzIDQuNDY1MTIgMS4wMjU4OCA0Ljc3MDQ2IDAuNTYyNDU5WiIgZmlsbD0iIzBFMEYxMCIvPgogIDxwYXRoIGQ9Ik03LjY5NzMzIDIuNDUwMkw3LjI4NjEyIDcuNzkzOTJMNy4xNzc3NCA3Ljc5ODI4TDYuNDUyMjYgMy45Nzk3NUg1LjI2MTIzTDQuNjY1NTggNy44OTE1N0w0LjUzNTc1IDcuODk2OEwzLjk1MDk2IDMuOTc5NzVIMi41TDMuODEwMjcgOS43MTU4Mkw1LjMxNTI4IDkuNjE0MzlMNS44NDU3NCA1Ljk3MTdINS45NjQ5OEw2LjU2MDM1IDkuNTMwMTFMOC4wNzY1MSA5LjQyNzIzTDkuMTA1MTEgMi40NTAySDcuNjk3MzNaIiBmaWxsPSIjRkYwNTU4Ii8+Cjwvc3ZnPgo=" class="css-14xwmiz e10cf2lr0"></span></div></div><div class="css-mb4qpf-StyledSubtitle e4f2vpe0"><div class="eysnieg4 css-wgm2hr etyqkvq0">평가 54</div></div></div><div><button class="css-1echrkx eysnieg1">팔로우</button></div></div></a></li><li class="eysnieg5 css-11a9a8l e4f2vpe2"><a title="데드풀" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/OkexJ047evdbw"><div class="css-bjn8wh e1ic68ft2"><div class="eysnieg2 css-1kh7r2p euge2161"><div class="css-18jnfey-ProfilePhotoImage euge2162"></div></div></div><div class="css-1pkjqps e1ic68ft0"><div class="css-m5a6g e1ic68ft1"><div class="css-16sgdn2 e4f2vpe1"><div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀</div></div><div class="css-mb4qpf-StyledSubtitle e4f2vpe0"><div class="eysnieg4 css-wgm2hr etyqkvq0">평가 34</div></div></div><div><button class="css-1echrkx eysnieg1">팔로우</button></div></div></a></li><li class="eysnieg5 css-11a9a8l e4f2vpe2"><a title="데드풀" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/YMKqmNAQrGvlo"><div class="css-bjn8wh e1ic68ft2"><div class="eysnieg2 css-1kh7r2p euge2161"><div class="css-1lhitym-ProfilePhotoImage euge2162"></div></div></div><div class="css-1pkjqps e1ic68ft0"><div class="css-m5a6g e1ic68ft1"><div class="css-16sgdn2 e4f2vpe1"><div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀<span src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuNzcwNDYgMC41NjI0NTlDNS4yNDMyOCAtMC4xNTY0MzIgNi4zMTE0NyAtMC4xOTMwNyA2LjgzNTM1IDAuNDkyMTU1QzcuMTczMzcgMC45MzM3ODggNy43NzM4NSAxLjEwMTEzIDguMzAxODEgMC45MDAxMjFDOS4xMTk4IDAuNTg4MjA1IDEwLjAwNjIgMS4xNjc0OCAxMC4wMTQ0IDIuMDIxMDRDMTAuMDE5NSAyLjU2OTYxIDEwLjQwNTUgMy4wNDc4OCAxMC45NTM5IDMuMTg1NTJDMTEuODA0NiAzLjM5OTQxIDEyLjE3MDIgNC4zNzQ3NiAxMS42NjA2IDUuMDY4OUMxMS4zMzE4IDUuNTE2NDggMTEuMzUzMiA2LjEyMTQ5IDExLjcxMzcgNi41NDYyOUMxMi4yNzIzIDcuMjA0NzggMTEuOTc3MiA4LjIwMTkyIDExLjE0MzggOC40NzIyNUMxMC42MDY3IDguNjQ3NTIgMTAuMjU3NCA5LjE1MDU0IDEwLjI5MTEgOS42OTkxMkMxMC4zNDQyIDEwLjU0OTcgOS41MDE3NCAxMS4xODc0IDguNjYzMzIgMTAuOTMxOUM4LjEyMjA4IDEwLjc2NzYgNy41MzQ4OCAxMC45NzQ1IDcuMjI5NTQgMTEuNDM3OUM2Ljc1NjcyIDEyLjE1NjggNS42ODc1MSAxMi4xOTI1IDUuMTY0NjUgMTEuNTA4MkM0LjgyNjYzIDExLjA2NTYgNC4yMjYxNSAxMC44OTgzIDMuNjk4MTkgMTEuMTAwM0MyLjg4MDIgMTEuNDEyMiAxLjk5Mzc4IDEwLjgzMTkgMS45ODQ1OSA5Ljk4MDM0QzEuOTgwNTEgOS40Mjk3OCAxLjU5NTUxIDguOTUyNSAxLjA0NjEgOC44MTM4N0MwLjE5NTQyOCA4LjU5OTk5IC0wLjE3MDE2NiA3LjYyNjYxIDAuMzM5NDE5IDYuOTMyNDdDMC42NjgyNDkgNi40ODM5MSAwLjY0NjgwNCA1Ljg3NzkgMC4yODYzMTYgNS40NTMxQy0wLjI3MjI4NyA0Ljc5NDYxIDAuMDIyODQzIDMuNzk5NDUgMC44NTYxNTIgMy41MjcxNUMxLjM5MzMxIDMuMzUyODcgMS43NDM1OSAyLjg1MDgzIDEuNzA4ODYgMi4zMDEyN0MxLjY1NTc2IDEuNDUwNjggMi40OTgyNiAwLjgxMTk5MiAzLjMzNjY4IDEuMDY4NDZDMy44Nzc5MiAxLjIzMjgzIDQuNDY1MTIgMS4wMjU4OCA0Ljc3MDQ2IDAuNTYyNDU5WiIgZmlsbD0iIzBFMEYxMCIvPgogIDxwYXRoIGQ9Ik03LjY5NzMzIDIuNDUwMkw3LjI4NjEyIDcuNzkzOTJMNy4xNzc3NCA3Ljc5ODI4TDYuNDUyMjYgMy45Nzk3NUg1LjI2MTIzTDQuNjY1NTggNy44OTE1N0w0LjUzNTc1IDcuODk2OEwzLjk1MDk2IDMuOTc5NzVIMi41TDMuODEwMjcgOS43MTU4Mkw1LjMxNTI4IDkuNjE0MzlMNS44NDU3NCA1Ljk3MTdINS45NjQ5OEw2LjU2MDM1IDkuNTMwMTFMOC4wNzY1MSA5LjQyNzIzTDkuMTA1MTEgMi40NTAySDcuNjk3MzNaIiBmaWxsPSIjRkYwNTU4Ii8+Cjwvc3ZnPgo=" class="css-14xwmiz e10cf2lr0"></span></div></div><div class="css-mb4qpf-StyledSubtitle e4f2vpe0"><div class="eysnieg4 css-wgm2hr etyqkvq0">평가 52</div></div></div><div><button class="css-1echrkx eysnieg1">팔로우</button></div></div></a></li><li class="eysnieg5 css-11a9a8l e4f2vpe2"><a title="데드풀" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/8BRveN7akQ56V"><div class="css-bjn8wh e1ic68ft2"><div class="eysnieg2 css-1kh7r2p euge2161"><div class="css-18jnfey-ProfilePhotoImage euge2162"></div></div></div><div class="css-1pkjqps e1ic68ft0"><div class="css-m5a6g e1ic68ft1"><div class="css-16sgdn2 e4f2vpe1"><div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀</div></div><div class="css-mb4qpf-StyledSubtitle e4f2vpe0"><div class="eysnieg4 css-wgm2hr etyqkvq0">평가 10</div></div></div><div><button class="css-1echrkx eysnieg1">팔로우</button></div></div></a></li><li class="eysnieg5 css-11a9a8l e4f2vpe2"><a title="데드풀너무좋아진짜사랑해" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/NP9vL22VLox6k"><div class="css-bjn8wh e1ic68ft2"><div class="eysnieg2 css-1kh7r2p euge2161"><div class="css-18jnfey-ProfilePhotoImage euge2162"></div></div></div><div class="css-1pkjqps e1ic68ft0"><div class="css-m5a6g e1ic68ft1"><div class="css-16sgdn2 e4f2vpe1"><div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀너무좋아진짜사랑해</div></div><div class="css-mb4qpf-StyledSubtitle e4f2vpe0"><div class="eysnieg4 css-wgm2hr etyqkvq0">평가 1</div></div></div><div><button class="css-1echrkx eysnieg1">팔로우</button></div></div></a></li><li class="eysnieg5 css-11a9a8l e4f2vpe2"><a title="데드풀" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/yKZx3Y6jDv4dJ"><div class="css-bjn8wh e1ic68ft2"><div class="eysnieg2 css-1kh7r2p euge2161"><div class="css-18jnfey-ProfilePhotoImage euge2162"></div></div></div><div class="css-1pkjqps e1ic68ft0"><div class="css-m5a6g e1ic68ft1"><div class="css-16sgdn2 e4f2vpe1"><div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀</div></div><div class="css-mb4qpf-StyledSubtitle e4f2vpe0"><div class="eysnieg4 css-wgm2hr etyqkvq0">평가 2</div></div></div><div><button class="css-1echrkx eysnieg1">팔로우</button></div></div></a></li><li class="eysnieg5 css-11a9a8l e4f2vpe2"><a title="데드풀" class="css-y7yqy-InnerPartOfListWithImage e1ic68ft4" href="/ko-KR/users/R6OvKwkW6vN8V"><div class="css-bjn8wh e1ic68ft2"><div class="eysnieg2 css-1kh7r2p euge2161"><div class="css-18jnfey-ProfilePhotoImage euge2162"></div></div></div><div class="css-1pkjqps e1ic68ft0"><div class="css-m5a6g e1ic68ft1"><div class="css-16sgdn2 e4f2vpe1"><div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀</div></div><div class="css-mb4qpf-StyledSubtitle e4f2vpe0"><div class="eysnieg4 css-wgm2hr etyqkvq0"></div></div></div><div><button class="css-1echrkx eysnieg1">팔로우</button></div></div></a></li></ul><div class="css-g070ko e1m42n8s1"><button class="css-1t8rbb1 el1t2oe0">더보기<span height="24px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNSA5LjEwMDFMMTIgMTQuNjAwMUwxNy41IDkuMTAwMSIgc3Ryb2tlPSIjNzg3OTgyIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K" width="24px" class="css-1jdnhky e17bapw90"></span></button></div></div></div></div>
+    <jsp:include page="/header.jsp"/>
+    <div class="css-1x6fzl1 e1szkzar0">
+        <div hidden="" class="css-1hyfx7x e1pww8ij0"></div>
+        <div hidden="" class="css-1hyfx7x e1pww8ij0"></div>
+        <div hidden="" class="css-1hyfx7x e1pww8ij0"></div>
+        <div class="css-13o7eu2 e1pww8ij0">
+            <div class="css-erbzy0 eeq1br70">
+                <section class="css-r1096k edsy68u0">
+                        <div class="css-pfk2ko e147tj4w3">
+                            <ul class="two-column-list">
+                                <li class="left-item">
+                                  <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 780 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 781 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                        
+                                     <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 782 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 782 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 785 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="right-item">
+                                    <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 784 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 785 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 786 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 782 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="css-1pkjqps e1ic68ft0">
+                                            <div class="css-m5a6g e1ic68ft1">
+                                                <div class="css-16sgdn2 e4f2vpe1">
+                                                    <div class="eysnieg3 css-wsusl5 e10cf2lr1">데드풀 애청자</div>
+                                                </div>
+                                                <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
+                                                    <div class="eysnieg4 css-wgm2hr etyqkvq0">평가 782 • 코멘트 45</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button class="css-1echrkx eysnieg1">팔로우</button>
+                                            </div>
+                                        </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </section>
+            </div>
+        </div>
+    </div>
 </body>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-<script type="text/javascript">
-</script>
 </html>
