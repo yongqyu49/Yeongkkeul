@@ -15,6 +15,7 @@ import dto.EmailToken;
 import dto.LikeMovie;
 import dto.Movie;
 import dto.MovieComment;
+import dto.Search;
 
 public class CrewDAO  {
 	
@@ -329,6 +330,30 @@ public class CrewDAO  {
 			close(rs, pstmt, conn);
 		}
 		return likeCommentList;
+	}
+
+	public List<Search> getRecentSearch(String email) {
+		List<Search> recentSearchList = new ArrayList<Search>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from search order by search_time desc";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Search search = new Search();
+				search.setSearch_word(rs.getString(1));
+				search.setSearch_count(rs.getInt(2));
+				search.setSearch_time(rs.getTimestamp(3));
+				recentSearchList.add(search);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return recentSearchList;
 	}
 
 }

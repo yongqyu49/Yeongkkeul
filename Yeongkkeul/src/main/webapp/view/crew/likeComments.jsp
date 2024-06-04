@@ -5,14 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>영끌</title>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-<link type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/slick.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/slick-theme.css"/>
-<link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
-<link rel="stylesheet" href="../../css/font-awesome.min.css">
-<link type="text/css" rel="stylesheet" href="../../css/style.css"/>
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/likeComments.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/crew/likeComments.css"/>
 </head>
 <body>
 	<jsp:include page="/header.jsp"/>

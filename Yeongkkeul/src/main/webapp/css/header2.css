@@ -239,3 +239,82 @@
     width: 100%;
     height: 100%;
 }
+
+.search_modal {
+  width: 100%;
+  padding: 0;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search_head {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  padding: 10px 0;
+  padding: 11px 20px;
+}
+
+.modal-backdrop.show {
+  	width: 0;
+  	height: 0;
+    opacity: 0;
+}
+
+.modal {
+	position: relative;
+	float: left;
+    width: 640px;
+	margin-left: 30px;
+    top: -45px;
+}
+
+.modal-footer {
+    padding: 5px 10px;
+}
+
+.modal-dialog {
+	max-width: none;
+}
+
+.right_contents {
+	width: 250px;
+}
+
+.list_searchWord {
+    margin: 0;
+    padding: 20px 10px 10px 10px;
+}
+
+.list_searchWord li .num {
+    display: inline-block;
+    width: 25px;
+    text-align: left;
+    color: #111;
+}
+
+.list_searchWord li {
+    width: calc(100% - 18px);
+    min-height: 26px;
+    padding: 0 18px 0 0;
+    overflow: hidden;
+}
+
+ol.list_searchWord li:nth-child(-n+3):nth-child(n+1) .num {
+    color: #5e2bb8;
+}
+
+a {
+	color: black;
+}
+
+#ui-id-1 {
+	background-color: white;
+    width: 546px;
+    border: 1px solid black;
+    z-index: 100;
+    margin-top: 10px;
+    border-radius: 0.3rem;
+    top: -6430px;
+}
