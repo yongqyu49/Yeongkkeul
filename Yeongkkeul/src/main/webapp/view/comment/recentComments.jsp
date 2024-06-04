@@ -12,7 +12,7 @@
 <link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css"/>
 <link rel="stylesheet" href="../../css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/likeComments.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/crew/likeComments.css"/>
 </head>
 <body>
 	<jsp:include page="/header.jsp"/>
@@ -25,9 +25,9 @@
               </div>
              </div>
 					 <div class="current_category">
-					<div>좋아요</div>
+					<div>최신 끌리는 멘트들</div>
 				</div>
-				<div class="v">좋아요</div>
+				<div class="v">최신 끌리는 멘트들</div>
 			</header>
 			<div class="like_category">
 			</div>
@@ -55,7 +55,7 @@
 								<div class="comment_text">
 									<p class="movie_title">싱 스트리트</p>
 									<p>영화 ・ 2023</p>
-									<a href="">
+									<a href="${pageContext.request.contextPath}/view/comment/oneline2.jsp">
 										<div>
 											<span>아아아아아앙라ㅣ넝ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ미ㅏㅓ이퓌ㅏㄴㅇㄻㄴㅇㄻㄴㄹㄴㅇㅁㄿㄴㅁㅇㅍㅌㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㄴㅁㅍㅁ퍼미퍼ㅐㅁ너ㅔ버절ㅇㄴ햐ㅐㅔㅔ매ㅓㅍ멒ㅁ;</span>
 										</div>

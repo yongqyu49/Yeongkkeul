@@ -1486,8 +1486,6 @@ button:focus-visible {
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/slick.css"/>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/slick-theme.css"/>
-	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/nouislider.min.css"/>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css">
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/added/index.css"/>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
@@ -1527,7 +1525,8 @@ button:focus-visible {
                                   <section class="e18z2wyi2 css-h5jh9m ehgi1703">
                                       <div class="css-bsgg5l ehgi1702">
                                           <ul class="items-ul css-yjfynz ehgi1701">
-                                              <li class="comment"><a href="${pageContext.request.contextPath}/view/comment/likeComments.jsp">
+                                              <li class="comment">
+                                              	<a href="${pageContext.request.contextPath}/view/comment/recentComments.jsp">
                                                       <article class="css-njo048 ectkrh99">
                                                           <div class="css-1066lcq ectkrh98">
                                                               <div class="css-1xesed8 e1q9qvad3"><img
@@ -2449,22 +2448,9 @@ button:focus-visible {
               </div>
           </div>
       </div>
-
-      <script src="https://an2-ast.amz.wtchn.net/ayg/javascripts/web.3cbbe5949e3afe6ee609.js" crossorigin="anonymous">
-      </script>
- 
-      
-      <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js');
-          });
-        }
-      </script> 
-      
-      
     </div>
-<!-- footer -->
-<jsp:include page="footer.jsp"/>
+	<!-- footer -->
+	<jsp:include page="footer.jsp"/>
   
-  </body>
+</body>
+</html>

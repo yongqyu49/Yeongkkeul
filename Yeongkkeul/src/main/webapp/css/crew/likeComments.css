@@ -1,5 +1,5 @@
 @media (min-width: 719px) {
-	comment_section {
+	.comment_section {
 		padding-top: 62px;
 		padding-bottom: unset;
 	}
@@ -18,7 +18,7 @@
     width: 100%;
     padding: 0px 16px;
     border-bottom: 1px solid rgb(227, 227, 227);
-    top: 100px;
+    top: 62px;
     text-align: left;
     height: auto;
 }
@@ -30,6 +30,13 @@
 }
 
 .go_back {
+    background-position: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
     padding: 0px;
     border: none;
     cursor: pointer;
