@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/header2.css"/>
 </head>
 <body>
@@ -23,12 +24,51 @@
 								<div class="search_box">
 									<form>
 										<label class="css-hfu8tx">
-											<input class="css-1qwgl6x" id="input_search" placeholder="영화, 유저를 검색해보세요.">
+											<input class="css-1qwgl6x input-form" id="input_search" placeholder="영화, 유저를 검색해보세요.">
 											<div class="css-1sojl3h-StyledClearButtonBlock">
 												<span class="css-1b5ngmb-ClearButton"></span>
 											</div>
 										</label>
 									</form>
+								</div>
+							</div>
+							
+							<!-- Modal -->
+							<div class="modal" id="exampleModal" tabindex="-1" role="dialog"
+								aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-body">
+						
+											<div class="search_modal">
+												<div class="wrap right_contents">
+													<div class="popular_search_top search_head">
+														<strong>최근검색어</strong>
+													</div>
+													<form action="/recentSearchWord">
+														<div class="recent_search_word">
+	
+														</div>
+													</form>
+												</div>
+												<div class="wrap right_contents">
+													<div class="popular_search_top search_head">
+														<strong>인기검색어</strong>
+													</div>
+													<form action="/popSearchWord">
+														<div class="popular_search_word">
+	
+														</div>
+													</form>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</li>
@@ -69,25 +109,21 @@
 		</nav>
 	</header>
 </body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
-const path = "${pageContext.request.contextPath}";
-console.log(path);
-// 검색 모달창
-/* $(document).ready(function() {
+const path = `${pageContext.request.contextPath}`
+//검색 모달창
+$(document).ready(function() {
     $('.input-form').click(function() {
-        $("#exampleModal").modal("show");
+        $("#exampleModal").css("display", "block");
         sli = "<ol class='list_searchWord type'>";
         rli = "<ul class='list_searchWord type'>";
         $.ajax({
-        	url: '/recentSearchWord',
+        	url: path + '/view/crew/recentSearchWord.do',
         	dataType: 'json',
         	success: function(datas) {
+        		console.log(datas)
 				$('.recent_search_word').empty();
 				$(datas).each(function(index) {
 					if (index < 10) {
@@ -101,7 +137,7 @@ console.log(path);
         });
         
         $.ajax({
-        	url: '/popSearchWord',
+        	url: path + '/view/crew/popSearchWord.do',
         	dataType: 'json',
         	success: function(data) {
 				$('.popular_search_word').empty();
@@ -122,7 +158,7 @@ console.log(path);
     $("#close_modal").click(function() {
         $("#exampleModal").modal("hide");
     });
-}); */
+});
 
 // 검색 자동완성
 $('#input_search').autocomplete({
