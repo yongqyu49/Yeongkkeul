@@ -1,13 +1,106 @@
 package dto;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class MovieComment {
 
-    public String movie_code;      // 영화 번호
-    public String email;			// 이메일
-    public Timestamp regi_Date;		// 등록날짜
-    public String content;			// 댓글 내용
+	private String movie_code;      // 영화 번호
+	private String email;			// 이메일
+	private Timestamp regi_date;		// 등록날짜
+	private String content;			// 댓글 내용
+    
+    private String movie_name;								
+    private String movie_poster;
+	private String movie_content;
+    private Date release_date;
+    private String fileCode;
+	private String fileName;
+	private String filePath;
+	private String fileExtension;
+	private Date filePostdate;
+	private String name;								
+	
+	@Override
+	public String toString() {
+		return "MovieComment [movie_code=" + movie_code + ", email=" + email + ", regi_date=" + regi_date + ", content="
+				+ content + ", movie_name=" + movie_name + ", movie_poster=" + movie_poster + ", movie_content="
+				+ movie_content + ", release_date=" + release_date + ", fileCode=" + fileCode + ", fileName=" + fileName
+				+ ", filePath=" + filePath + ", fileExtension=" + fileExtension + ", filePostdate=" + filePostdate
+				+ ", name=" + name + "]";
+	}
+
+	public String getMovie_name() {
+		return movie_name;
+	}
+
+	public void setMovie_name(String movie_name) {
+		this.movie_name = movie_name;
+	}
+
+	public String getMovie_poster() {
+		return movie_poster;
+	}
+
+	public void setMovie_poster(String movie_poster) {
+		this.movie_poster = movie_poster;
+	}
+
+	public String getMovie_content() {
+		return movie_content;
+	}
+
+	public void setMovie_content(String movie_content) {
+		this.movie_content = movie_content;
+	}
+
+	public Date getRelease_date() {
+		return release_date;
+	}
+
+	public void setRelease_date(Date release_date) {
+		this.release_date = release_date;
+	}
+
+	public String getFileCode() {
+		return fileCode;
+	}
+
+	public void setFileCode(String fileCode) {
+		this.fileCode = fileCode;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
+	public String getFileExtension() {
+		return fileExtension;
+	}
+
+	public void setFileExtension(String fileExtension) {
+		this.fileExtension = fileExtension;
+	}
+
+	public Date getFilePostdate() {
+		return filePostdate;
+	}
+
+	public void setFilePostdate(Date filePostdate) {
+		this.filePostdate = filePostdate;
+	}
 
     public String getMovie_code() {
         return movie_code;
@@ -26,11 +119,11 @@ public class MovieComment {
     }
 
     public Timestamp getRegi_Date() {
-        return regi_Date;
+        return regi_date;
     }
 
-    public void setRegi_Date(Timestamp regi_Date) {
-        this.regi_Date = regi_Date;
+    public void setRegi_Date(Timestamp regi_date) {
+        this.regi_date = regi_date;
     }
 
     public String getContent() {
@@ -40,4 +133,22 @@ public class MovieComment {
     public void setContent(String content) {
         this.content = content;
     }
+
+	public Timestamp getRegi_date() {
+		return regi_date;
+	}
+
+	public void setRegi_date(Timestamp regi_date) {
+		this.regi_date = regi_date;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+    
+    
 }

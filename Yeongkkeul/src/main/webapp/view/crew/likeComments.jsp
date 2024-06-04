@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,130 +34,39 @@
 			</div>
 			<div class="comment_container">
 				<ul class="comment_ul">
-					<li>
-						<div class="user_container">
-							<div class="comment_user">
-								<a href="${pageContext.request.contextPath}/view/crew/user.jsp">
-									<div class="photo_container">
-										<div class="photo"></div>
-									</div>
-									<div class="user_name">이돈주인</div>
-								</a>
-							</div>
-							<div class="evaluation">
-								<img alt="star" src="${pageContext.request.contextPath}/img/sing street.jpg"/>
-							</div>
-						</div>
-						<div class="comment_content">
-							<div class="comment_display">
-								<a href="">
-									<img alt="movie_poster" src="${pageContext.request.contextPath}/img/sing street.jpg">
-								</a>
-								<div class="comment_text">
-									<p class="movie_title">싱 스트리트</p>
-									<p>영화 ・ 2023</p>
-									<a href="">
-										<div>
-											<span>아아아아아앙라ㅣ넝ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ미ㅏㅓ이퓌ㅏㄴㅇㄻㄴㅇㄻㄴㄹㄴㅇㅁㄿㄴㅁㅇㅍㅌㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㄴㅁㅍㅁ퍼미퍼ㅐㅁ너ㅔ버절ㅇㄴ햐ㅐㅔㅔ매ㅓㅍ멒ㅁ;</span>
+					<c:forEach items="${likeCommentList}" var="likeCommentList">
+						<li>
+							<div class="user_container">
+								<div class="comment_user">
+									<a href="${pageContext.request.contextPath}/view/crew/user.jsp">
+										<div class="photo_container">
+											<div class="photo"></div>
 										</div>
+										<div class="user_name">${likeCommentList.name}</div>
 									</a>
 								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="user_container">
-							<div class="comment_user">
-								<a href="${pageContext.request.contextPath}/view/crew/user.jsp">
-									<div class="photo_container">
-										<div class="photo"></div>
-									</div>
-									<div class="user_name">이돈주인</div>
-								</a>
-							</div>
-							<div class="evaluation">
-								<img alt="star" src="${pageContext.request.contextPath}/img/sing street.jpg"/>
-							</div>
-						</div>
-						<div class="comment_content">
-							<div class="comment_display">
-								<a href="">
-									<img alt="movie_poster" src="${pageContext.request.contextPath}/img/sing street.jpg">
-								</a>
-								<div class="comment_text">
-									<p class="movie_title">싱 스트리트</p>
-									<p>영화 ・ 2023</p>
-									<a href="">
-										<div>
-											<span>아아아아아앙라ㅣ넝ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ미ㅏㅓ이퓌ㅏㄴㅇㄻㄴㅇㄻㄴㄹㄴㅇㅁㄿㄴㅁㅇㅍㅌㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㄴㅁㅍㅁ퍼미퍼ㅐㅁ너ㅔ버절ㅇㄴ햐ㅐㅔㅔ매ㅓㅍ멒ㅁ;</span>
-										</div>
-									</a>
+								<div class="evaluation">
+									<img alt="star" src="${pageContext.request.contextPath}/img/${likeMovie.fileName}${likeMovie.fileExtension}"/>
 								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						<div class="user_container">
-							<div class="comment_user">
-								<a href="${pageContext.request.contextPath}/view/crew/user.jsp">
-									<div class="photo_container">
-										<div class="photo"></div>
-									</div>
-									<div class="user_name">이돈주인</div>
-								</a>
-							</div>
-							<div class="evaluation">
-								<img alt="star" src="${pageContext.request.contextPath}/img/sing street.jpg"/>
-							</div>
-						</div>
-						<div class="comment_content">
-							<div class="comment_display">
-								<a href="">
-									<img alt="movie_poster" src="${pageContext.request.contextPath}/img/sing street.jpg">
-								</a>
-								<div class="comment_text">
-									<p class="movie_title">싱 스트리트</p>
-									<p>영화 ・ 2023</p>
+							<div class="comment_content">
+								<div class="comment_display">
 									<a href="">
-										<div>
-											<span>아아아아아앙라ㅣ넝ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ미ㅏㅓ이퓌ㅏㄴㅇㄻㄴㅇㄻㄴㄹㄴㅇㅁㄿㄴㅁㅇㅍㅌㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㅊㄴㅁㅍㅁ퍼미퍼ㅐㅁ너ㅔ버절ㅇㄴ햐ㅐㅔㅔ매ㅓㅍ멒ㅁ;</span>
-										</div>
+										<img alt="movie_poster" src="${pageContext.request.contextPath}/img/sing street.jpg">
 									</a>
+									<div class="comment_text">
+										<p class="movie_title">싱 스트리트</p>
+										<p>영화 ・ 2023</p>
+										<a href="">
+											<div>
+												<span>${likeCommentList.content}</span>
+											</div>
+										</a>
+									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						<div class="user_container">
-							<div class="comment_user">
-								<a href="${pageContext.request.contextPath}/view/crew/user.jsp">
-									<div class="photo_container">
-										<div class="photo"></div>
-									</div>
-									<div class="user_name">이돈주인</div>
-								</a>
-							</div>
-							<div class="evaluation">
-								<img alt="star" src="${pageContext.request.contextPath}/img/sing street.jpg"/>
-							</div>
-						</div>
-						<div class="comment_content">
-							<div class="comment_display">
-								<a href="">
-									<img alt="movie_poster" src="${pageContext.request.contextPath}/img/sing street.jpg">
-								</a>
-								<div class="comment_text">
-									<p class="movie_title">싱 스트리트</p>
-									<p>영화 ・ 2023</p>
-									<a href="">
-										<div>
-											<span>테스트2222</span>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</li>
+						</li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>

@@ -14,6 +14,7 @@ import dto.Crew;
 import dto.EmailToken;
 import dto.LikeMovie;
 import dto.Movie;
+import dto.MovieComment;
 
 public class CrewDAO  {
 	
@@ -273,6 +274,61 @@ public class CrewDAO  {
 			close(rs, pstmt, conn);
 		}
 		return likeMovieList;
+	}
+
+	public int changePassword(String email, String password, String currentPassword) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "update crew set password = ? where email = ? and password = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, password);
+			pstmt.setString(2, email);
+			pstmt.setString(3, currentPassword);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(pstmt, conn);
+		}
+		return result;
+	}
+
+	public List<MovieComment> getLikeComment(String email) {
+		List<MovieComment> likeCommentList = new ArrayList<MovieComment>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select mc.*, m.movie_name, p.*, c.name\r\n"
+				+ "from movie_comment mc, movie m, poster p, crew c\r\n"
+				+ "where mc.movie_code = m.movie_code and m.movie_code = p.movie_code and c.email = mc.email\r\n"
+				+ "and mc.email = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MovieComment mc = new MovieComment();
+				mc.setEmail(rs.getString(1));
+				mc.setMovie_code(rs.getString(2));
+				mc.setRegi_Date(rs.getTimestamp(3));
+				mc.setContent(rs.getString(4));
+				mc.setMovie_name(rs.getString(5));
+				mc.setFileCode(rs.getString(6));	
+				mc.setFileName(rs.getString(7));
+				mc.setFilePath(rs.getString(8));
+				mc.setFileExtension(rs.getString(9));
+				mc.setFilePostdate(rs.getDate(10));
+				mc.setName(rs.getString(12));
+				likeCommentList.add(mc);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return likeCommentList;
 	}
 
 }

@@ -44,10 +44,27 @@
 							</div>
 						</section>
 						
+						<section class="want_movie">
+							<h4>보고싶은 영화</h4>
+							<a href="${pageContext.request.contextPath}/view/crew/wantMovie.jsp">더 보기</a>
+							<div class="gallery_container">
+								<ul class="gallery">
+									<c:forEach items="${likeMovie}" var="likeMovie" begin="0" end="3">
+								        <li>
+								        	<img src="${pageContext.request.contextPath}/img/${likeMovie.fileName}${likeMovie.fileExtension}">
+								        	<p>${likeMovie.movie_name}</p>
+								        	<span>2018</span><span> 영국</span>
+								        </li>									
+									</c:forEach>
+							        
+							    </ul>
+						   </div>
+						</section>
+						
 						<section class="comment">
 							<h4>나의 코멘트</h4>
 							<div class="gallery_container">
-								<ul class="comment_list">
+								<%-- <ul class="comment_list">
 							        <li class="comment" style="width: 33%;">
 							        	<a href="${pageContext.request.contextPath}/index.jsp">
 								        	<article>
@@ -117,32 +134,17 @@
 								        	</article>
 							        	</a>
 							        </li>
-							    </ul>
+							    </ul> --%>
 						   </div>
 						</section>
-						<section class="want_movie">
-							<h4>보고싶은 영화</h4>
-							<a href="${pageContext.request.contextPath}/view/crew/wantMovie.jsp">더 보기</a>
-							<div class="gallery_container">
-								<ul class="gallery">
-									<c:forEach items="${likeMovie}" var="likeMovie" begin="0" end="3">
-								        <li>
-								        	<img src="${pageContext.request.contextPath}/img/${likeMovie.fileName}${likeMovie.fileExtension}">
-								        	<p>${likeMovie.movie_name}</p>
-								        	<span>2018</span><span> 영국</span>
-								        </li>									
-									</c:forEach>
-							        
-							    </ul>
-						   </div>
-						</section>
+						
 						<section class="favorite_comment comment">
 							<div style="display: flex;">
 								<h4>좋아한 코멘트</h4>
-								<a href="${pageContext.request.contextPath}/view/crew/likeComments.jsp">더 보기</a>
+								<a href="${pageContext.request.contextPath}/view/crew/likeComments.do">더 보기</a>
 							</div>
 							<div class="gallery_container">
-								<ul class="comment_list">
+								<%-- <ul class="comment_list">
 							        <li class="comment" style="width: 33%;">
 							        	<a href="${pageContext.request.contextPath}/index.jsp">
 								        	<article>
@@ -189,7 +191,7 @@
 								        	</article>
 							        	</a>
 							        </li>
-							    </ul>
+							    </ul> --%>
 						   </div>
 						</section>
 					</div>
@@ -214,17 +216,11 @@
 				</header>
 				<div class="modal_box">
 					<div class="">
-						<div class="modal_ul_container" style="    margin: 0px 20px;">
+						<div class="modal_ul_container" style="margin: 0px 20px;">
 							<ul>
 								<li>
-									<div class="modal_list">
-										<div class="modal_content">마케팅 정보</div>
-										<div></div>
-									</div>
-								</li>
-								<li>
-									<div class="modal_list">
-										<div class="modal_content">공개 설정</div>
+									<div class="modal_list" id="change_password">
+										<div class="modal_content">비밀번호 변경</div>
 										<div></div>
 									</div>
 								</li>
@@ -259,10 +255,42 @@
 								</ul>
 							</section>
 						</div>
+						<div class="change_password_modal" style="margin: 0px 20px; display: none;;">
+							<section class="setting_section">
+								<form action="${pageContext.request.contextPath}/view/crew/changePassword.do" method="post">
+									<div class="section_cate">비밀번호 변경</div>
+									<ul class="">
+										<li>
+											<div class="modal_list">
+												<input class="input" id="current_password" type="password" name="password" oninput="checkPwd()" placeholder="현재 비밀번호">
+												<div></div>
+											</div>
+										</li>
+										<li>
+											<div class="modal_list">
+												<input class="input" id="input_password" type="password" name="password" oninput="checkPwd()" placeholder="비밀번호">
+												<div></div>
+											</div>
+										</li>
+										<li>
+											<div class="modal_list">
+												<input class="input" id="confirm_password" type="password" name="confirm_password" oninput="checkPwd()" placeholder="비밀번호 확인">
+												<div></div>
+											</div>
+										</li>
+										<li>
+											<input type="submit" value="변경하기" class="primary-btn order-submit" id="change_password_submit"/>
+										</li>
+									</ul>
+								</form>
+							</section>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<!-- 비밀번호 변경 모달 -->
 		<div class="confirm_container">
 			<div class="confirm_block">
 				<div class="alert_container">
@@ -273,7 +301,7 @@
 							<div size="2" class="" style="display: flex;">
 								<button type="button" class="logout_cancel">취소</button>
 								<button type="button" class="logout_confirm">
-									<a href="/view/crew/logout.do">확인</a>
+									<a href="${pageContext.request.contextPath}/view/crew/logout.do">확인</a>
 								</button>
 							</div>
 						</div>
@@ -281,16 +309,28 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 프로필 사진변경 모달 -->
+		<%-- <div class="change_profile_container">
+			<div class="confirm_block">
+				<div class="alert_container">
+					<div class="">
+						<div style="margin: 0px 20px;">
+							<div class="alert_text">알림</div>
+							<div class="confirm_logout">로그아웃 하쉴?</div>
+							<div size="2" class="" style="display: flex;">
+								<button type="button" class="logout_cancel">취소</button>
+								<button type="button" class="logout_confirm">
+									<a href="${pageContext.request.contextPath}/view/crew/logout.do">확인</a>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> --%>
 	</div>
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/crew/user.js"></script>
-<script>
-$(() => {
-	$(".logout_confirm").on("click", () => {
-		let path = "${pageContext.request.contextPath}";
-		location.href = path + "/index.jsp";
-	});	
-});
-</script>
 </html>
