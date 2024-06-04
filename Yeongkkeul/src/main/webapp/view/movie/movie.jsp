@@ -16,7 +16,6 @@
 
 </head>
 <body>
-
 <!-- header -->
 <jsp:include page="../../header.jsp"/>
 	
@@ -53,12 +52,11 @@
                                             <div
                                                 class="css-mkiodl-StyledContentInfoOnWallpaper-createMediaQuery-createMediaQuery-createMediaQuery-createMediaQuery-pageMarginStyle e1yew28615">
                                                 <div>
-                                                    <h1 class="css-1tlhtfm-StyledTitle e1yew28614">극장판 하이큐!! 쓰레기장의 결전
+                                                    <h1 class="css-1tlhtfm-StyledTitle e1yew28614">${ld.movie_name}
                                                     </h1>
                                                     <div class="css-s64a79-StyledDetail e1yew28613">劇場版ハイキュー！！ ゴミ捨て場の決戦
                                                     </div>
-                                                    <div class="css-s64a79-StyledDetail e1yew28613">2023 · 애니메이션/스포츠 ·
-                                                        일본</div>
+                                                    <div class="css-s64a79-StyledDetail e1yew28613">${ld.release_date}</div>
                                                     <div class="css-s64a79-StyledDetail e1yew28613">1시간 24분 · 전체</div>
                                                     <div class="css-1i3fxrq-StyledDetail-StyledRanking e1yew28612">예매 순위
                                                         6위(6.1%) · 개봉 8일째 · 누적 관객 37.8만명</div>

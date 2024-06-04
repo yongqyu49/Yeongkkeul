@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 
 import dto.Crew;
 import dto.LikeMovie;
+import dto.Movie;
 
 public class MovieDAO {
 	private static MovieDAO instance;
@@ -197,18 +198,20 @@ public class MovieDAO {
 		List<LikeMovie> movielist = new ArrayList<LikeMovie>();
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		ResultSet rs = null;
-		String sql = "select m.movie_name,m.release_date, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code = p.movie_code";
+		String sql = "select m.movie_code,m.movie_name,m.release_date, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code = p.movie_code";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				LikeMovie movie = new LikeMovie();
-				movie.setMovie_name(rs.getString(1));
-				movie.setRelease_date(rs.getDate(2));
-				movie.setFilePath(rs.getString(3));
-				movie.setFileName(rs.getString(4));
-				movie.setFileExtension(rs.getString(5));
+				movie.setMovie_code(rs.getString(1));
+				movie.setMovie_name(rs.getString(2));
+				movie.setRelease_date(rs.getDate(3));
+				movie.setFilePath(rs.getString(4));
+				movie.setFileName(rs.getString(5));
+				movie.setFileExtension(rs.getString(6));
 				movielist.add(movie);
 			}
 		} catch (Exception e) {
@@ -218,6 +221,34 @@ public class MovieDAO {
 		}
 		return movielist;
 	}
-
 	
-}	
+	
+	public LikeMovie detailMovie(String movie_code) {
+		LikeMovie movie = new LikeMovie();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select m.movie_code,m.movie_name,m.content ,m.release_date, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,movie_code);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				movie.setMovie_code(rs.getString(1));
+				movie.setMovie_name(rs.getString(2));
+				movie.setMovie_content(rs.getString(3));
+				movie.setRelease_date(rs.getDate(4));
+				movie.setFilePath(rs.getString(5));
+				movie.setFileName(rs.getString(6));
+				movie.setFileExtension(rs.getString(7));
+				System.out.println("detail : "+movie);
+			}
+			} catch (Exception e) {
+				e.getMessage();
+			} finally {
+				close(rs, pstmt, conn);
+			}
+			return movie;
+	}
+}
+

@@ -1,8 +1,10 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+
 <style>@import url("https://d3exygglbxwa7b.cloudfront.net/fonts/pretendard/pretendard-subset.css");
 
 *,
@@ -1835,12 +1837,13 @@ button:focus-visible {
                                   <section class="e18z2wyi2 css-1uyzw27-StyledContainer-StyledListSection ehgi1703">
                                       <div class="css-xpgryv-StyledUlParent ehgi1702">
                                           <ul class="items-ul css-19gc9b-StyledUl-gapFromBreakPoints-breakPointsToCss ehgi1701">
+                                          <c:forEach var="ld" items="${ld}">
                                               <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="원더랜드" href="${pageContext.request.contextPath}/view/movie/movie.jsp">
+                                                      title="${ld.movie_name}" href="${pageContext.request.contextPath}/view/movie/movie.do?movie_code=${ld.movie_code}">
                                                       <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
                                                           <div class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
                                                               <img class="show css-1p5524l ezcopuc0"
-                                                                  src="https://an2-img.amz.wtchn.net/image/v2/FdBNu2eOuavaFcePcqD-Ug.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpnek9Ea3lNREU0TmpjME9ESTRNaUo5LjgzM19SUjlxeEpKM3NZQTdSNTZTNnlvcVdoNGNJRTlMZlU2dXRNYktsWHc">
+                                                                  src="${pageContext.request.contextPath}/img/${ld.fileName}${ld.fileExtension}">
                                                           </div>
                                                           <div class="css-18784a9 ei3ci1h2">1</div>
                                                           <div
@@ -1848,265 +1851,15 @@ button:focus-visible {
                                                           </div>
                                                       </div>
                                                       <div class="css-1jkabhk-ContentInfo ei3ci1h7">
-                                                          <div
-                                                              class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
-                                                              원더랜드</div>
-                                                          <div
-                                                              class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
+                                                          <div class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
+                                                              ${ld.movie_name}</div>
+                                                          <div class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
                                                               2022 ・ 한국</div>
-                                                          <div
-                                                              class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              예매율 32% ・ 누적 관객 4,471명</div>
+                                                          <div class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
+                                                              ${ld.release_date}</div>
                                                       </div>
                                                   </a></li>
-                                              <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="퓨리오사: 매드맥스 사가" href="/ko-KR/contents/mOllnqg">
-                                                      <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
-                                                          <div
-                                                              class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
-                                                              <img class="show css-1p5524l ezcopuc0"
-                                                                  src="https://an2-img.amz.wtchn.net/image/v2/qhMoqsetGYuoXLYI-719mw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpNeE5qWTBOelF5TmprM01UTTVNU0o5LmkxX2p1SVVEY3BPOFlXeDFEbzVtVGNJbFRVVC1BMngxeF9pc2FUVXF6Qk0">
-                                                          </div>
-                                                          <div class="css-18784a9 ei3ci1h2">2</div>
-                                                          <div
-                                                              class="css-tahavf-StyledOttBadgeWrapper-createMediaQuery ei3ci1h1">
-                                                          </div>
-                                                      </div>
-                                                      <div class="css-1jkabhk-ContentInfo ei3ci1h7">
-                                                          <div
-                                                              class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
-                                                              퓨리오사: 매드맥스 사가</div>
-                                                          <div
-                                                              class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
-                                                              2024 ・ 호주</div>
-                                                          <div
-                                                              class="average css-11mdjl6-ContentRating-makeTypeFunction-createMediaQuery-StyledContentRating e1ta4wyd1">
-                                                              <span>평균</span><svg height="10" viewBox="0 0 12 10"
-                                                                  width="12" xmlns="http://www.w3.org/2000/svg"
-                                                                  fill="#555765"
-                                                                  class="css-x4tpy0-IcRatingStarSvg e1y2ujgu0">
-                                                                  <path clip-rule="evenodd"
-                                                                      d="M6 8.02L3.14233 9.91131C2.91094 10.0644 2.61352 9.84836 2.68767 9.58097L3.60334 6.27872L0.921531 4.14536C0.704379 3.97262 0.817982 3.62299 1.0952 3.61087L4.51878 3.46128L5.719 0.251483C5.81619 -0.00842059 6.18381 -0.00842094 6.281 0.251483L7.48122 3.46128L10.9048 3.61087C11.182 3.62299 11.2956 3.97262 11.0785 4.14536L8.39666 6.27872L9.31233 9.58097C9.38648 9.84836 9.08906 10.0644 8.85767 9.91131L6 8.02Z"
-                                                                      fill-rule="evenodd"></path>
-                                                              </svg><span>4.0</span></div>
-                                                          <div
-                                                              class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              예매율 13% ・ 누적 관객 105.1만명</div>
-                                                      </div>
-                                                  </a></li>
-                                              <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="극장판 하이큐!! 쓰레기장의 결전" href="/ko-KR/contents/m5agbKl">
-                                                      <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
-                                                          <div
-                                                              class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
-                                                              <img class="show css-1p5524l ezcopuc0"
-                                                                  src="https://an2-img.amz.wtchn.net/image/v2/xJYLE7Y_E78KyCqevJmhhQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpJNU16UTBOVEk0TURRek1UQTBOaUo5Ljh4bUlIOVE4em56aUhpQ1NNdzFzU1NNc2NtdTBMN3dOWFlBTy1nWGsxNjg">
-                                                          </div>
-                                                          <div class="css-18784a9 ei3ci1h2">3</div>
-                                                          <div
-                                                              class="css-tahavf-StyledOttBadgeWrapper-createMediaQuery ei3ci1h1">
-                                                          </div>
-                                                      </div>
-                                                      <div class="css-1jkabhk-ContentInfo ei3ci1h7">
-                                                          <div
-                                                              class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
-                                                              극장판 하이큐!! 쓰레기장의 결전</div>
-                                                          <div
-                                                              class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
-                                                              2023 ・ 일본</div>
-                                                          <div
-                                                              class="average css-11mdjl6-ContentRating-makeTypeFunction-createMediaQuery-StyledContentRating e1ta4wyd1">
-                                                              <span>평균</span><svg height="10" viewBox="0 0 12 10"
-                                                                  width="12" xmlns="http://www.w3.org/2000/svg"
-                                                                  fill="#555765"
-                                                                  class="css-x4tpy0-IcRatingStarSvg e1y2ujgu0">
-                                                                  <path clip-rule="evenodd"
-                                                                      d="M6 8.02L3.14233 9.91131C2.91094 10.0644 2.61352 9.84836 2.68767 9.58097L3.60334 6.27872L0.921531 4.14536C0.704379 3.97262 0.817982 3.62299 1.0952 3.61087L4.51878 3.46128L5.719 0.251483C5.81619 -0.00842059 6.18381 -0.00842094 6.281 0.251483L7.48122 3.46128L10.9048 3.61087C11.182 3.62299 11.2956 3.97262 11.0785 4.14536L8.39666 6.27872L9.31233 9.58097C9.38648 9.84836 9.08906 10.0644 8.85767 9.91131L6 8.02Z"
-                                                                      fill-rule="evenodd"></path>
-                                                              </svg><span>4.0</span></div>
-                                                          <div
-                                                              class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              예매율 10% ・ 누적 관객 56.7만명</div>
-                                                      </div>
-                                                  </a></li>
-                                              <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="설계자" href="/ko-KR/contents/mdEmNVV">
-                                                      <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
-                                                          <div
-                                                              class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
-                                                              <img class="show css-1p5524l ezcopuc0"
-                                                                  src="https://an2-img.amz.wtchn.net/image/v2/NNximvuLaHXasLPR62FEPA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpNM05qQTVNVGcxTVRNeU9UTTNOeUo5Ll93cWhzS250VVd0RU9McERRbDZuOG85cG5QWTFLWlNKaV9fRERPVEZsTGc">
-                                                          </div>
-                                                          <div class="css-18784a9 ei3ci1h2">4</div>
-                                                          <div
-                                                              class="css-tahavf-StyledOttBadgeWrapper-createMediaQuery ei3ci1h1">
-                                                          </div>
-                                                      </div>
-                                                      <div class="css-1jkabhk-ContentInfo ei3ci1h7">
-                                                          <div
-                                                              class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
-                                                              설계자</div>
-                                                          <div
-                                                              class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
-                                                              2022 ・ 한국</div>
-                                                          <div
-                                                              class="average css-11mdjl6-ContentRating-makeTypeFunction-createMediaQuery-StyledContentRating e1ta4wyd1">
-                                                              <span>평균</span><svg height="10" viewBox="0 0 12 10"
-                                                                  width="12" xmlns="http://www.w3.org/2000/svg"
-                                                                  fill="#555765"
-                                                                  class="css-x4tpy0-IcRatingStarSvg e1y2ujgu0">
-                                                                  <path clip-rule="evenodd"
-                                                                      d="M6 8.02L3.14233 9.91131C2.91094 10.0644 2.61352 9.84836 2.68767 9.58097L3.60334 6.27872L0.921531 4.14536C0.704379 3.97262 0.817982 3.62299 1.0952 3.61087L4.51878 3.46128L5.719 0.251483C5.81619 -0.00842059 6.18381 -0.00842094 6.281 0.251483L7.48122 3.46128L10.9048 3.61087C11.182 3.62299 11.2956 3.97262 11.0785 4.14536L8.39666 6.27872L9.31233 9.58097C9.38648 9.84836 9.08906 10.0644 8.85767 9.91131L6 8.02Z"
-                                                                      fill-rule="evenodd"></path>
-                                                              </svg><span>2.1</span></div>
-                                                          <div
-                                                              class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              예매율 7.7% ・ 누적 관객 37.2만명</div>
-                                                      </div>
-                                                  </a></li>
-                                              <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="나쁜 녀석들: 라이드 오어 다이" href="/ko-KR/contents/mWq1v7B">
-                                                      <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
-                                                          <div
-                                                              class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
-                                                              <img class="show css-1p5524l ezcopuc0"
-                                                                  src="https://an2-img.amz.wtchn.net/image/v2/X-kTxU8udv62C_4_xlhpQQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpNek1EUTNOVFEwTURNeE5USTBNekFpZlEuX1dWdmNqUGpab0lXWXhnMXUtYllIbU1qdFBMNWRfTENZOU9pS0JwU3Z0SQ">
-                                                          </div>
-                                                          <div class="css-18784a9 ei3ci1h2">5</div>
-                                                          <div
-                                                              class="css-tahavf-StyledOttBadgeWrapper-createMediaQuery ei3ci1h1">
-                                                          </div>
-                                                      </div>
-                                                      <div class="css-1jkabhk-ContentInfo ei3ci1h7">
-                                                          <div
-                                                              class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
-                                                              나쁜 녀석들: 라이드 오어 다이</div>
-                                                          <div
-                                                              class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
-                                                              2024 ・ 미국</div>
-                                                          <div
-                                                              class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              예매율 6.5% ・ 누적 관객 624명</div>
-                                                      </div>
-                                                  </a></li>
-                                              <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="명탐정 코난 VS 괴도 키드" href="/ko-KR/contents/mW9pqZ4">
-                                                      <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
-                                                          <div
-                                                              class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
-                                                              <img class=" css-g1bfv9-StyledImg ezcopuc0"
-                                                                  src="https://an2-img.amz.wtchn.net/image/v2/fI6LOj1RW1c4S8uxWYwwdA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpJM01UTTBPVEEwTnpnMU16azJOamNpZlEuSzhrWHhoMTZOQmplU3lXM2kzQUN2WU1iNXl3X2ZXaXVtOERxWndqbjlwOA">
-                                                          </div>
-                                                          <div
-                                                              class="css-1sctp79-RankBadge-makePediaTypeFunction-createMediaQuery-createMediaQuery-createMediaQuery ei3ci1h2">
-                                                              6</div>
-                                                          <div
-                                                              class="css-tahavf-StyledOttBadgeWrapper-createMediaQuery ei3ci1h1">
-                                                          </div>
-                                                      </div>
-                                                      <div class="css-1jkabhk-ContentInfo ei3ci1h7">
-                                                          <div
-                                                              class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
-                                                              명탐정 코난 VS 괴도 키드</div>
-                                                          <div
-                                                              class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
-                                                              2023 ・ 일본</div>
-                                                          <div
-                                                              class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              예매율 5.8% ・ 누적 관객 462명</div>
-                                                      </div>
-                                                  </a></li>
-                                              <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="존 오브 인터레스트" href="/ko-KR/contents/m5X2Q4g">
-                                                      <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
-                                                          <div
-                                                              class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
-                                                              <img class=" css-g1bfv9-StyledImg ezcopuc0"
-                                                                  src="https://an2-img.amz.wtchn.net/image/v2/oV-jS6xC-r6OH1fD7AcHYQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFM09ESTRNRFUwTnpRM01ESTRNekFpZlEub3BfNFBUb2UyelpDQS1FWXNQZDVxMkNWTExXdHdQMFN4SlRTOVhjX29SWQ">
-                                                          </div>
-                                                          <div
-                                                              class="css-1sctp79-RankBadge-makePediaTypeFunction-createMediaQuery-createMediaQuery-createMediaQuery ei3ci1h2">
-                                                              7</div>
-                                                          <div
-                                                              class="css-tahavf-StyledOttBadgeWrapper-createMediaQuery ei3ci1h1">
-                                                          </div>
-                                                      </div>
-                                                      <div class="css-1jkabhk-ContentInfo ei3ci1h7">
-                                                          <div
-                                                              class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
-                                                              존 오브 인터레스트</div>
-                                                          <div
-                                                              class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
-                                                              2023 ・ 미국</div>
-                                                          <div
-                                                              class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              예매율 4.1% ・ 누적 관객 3,756명</div>
-                                                      </div>
-                                                  </a></li>
-                                              <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="김준수 콘서트 무비 챕터 원: 레크리에이션" href="/ko-KR/contents/mdj2eAr">
-                                                      <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
-                                                          <div
-                                                              class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
-                                                              <img class=" css-g1bfv9-StyledImg ezcopuc0"
-                                                                  src="https://an2-img.amz.wtchn.net/image/v2/OT9oXRUdMNS1nu7Hq8i0uQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFd016YzVNRFkwTXpFeE56TXdNQ0o5LjdVRjRaRDVwbTN2TGhyQ25RLUJZX2VOb0FmbU9MMkRVdTJXaTdIX2pKTWc">
-                                                          </div>
-                                                          <div
-                                                              class="css-1sctp79-RankBadge-makePediaTypeFunction-createMediaQuery-createMediaQuery-createMediaQuery ei3ci1h2">
-                                                              8</div>
-                                                          <div
-                                                              class="css-tahavf-StyledOttBadgeWrapper-createMediaQuery ei3ci1h1">
-                                                          </div>
-                                                      </div>
-                                                      <div class="css-1jkabhk-ContentInfo ei3ci1h7">
-                                                          <div
-                                                              class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
-                                                              김준수 콘서트 무비 챕터 원: 레크리에이션</div>
-                                                          <div
-                                                              class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
-                                                              2024 ・ 한국</div>
-                                                          <div
-                                                              class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              예매율 3% ・ 누적 관객 320명</div>
-                                                      </div>
-                                                  </a></li>
-                                              <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="그녀가 죽었다" href="/ko-KR/contents/mObV777">
-                                                      <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
-                                                          <div
-                                                              class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
-                                                              <img class=" css-g1bfv9-StyledImg ezcopuc0"
-                                                                  src="https://an2-img.amz.wtchn.net/image/v2/-6cJH6S17ZyS6GEIw0K8iQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpRMU16WTVNRFU1TXpreE16QTJOU0o5LnR6SmNXMW0wQVJYQWlTbFpWRGVHVWRKMm40M0pxcVZLR2tQVkt4YWh5UmM">
-                                                          </div>
-                                                          <div
-                                                              class="css-1sctp79-RankBadge-makePediaTypeFunction-createMediaQuery-createMediaQuery-createMediaQuery ei3ci1h2">
-                                                              9</div>
-                                                          <div
-                                                              class="css-tahavf-StyledOttBadgeWrapper-createMediaQuery ei3ci1h1">
-                                                          </div>
-                                                      </div>
-                                                      <div class="css-1jkabhk-ContentInfo ei3ci1h7">
-                                                          <div
-                                                              class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
-                                                              그녀가 죽었다</div>
-                                                          <div
-                                                              class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
-                                                              2024 ・ 한국</div>
-                                                          <div
-                                                              class="average css-11mdjl6-ContentRating-makeTypeFunction-createMediaQuery-StyledContentRating e1ta4wyd1">
-                                                              <span>평균</span><svg height="10" viewBox="0 0 12 10"
-                                                                  width="12" xmlns="http://www.w3.org/2000/svg"
-                                                                  fill="#555765"
-                                                                  class="css-x4tpy0-IcRatingStarSvg e1y2ujgu0">
-                                                                  <path clip-rule="evenodd"
-                                                                      d="M6 8.02L3.14233 9.91131C2.91094 10.0644 2.61352 9.84836 2.68767 9.58097L3.60334 6.27872L0.921531 4.14536C0.704379 3.97262 0.817982 3.62299 1.0952 3.61087L4.51878 3.46128L5.719 0.251483C5.81619 -0.00842059 6.18381 -0.00842094 6.281 0.251483L7.48122 3.46128L10.9048 3.61087C11.182 3.62299 11.2956 3.97262 11.0785 4.14536L8.39666 6.27872L9.31233 9.58097C9.38648 9.84836 9.08906 10.0644 8.85767 9.91131L6 8.02Z"
-                                                                      fill-rule="evenodd"></path>
-                                                              </svg><span>3.0</span></div>
-                                                          <div
-                                                              class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              예매율 2.8% ・ 누적 관객 95.3만명</div>
-                                                      </div>
-                                                  </a></li>
+                                          </c:forEach>
                                               <li class="css-1ofozqs ei3ci1h10"><a title="범죄도시4"
                                                       href="/ko-KR/contents/mWyawb6">
                                                       <div class="css-1wwivh7 ei3ci1h8">
@@ -2257,6 +2010,7 @@ button:focus-visible {
                                                       </div>
                                                   </a></li>
                                               <li class="css-1ofozqs ei3ci1h10"><a title="코코"
+                                              
                                                       href="/ko-KR/contents/mWvkXvZ">
                                                       <div class="css-1wwivh7 ei3ci1h8">
                                                           <div class=" e1dnb43p0 css-wj0asr ezcopuc1"><img

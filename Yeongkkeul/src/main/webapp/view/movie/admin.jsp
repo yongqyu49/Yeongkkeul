@@ -472,8 +472,7 @@
                                                 
                                                 
                                                		<c:forEach var="ld" items= "${ld}">
-                                                    <li class="css-1ofozqs ei3ci1h10"><a title="${ld.movie_name}"
-                                                            href="/ko-KR/contents/m5x1G2q">
+                                                    <li class="css-1ofozqs ei3ci1h10"><a title="${ld.movie_name}" href="${pageContext.request.contextPath}/view/movie/movie.do?movie_code=${ld.movie_code}">
                                                             <div class="css-1wwivh7 ei3ci1h8">
                                                                 <div class=" e1dnb43p0 css-wj0asr ezcopuc1"><img
                                                                         class="show css-1p5524l ezcopuc0"
