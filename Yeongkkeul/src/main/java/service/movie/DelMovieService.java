@@ -1,29 +1,25 @@
 package service.movie;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import control.CommandProcess;
-import dao.CrewDAO;
-import dto.Crew;
+import dao.MovieDAO;
 
-public class ManageMemberService implements CommandProcess{
+public class DelMovieService implements CommandProcess {
 
 	@Override
 	public String requestProc(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Crew cd = new Crew();
+		MovieDAO dao = MovieDAO.getInstance();
+		int movie_code = Integer.parseInt(request.getParameter("movie_code"));
+		int old = dao.delmovie(movie_code);
+		String returnPage = "/view/index.jsp";
 		
-		
-		List<Crew> crewList = cd.getCrew();
-		System.out.println("Service");
-		request.setAttribute("crewList", crewList);
-		
-		return "/view/movie/manageMember.jsp";
+		return returnPage;
 	}
 
 }

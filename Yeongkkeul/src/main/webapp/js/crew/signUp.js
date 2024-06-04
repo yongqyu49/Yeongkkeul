@@ -48,6 +48,7 @@ $(function() {
                 from_name: "Yeongkkeul",
                 message: "Copy the Code",
                 token: result.token,
+                give_email: email,
             });
             console.log("SUCCESS. status=%d, text=%s", emailResponse.status, emailResponse.text);
 

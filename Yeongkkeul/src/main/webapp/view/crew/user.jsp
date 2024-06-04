@@ -230,13 +230,13 @@
 								</li>
 								<li>
 									<div class="modal_list">
-										<div class="modal_content">로그아웃</div>
+										<div class="modal_content" id="logout">로그아웃</div>
 										<div></div>
 									</div>
 								</li>
 								<li>
 									<div class="modal_list">
-										<div class="modal_content" id="secession">탈퇴하기</div>
+										<div class="modal_content">탈퇴하기</div>
 										<div></div>
 									</div>
 								</li>
@@ -272,7 +272,9 @@
 							<div class="confirm_logout">로그아웃 하쉴?</div>
 							<div size="2" class="" style="display: flex;">
 								<button type="button" class="logout_cancel">취소</button>
-								<button type="button" class="logout_confirm">확인</button>
+								<button type="button" class="logout_confirm">
+									<a href="/view/crew/logout.do">확인</a>
+								</button>
 							</div>
 						</div>
 					</div>
