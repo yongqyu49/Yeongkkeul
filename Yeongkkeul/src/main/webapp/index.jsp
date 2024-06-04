@@ -1525,8 +1525,7 @@ button:focus-visible {
                                   <section class="e18z2wyi2 css-h5jh9m ehgi1703">
                                       <div class="css-bsgg5l ehgi1702">
                                           <ul class="items-ul css-yjfynz ehgi1701">
-                                              <li class="comment"><a
-                                                      href="/ko-KR/feed/comments?filter=most_liked_comments&amp;domain=movie&amp;comment=BglQaxLgBvMX0">
+                                              <li class="comment"><a href="${pageContext.request.contextPath}/view/comment/likeComments.jsp">
                                                       <article class="css-njo048 ectkrh99">
                                                           <div class="css-1066lcq ectkrh98">
                                                               <div class="css-1xesed8 e1q9qvad3"><img
@@ -1831,19 +1830,16 @@ button:focus-visible {
                                   data-rowindex="2">
                                   <div
                                       class="css-rbndzf-StyledHomeListTitleRow-createMediaQuery-createMediaQuery-createMediaQuery-createMediaQuery-StyledHomeListTitleRow ec19s3e6">
-                                      <p
-                                          class="css-s5k9o0-StyledHomeListTitle-makePediaTypeFunction-StyledHomeListTitle ec19s3e0">
+                                      <p class="css-s5k9o0-StyledHomeListTitle-makePediaTypeFunction-StyledHomeListTitle ec19s3e0">
                                           박스오피스 순위</p>
                                   </div>
                                   <section class="e18z2wyi2 css-1uyzw27-StyledContainer-StyledListSection ehgi1703">
                                       <div class="css-xpgryv-StyledUlParent ehgi1702">
-                                          <ul
-                                              class="items-ul css-19gc9b-StyledUl-gapFromBreakPoints-breakPointsToCss ehgi1701">
+                                          <ul class="items-ul css-19gc9b-StyledUl-gapFromBreakPoints-breakPointsToCss ehgi1701">
                                               <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
-                                                      title="원더랜드" href="/ko-KR/contents/mW42aEX">
+                                                      title="원더랜드" href="${pageContext.request.contextPath}/view/movie/movie.jsp">
                                                       <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
-                                                          <div
-                                                              class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
+                                                          <div class=" e1dnb43p0 css-12gkm8z-StyledLazyLoadingImage-contentPosterStyle-LazyLoadingImg ezcopuc1">
                                                               <img class="show css-1p5524l ezcopuc0"
                                                                   src="https://an2-img.amz.wtchn.net/image/v2/FdBNu2eOuavaFcePcqD-Ug.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpnek9Ea3lNREU0TmpjME9ESTRNaUo5LjgzM19SUjlxeEpKM3NZQTdSNTZTNnlvcVdoNGNJRTlMZlU2dXRNYktsWHc">
                                                           </div>
