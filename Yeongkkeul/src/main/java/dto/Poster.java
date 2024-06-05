@@ -5,11 +5,24 @@ import java.sql.Date;
 public class Poster {
 	private String fileCode;
 	private String fileName;
+	private String fileSort;
 	private String filePath;
 	private String fileExtension;
 	private Date filePostdate;
 	private String movie_code;
 	
+	@Override
+	public String toString() {
+		return "Poster [fileCode=" + fileCode + ", fileName=" + fileName + ", fileSort=" + fileSort + ", filePath="
+				+ filePath + ", fileExtension=" + fileExtension + ", filePostdate=" + filePostdate + ", movie_code="
+				+ movie_code + "]";
+	}
+	public String getFileSort() {
+		return fileSort;
+	}
+	public void setFileSort(String fileSort) {
+		this.fileSort = fileSort;
+	}
 	public String getFileCode() {
 		return fileCode;
 	}
