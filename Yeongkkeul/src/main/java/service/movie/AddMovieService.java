@@ -15,50 +15,71 @@ import dao.MovieDAO;
 
 public class AddMovieService implements CommandProcess {
 
-	@Override
-	public String requestProc(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		System.out.println("addMovie");
-		MovieDAO md = MovieDAO.getInstance();
-		
-		String path = request.getServletContext().getRealPath("/img/"); // 사진을 저장할 경로
-		int maxSize = 10 * 1024 * 1024;
-		MultipartRequest multipart = new MultipartRequest(request, path, maxSize, "utf-8", new DefaultFileRenamePolicy());
-		
-		String movie_name = multipart.getParameter("movie_name");
-		String release_date = multipart.getParameter("release_date");
-		String content = multipart.getParameter("content");
-		
-		int result = md.addMovie(movie_name, release_date, content);
-		String movie_code = md.selectLatestMovie();
-		System.out.println("addMovie Result: " + result);
-		System.out.println("sel MovieCode: " + movie_code);
-		
-		// 파일 업로드
-		String fname = multipart.getOriginalFileName("poster");
-		int i = fname.indexOf(".");
-		String extension = fname.substring(i);
-		String fileName = fname.substring(0, i);
-		int fileResult = md.addPoster(fileName, path, extension, movie_code);
-		System.out.println("File DB 저장: " + fileResult);
-		File f = multipart.getFile("poster");
-		
-		String ffname = f.getName();
-		System.out.println("ffname: " + ffname);
-		
-		File dir = new File(path);
-		
-		String flist[] = dir.list();
-		
-		request.setAttribute("flist", flist);
-		
-		String returnPage ="/view/index.jsp";
-		if(result == 1) {
-			returnPage = "/view/movie.jsp";
-		} else if(result == 0) {
-			returnPage = "/view/movie/administrator.jsp";
-		}
-		return returnPage;
-	}
+    @Override
+    public String requestProc(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        System.out.println("addMovie");
+        MovieDAO md = MovieDAO.getInstance();
+        
+        // 포스터와 배경 이미지의 절대 경로 설정
+        String posterPath = "C:\\Users\\YongQ\\OneDrive\\바탕 화면\\Yeongkkeul\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Yeongkkeul\\img\\poster\\";
+        String backgroundPath = "C:\\Users\\YongQ\\OneDrive\\바탕 화면\\Yeongkkeul\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Yeongkkeul\\img\\background\\";
+        
+        int maxSize = 10 * 1024 * 1024; // 10 MB
+        MultipartRequest multipart = new MultipartRequest(request, "C:\\temp", maxSize, "utf-8", new DefaultFileRenamePolicy());
+        
+        try {
+            String movie_name = multipart.getParameter("movie_name");
+            String release_date = multipart.getParameter("release_date");
+            String content = multipart.getParameter("content");
+            String release_country = multipart.getParameter("release_country");
+            String genre = multipart.getParameter("genre");
+            
+            int result = md.addMovie(movie_name, release_date, content, release_country, genre);
+            String movie_code = md.selectLatestMovie();
+            System.out.println("addMovie Result: " + result);
+            System.out.println("sel MovieCode: " + movie_code);
+            
+            // 포스터 파일 처리
+            File posterFile = multipart.getFile("poster");
+            if (posterFile != null) {
+                String posterName = posterFile.getName();
+                String posterExtension = posterName.substring(posterName.lastIndexOf('.'));
+                String posterBaseName = posterName.substring(0, posterName.lastIndexOf('.'));
+                
+                File newPosterFile = new File(posterPath + posterName);
+                posterFile.renameTo(newPosterFile); // 포스터 파일 이동
+                md.addPoster(posterBaseName, posterPath, posterExtension, movie_code);
+            }
 
+            // 배경 이미지 파일 처리
+            File backgroundFile = multipart.getFile("movie_background");
+            if (backgroundFile != null) {
+                String backgroundName = backgroundFile.getName();
+                String backgroundExtension = backgroundName.substring(backgroundName.lastIndexOf('.'));
+                String backgroundBaseName = backgroundName.substring(0, backgroundName.lastIndexOf('.'));
+                
+                File newBackgroundFile = new File(backgroundPath + backgroundName);
+                backgroundFile.renameTo(newBackgroundFile); // 배경 이미지 파일 이동
+                md.addBackground(backgroundBaseName, backgroundPath, backgroundExtension, movie_code);
+            }
+
+            // 디렉토리 내 파일 목록 가져오기
+            File dir = new File(posterPath);
+            String[] flist = dir.list();
+            request.setAttribute("flist", flist);
+            
+            String returnPage = "/view/index.jsp";
+            if (result == 1) {
+                returnPage = "/view/movie.jsp";
+            } else if (result == 0) {
+                returnPage = "/view/movie/administrator.jsp";
+            }
+            return returnPage;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ServletException("파일 업로드 처리 중 오류 발생", e);
+        }
+    }
 }

@@ -49,17 +49,18 @@ public class MovieDAO {
 	
 	
 	//addmovie posterupload
-	public int addMovie(String movie_name,String release_date,String content) {
+	public int addMovie(String movie_name,String release_date,String content, String release_country, String genre) {
 		int result = 0;
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
     	try {
-    		String sql ="INSERT INTO movie(movie_code, movie_name, movie_content, release_date) \r\n"
-    				+ "VALUES(MOVIE_CODE_SEQUENCE.nextval, ?, ?, ?)";
+    		String sql ="insert into movie values(MOVIE_CODE_SEQUENCE.nextval, ?, ?, ?, ?, ?)";
     		pstmt = conn.prepareStatement(sql);
     		pstmt.setString(1, movie_name);
     		pstmt.setString(2,content);
     		pstmt.setDate(3, java.sql.Date.valueOf(release_date));
+    		pstmt.setString(4, release_country);
+    		pstmt.setString(5, genre);
     		result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -179,13 +180,33 @@ public class MovieDAO {
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
     	try {
-    		String sql ="insert into poster values(file_CODE_SEQUENCE.nextval, ?, ?, ?, sysdate, ?)";
+    		String sql ="insert into poster values(file_CODE_SEQUENCE.nextval, ?, 'poster', ?, ?, sysdate, ?)";
     		pstmt = conn.prepareStatement(sql);
     		pstmt.setString(1, fileName);
     		pstmt.setString(2, path);
     		pstmt.setString(3, extension);
     		pstmt.setString(4, movie_code);
     		result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt);
+		}
+		return result;
+	}
+	
+	public int addBackground(String fileName, String path, String extension, String movie_code) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		try {
+			String sql ="insert into poster values(file_CODE_SEQUENCE.nextval, ?, 'background', ?, ?, sysdate, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, fileName);
+			pstmt.setString(2, path);
+			pstmt.setString(3, extension);
+			pstmt.setString(4, movie_code);
+			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
