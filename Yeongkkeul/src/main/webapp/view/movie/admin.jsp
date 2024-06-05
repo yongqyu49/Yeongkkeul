@@ -487,7 +487,8 @@
                                                             <div class="css-1g7cek2 ei3ci1h7">
                                                                 <div class="css-9ii2a2 e3nnt384">${ld.movie_name}
                                                                 </div>
-                                                                <div class="css-k49xxh e3nnt383">${ld.release_date}</div>
+                                                                <div class="css-k49xxh e3nnt383">  ${ld.release_date} ・ ${ld.release_country}</div>
+                                                                 <div class="css-a1topa e3nnt382">${ld.genre}</div>
                                                             </div>
                                                         </a></li>
                                                  	</c:forEach>

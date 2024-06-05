@@ -6,7 +6,8 @@ public class Comment {
     public String email;			// 이메일
     public String regi_Date;		// 등록날짜
     public String content;			// 댓글 내용
-
+    private String commet_num;
+    
     public String getMovie_code() {
         return movie_code;
     }
@@ -38,4 +39,12 @@ public class Comment {
     public void setContent(String content) {
         this.content = content;
     }
+
+	public String getCommet_num() {
+		return commet_num;
+	}
+
+	public void setCommet_num(String commet_num) {
+		this.commet_num = commet_num;
+	}
 }

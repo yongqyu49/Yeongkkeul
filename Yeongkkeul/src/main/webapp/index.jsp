@@ -1,4 +1,4 @@
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -1856,9 +1856,9 @@ button:focus-visible {
                                                           <div class="css-1ltp88z-ContentTitle-makeTypeFunction-renderRankingContent ei3ci1h6">
                                                               ${ld.movie_name}</div>
                                                           <div class="css-zb5qbk-StyledContentYearAndNation-createMediaQuery-makePediaTypeFunction e1ta4wyd2">
-                                                              2022 ・ 한국</div>
+                                                              ${ld.release_date} ・ ${ld.release_country}</div>
                                                           <div class="css-tbyq8r-StyledContentBoxOfficeStats-createMediaQuery-makePediaTypeFunction e1ta4wyd0">
-                                                              ${ld.release_date}</div>
+                                                              ${ld.genre}</div>
                                                       </div>
                                                   </a></li>
                                                   
