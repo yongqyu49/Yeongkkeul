@@ -2,12 +2,21 @@ package dto;
 
 public class Comment {
 
-    public String movie_code;      // 영화 번호
-    public String email;			// 이메일
-    public String regi_Date;		// 등록날짜
-    public String content;			// 댓글 내용
+	private String movie_code;      // 영화 번호
+    private String email;			// 이메일
+    private String regi_Date;		// 등록날짜
+    private String content;			// 댓글 내용
+    private String comment_num;
 
-    public String getMovie_code() {
+    public String getComment_num() {
+		return comment_num;
+	}
+
+    public void setComment_num(String comment_num) {
+		this.comment_num = comment_num;
+	}
+
+	public String getMovie_code() {
         return movie_code;
     }
 
