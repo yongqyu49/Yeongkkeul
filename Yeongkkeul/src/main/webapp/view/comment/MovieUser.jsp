@@ -67,7 +67,7 @@
 				    flex-direction: column;
 				    justify-content: space-between;
 				}
-				.css-16sgdn2,
+				.css-16sgdn2,0
 				.css-mb4qpf-StyledSubtitle {
 				    margin-bottom: 20px; /* 각 요소 사이의 간격 조정 */
 				}
@@ -131,7 +131,7 @@
 																        </div>
 																    </div>
 																    <div>
-																        <button class="css-1echrkx eysnieg1 follow-button">팔로우</button>
+																        <button class="css-1echrkx eysnieg1 follow-button">삭제</button>
 																    </div>
 																</div>
                                 
