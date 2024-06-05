@@ -10,6 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import dto.Crew;
 import dto.MovieComment;
 
 public class CommentDAO {
@@ -35,12 +36,16 @@ public class CommentDAO {
         return conn;
     }
 
-    // 댓글 작성
-    public boolean insertComment(MovieComment comment) {
-        Connection conn = getConnection();
-        PreparedStatement pstmt = null;
-        boolean result = false;
+    // 자원해제
+ 	private void close(AutoCloseable... ac) {
+ 		try {
+ 			for(AutoCloseable a : ac) if(a != null) a.close();
+ 		} catch (Exception e) {
+ 			e.printStackTrace();
+ 		}
+ 	}
 
+<<<<<<< HEAD
         try {
             conn = getConnection();
             String sql = "INSERT INTO comments (movie_code, email, regi_date, content) VALUES (?, ?, ?, ?)";
@@ -149,4 +154,27 @@ public class CommentDAO {
 
         return commentList;
     }
+=======
+	public List<MovieComment> getCommentList(String comment_num) {
+		List<MovieComment> commentList = new ArrayList<MovieComment>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from movie_comment where comment_num = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, comment_num);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return commentList;
+	}
+    
+>>>>>>> branch 'main' of https://github.com/YesI4m/Yeongkkeul.git
 }

@@ -5,11 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>영끌</title>
-<link
-	href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
-	rel="stylesheet">
-<link type="text/css" rel="stylesheet"
-	href="../../css/bootstrap.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css" />
 <link type="text/css" rel="stylesheet" href="../../css/slick.css" />
 <link type="text/css" rel="stylesheet" href="../../css/slick-theme.css" />
 <link type="text/css" rel="stylesheet" href="../../css/nouislider.min.css" />
