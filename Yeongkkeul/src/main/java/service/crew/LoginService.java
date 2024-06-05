@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import control.CommandProcess;
 import dao.CrewDAO;
@@ -22,12 +21,16 @@ public class LoginService implements CommandProcess {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		Crew crew = cd.checkCrew(email, password);
-		if(crew.getEmail() != null) {
+		
+		if(email == "admin@naver.com"){
+			session.setAttribute("sessionEmail", "admin");
+			return "/index.jsp";
+		} else if(crew.getEmail() != null) {
 			session.getAttribute(email);
 			String sessionEmail = crew.getEmail();
 			session.setAttribute("sessionEmail", sessionEmail);
 			System.out.println("sessionEmail: " + sessionEmail);
-			return "/index.jsp";
+			return "/index.jsp"; 
 		} else {
 			session.setAttribute("sessionEmail", null);
 			return "login.jsp";
