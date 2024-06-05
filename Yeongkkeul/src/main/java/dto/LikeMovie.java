@@ -17,12 +17,16 @@ public class LikeMovie {
 	private String fileExtension;
 	private Date filePostdate;
 	
+	private String genre;
+	private String release_country;
+	
+	
 	@Override
 	public String toString() {
 		return "LikeMovie [email=" + email + ", movie_code=" + movie_code + ", likeDate=" + likeDate + ", movie_name="
 				+ movie_name + ", movie_poster=" + movie_poster + ", movie_content=" + movie_content + ", release_date="
 				+ release_date + ", fileCode=" + fileCode + ", fileName=" + fileName + ", filePath=" + filePath
-				+ ", fileExtension=" + fileExtension + ", filePostdate=" + filePostdate + "]";
+				+ ", fileExtension=" + fileExtension + ", filePostdate=" + filePostdate + ",genre="+ genre +",release_country="+ release_country +"";
 	}
 	
 	public String getEmail() {
@@ -96,6 +100,22 @@ public class LikeMovie {
 	}
 	public void setFilePostdate(Date filePostdate) {
 		this.filePostdate = filePostdate;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	public String getRelease_country() {
+		return release_country;
+	}
+
+	public void setRelease_country(String release_country) {
+		this.release_country = release_country;
 	}
 	
 	

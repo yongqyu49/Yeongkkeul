@@ -19,7 +19,9 @@ public class MovieComment {
 	private String filePath;
 	private String fileExtension;
 	private Date filePostdate;
-	private String name;								
+	private String name;	
+	
+	private String commet_num;
 	
 	@Override
 	public String toString() {
@@ -148,6 +150,14 @@ public class MovieComment {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getCommet_num() {
+		return commet_num;
+	}
+
+	public void setCommet_num(String commet_num) {
+		this.commet_num = commet_num;
 	}
     
     

@@ -2,6 +2,15 @@ package dto;
 
 public class Comment {
 
+<<<<<<< HEAD
+    public String movie_code;      // 영화 번호
+    public String email;			// 이메일
+    public String regi_Date;		// 등록날짜
+    public String content;			// 댓글 내용
+    private String commet_num;
+    
+    public String getMovie_code() {
+=======
 	private String movie_code;      // 영화 번호
     private String email;			// 이메일
     private String regi_Date;		// 등록날짜
@@ -17,6 +26,7 @@ public class Comment {
 	}
 
 	public String getMovie_code() {
+>>>>>>> branch 'main' of https://github.com/YesI4m/Yeongkkeul.git
         return movie_code;
     }
 
@@ -47,4 +57,12 @@ public class Comment {
     public void setContent(String content) {
         this.content = content;
     }
+
+	public String getCommet_num() {
+		return commet_num;
+	}
+
+	public void setCommet_num(String commet_num) {
+		this.commet_num = commet_num;
+	}
 }

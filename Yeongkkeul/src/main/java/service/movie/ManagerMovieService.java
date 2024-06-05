@@ -16,7 +16,6 @@ public class ManagerMovieService implements CommandProcess{
 	@Override
 	public String requestProc(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {System.out.println("addMovie");
-			System.out.println("selmove");
 			MovieDAO md = MovieDAO.getInstance();
 			List<LikeMovie> ld = md.selectMovie();
 			System.out.println(ld);
