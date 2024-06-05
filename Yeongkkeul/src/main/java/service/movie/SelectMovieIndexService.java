@@ -16,13 +16,12 @@ public class SelectMovieIndexService implements CommandProcess {
 	@Override
 	public String requestProc(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("selmove");
 		MovieDAO md = MovieDAO.getInstance();
 		List<LikeMovie> ld = md.selectMovie();
 		System.out.println(ld);
 		request.setAttribute("ld", ld);
 
-		return "/view/movie/index.jsp";
+		return "/index.jsp";
 	}
 
 }

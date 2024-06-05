@@ -221,7 +221,7 @@ public class MovieDAO {
 		PreparedStatement pstmt = null;
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		ResultSet rs = null;
-		String sql = "select m.movie_code,m.movie_name,m.release_date, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code = p.movie_code";
+		String sql = "select m.movie_code, m.movie_name, m.release_date, m.release_country, m.genre, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code = p.movie_code";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -230,9 +230,11 @@ public class MovieDAO {
 				movie.setMovie_code(rs.getString(1));
 				movie.setMovie_name(rs.getString(2));
 				movie.setRelease_date(rs.getDate(3));
-				movie.setFilePath(rs.getString(4));
-				movie.setFileName(rs.getString(5));
-				movie.setFileExtension(rs.getString(6));
+				movie.setRelease_country(rs.getString(4));
+				movie.setGenre(rs.getString(5));
+				movie.setFilePath(rs.getString(6));
+				movie.setFileName(rs.getString(7));
+				movie.setFileExtension(rs.getString(8));
 				movielist.add(movie);
 			}
 		} catch (Exception e) {
@@ -249,7 +251,7 @@ public class MovieDAO {
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select m.movie_code,m.movie_name,m.content ,m.release_date, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code = ?";
+		String sql = "select m.*, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code =?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,movie_code);
@@ -259,9 +261,11 @@ public class MovieDAO {
 				movie.setMovie_name(rs.getString(2));
 				movie.setMovie_content(rs.getString(3));
 				movie.setRelease_date(rs.getDate(4));
-				movie.setFilePath(rs.getString(5));
-				movie.setFileName(rs.getString(6));
-				movie.setFileExtension(rs.getString(7));
+				movie.setRelease_country(rs.getString(5));
+				movie.setGenre(rs.getString(6));
+				movie.setFilePath(rs.getString(7));
+				movie.setFileName(rs.getString(8));
+				movie.setFileExtension(rs.getString(9));
 				System.out.println("detail : "+movie);
 			}
 			} catch (Exception e) {
