@@ -132,16 +132,6 @@
     float: left; /* 이미지를 왼쪽으로 배치 */
     margin-right: 20px; /* 텍스트와 이미지 사이의 간격 조절 */
 }
-.css-wgm2hr {
-    font-weight: 400;
-    letter-spacing: -0.3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: rgb(116, 116, 123);
-    font-size: 13px;
-    line-height: 17px;
-}
 ul.css-1jr50mw {
   display: flex;
   justify-content: center;

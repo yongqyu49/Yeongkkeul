@@ -49,6 +49,16 @@
         .css-1pkjqps {
             text-align: left;
         }
+        .css-name-comment{
+				    font-weight: 400;
+				    letter-spacing: -0.3px;
+				    white-space: nowrap;
+				    overflow: hidden;
+				    text-overflow: ellipsis;
+				    color: rgb(116, 116, 123);
+				    font-size: 13px;
+				    line-height: 50px;
+				}
         button.css-1echrkx {
             margin-right: auto;
         }
@@ -127,7 +137,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -144,7 +154,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -161,7 +171,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -178,7 +188,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -195,7 +205,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -212,7 +222,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -229,7 +239,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -246,7 +256,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -263,7 +273,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -282,7 +292,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -299,7 +309,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -316,7 +326,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -333,7 +343,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -350,7 +360,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -367,7 +377,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -384,7 +394,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -401,7 +411,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
@@ -418,7 +428,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-wgm2hr etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>
