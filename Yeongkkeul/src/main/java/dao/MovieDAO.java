@@ -228,7 +228,7 @@ public class MovieDAO {
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select m.movie_code,m.movie_name,m.content ,m.release_date, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code = ?";
+		String sql = "select m.movie_code,m.movie_name, m.movie_content ,m.release_date, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code =?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,movie_code);

@@ -13,9 +13,7 @@ import dto.LikeMovie;
 public class MovieDetailService implements CommandProcess{
 
 	@Override
-	public String requestProc(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {System.out.println("addMovie");
-			System.out.println("selmove");
+	public String requestProc(HttpServletRequest request, HttpServletResponse response) {
 			MovieDAO md = MovieDAO.getInstance();
 			String movie_code = request.getParameter("movie_code");
 			LikeMovie ld = md.detailMovie(movie_code);

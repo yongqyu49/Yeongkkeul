@@ -1,4 +1,4 @@
-
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -1837,7 +1837,9 @@ button:focus-visible {
                                   <section class="e18z2wyi2 css-1uyzw27-StyledContainer-StyledListSection ehgi1703">
                                       <div class="css-xpgryv-StyledUlParent ehgi1702">
                                           <ul class="items-ul css-19gc9b-StyledUl-gapFromBreakPoints-breakPointsToCss ehgi1701">
-                                          <c:forEach var="ld" items="${ld}">
+                                         
+                                          <c:forEach var="ld" items= "${ld}">
+                                          
                                               <li class="css-d23ucn-StyledContentListItemWithPoster ei3ci1h10"><a
                                                       title="${ld.movie_name}" href="${pageContext.request.contextPath}/view/movie/movie.do?movie_code=${ld.movie_code}">
                                                       <div class="css-wg9zzb-ContentPosterBlock ei3ci1h8">
@@ -1859,6 +1861,7 @@ button:focus-visible {
                                                               ${ld.release_date}</div>
                                                       </div>
                                                   </a></li>
+                                                  
                                           </c:forEach>
                                               <li class="css-1ofozqs ei3ci1h10"><a title="범죄도시4"
                                                       href="/ko-KR/contents/mWyawb6">

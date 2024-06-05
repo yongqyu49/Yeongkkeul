@@ -71,15 +71,12 @@
                                                         <div
                                                             class=" e1dnb43p0 css-1hh6j5c-StyledLazyLoadingImage-posterStyle-LazyLoadingImg ezcopuc1">
                                                             <img class="show css-1p5524l ezcopuc0"
-                                                                src="https://an2-img.amz.wtchn.net/image/v2/xJYLE7Y_E78KyCqevJmhhQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpJNU16UTBOVEk0TURRek1UQTBOaUo5Ljh4bUlIOVE4em56aUhpQ1NNdzFzU1NNc2NtdTBMN3dOWFlBTy1nWGsxNjg">
+                                                                src="${pageContext.request.contextPath}/img/${ld.fileName}${ld.fileExtension}">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="css-at7v9j-StyledRightColumn e1yew2866">
-                                                    <section class="css-4fn1yr-StyledContentSummarySection e1yew2865">봄철
-                                                        고교 배구대회 1회전과 2회전에서 우승 후보를 차례로 꺾은 카라스노 고등학교는 마침내 3회전에서 인연의 라이벌
-                                                        네코마 고등학교와 맞붙게 된다. 공식 경기에서 처음으로 대결하는 두 고등학교, 통칭 까마귀 VS 고양이 ‘쓰레기장의
-                                                        결전’. 약속의 땅에서 ‘한 번 더’가 없는 싸움이 드디어 시작된다!</section>
+                                                    <section class="css-4fn1yr-StyledContentSummarySection e1yew2865">${ld.movie_content}</section>
                                                 </div>
                                             </section>
                                         </div>
