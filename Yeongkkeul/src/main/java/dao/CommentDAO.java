@@ -10,7 +10,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import dto.Crew;
 import dto.MovieComment;
 
 public class CommentDAO {
@@ -45,27 +44,6 @@ public class CommentDAO {
  		}
  	}
 
-<<<<<<< HEAD
-        try {
-            conn = getConnection();
-            String sql = "INSERT INTO comments (movie_code, email, regi_date, content) VALUES (?, ?, ?, ?)";
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, comment.getMovie_code());
-            pstmt.setString(2, comment.getEmail());
-            pstmt.setTimestamp(3, comment.getRegi_Date());
-            pstmt.setString(4, comment.getContent());
-
-            result = pstmt.executeUpdate() > 0;
-        } catch (Exception e) {
-        	e.getMessage();
-        } finally {
-            try { if (pstmt != null) pstmt.close(); } catch (Exception e) {}
-            try { if (conn != null) conn.close(); } catch (Exception e) {}
-        }
-
-        return result;
-    }
-
     // 특정 영화의 댓글 목록 조회
     public List<MovieComment> getCommentsByMovie(String movie_code) {
         Connection conn = getConnection();
@@ -93,68 +71,12 @@ public class CommentDAO {
         } catch (Exception e) {
         	e.getMessage();
         } finally {
-            try {
-            	if (rs != null) rs.close(); 
-            } catch (Exception e) {
-            	e.getMessage();
-            }
-            
-            try { 
-            	if (pstmt != null) pstmt.close(); 
-            } catch (Exception e) {
-            	e.getMessage();
-            }
-            
-            try { 
-            	if (conn != null) conn.close(); 
-            } catch (Exception e) {
-            	e.getMessage();
-            }
+            close(rs, pstmt, conn);
         }
 
         return commentList;
     }
 
-    // 특정 사용자의 댓글 목록 조회
-    public List<MovieComment> getCommentsByUser(String email) {
-        Connection conn = getConnection();
-        ResultSet rs = null;
-
-        PreparedStatement pstmt = null;
-
-        List<MovieComment> commentList = new ArrayList<>();
-
-
-        try {
-            conn = getConnection();
-            String sql = "SELECT * FROM comments WHERE email = ? ORDER BY regi_date DESC";
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, email);
-            rs = pstmt.executeQuery();
-
-            while (rs.next()) {
-
-            	MovieComment comment = new MovieComment();
-                comment.setMovie_code(rs.getString("movie_code"));
-
-
-                comment.setEmail(rs.getString("email"));
-                comment.setRegi_Date(rs.getTimestamp("regi_date"));
-                comment.setContent(rs.getString("content"));
-
-                commentList.add(comment);
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        } finally {
-            try { if (rs != null) rs.close(); } catch (Exception e) {}
-            try { if (pstmt != null) pstmt.close(); } catch (Exception e) {}
-            try { if (conn != null) conn.close(); } catch (Exception e) {}
-        }
-
-        return commentList;
-    }
-=======
 	public List<MovieComment> getCommentList(String comment_num) {
 		List<MovieComment> commentList = new ArrayList<MovieComment>();
 		Connection conn = getConnection();
@@ -176,5 +98,4 @@ public class CommentDAO {
 		return commentList;
 	}
     
->>>>>>> branch 'main' of https://github.com/YesI4m/Yeongkkeul.git
 }
