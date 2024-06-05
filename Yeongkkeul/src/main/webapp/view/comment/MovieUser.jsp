@@ -428,7 +428,7 @@
 																            <div class="eysnieg3 css-wsusl5 e10cf2lr1 profile-name">데드풀 애청자</div>
 																        </div>
 																        <div class="css-mb4qpf-StyledSubtitle e4f2vpe0">
-																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 784 • 코멘트 45</div>
+																            <div class="eysnieg4 css-name-comment etyqkvq0 profile-stats">평가 783 • 코멘트 45</div>
 																        </div>
 																    </div>
 																    <div>

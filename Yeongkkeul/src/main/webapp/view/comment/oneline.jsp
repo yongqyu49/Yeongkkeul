@@ -47,7 +47,7 @@
               	<div class="css-15bl2t8">
               		<textarea id="commentText" maxlength="10000" class="css-1es2t5o" oninput="updateCharCount()" placeholder=""></textarea>
                 		<div class="css-158g36p"></div>
-                		<span class="placeholder-text">이 코멘트에 대한 생각을 자유롭게 표현해주세요..</span>
+                		<span class="placeholder-text">이 코멘트에 대한 생각을 자유롭게 표현해주세요.</span>
               	</div>
               </div>
             </div>

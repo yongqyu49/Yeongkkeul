@@ -139,7 +139,7 @@ ul.css-1jr50mw {
 li.right-item {
     margin-right: 10px; /* 조정하고자 하는 만큼의 마진을 설정합니다 */
 }
-/*---모텔 2로 진행해야함 -- 작업중
+/*---모텔 2로 진행해야함ㄷ -- 작업중
 <div class="user-list">
     <c:forEach var="user" items="${userList}">
         <div class="user-profile">
