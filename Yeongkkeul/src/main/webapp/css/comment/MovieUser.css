@@ -8,6 +8,7 @@
     border-bottom: 1px solid rgb(240, 240, 240);
     overflow: hidden;
     text-overflow: ellipsis;
+    justify-content: flex-end;
 }
 
 .css-1echrkx {
@@ -30,7 +31,8 @@
     align-items: center;
     color: inherit;
     text-decoration: none;
-    height: 76px;
+    height: 104px;
+    width: 444px;
     flex-direction: row;
 }
 
@@ -69,7 +71,8 @@
     -webkit-box-align: center;
     align-items: center;
     box-sizing: border-box;
-    height: 100%;
+    height: 104px;
+    width: 362px;
     border-bottom: 1px solid rgb(240, 240, 240);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -80,24 +83,30 @@
     position: relative;
 }
 
-.css-1jr50mw > li {
-    width: 50%;
+.css-1jr50mw {
+    list-style: none;
+    padding: 0px;
+    margin: 0px -15px;
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
 }
 
 .css-13o7eu2 {
     display: block;
+    overflow: hidden;
 }
 
 .css-1x6fzl1 {
+		height: 100%;
     width: 100%;
-    overflow-x: hidden;
 }
 .css-11a9a8l [class*="InnerPartOfListWithImage"] {
         height: 104px;
 }
 
 .css-11a9a8l {
-    box-sizing: border-box;
+   box-sizing: border-box;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -108,24 +117,29 @@
     overflow: hidden; /* clearfix를 위해 사용 */
 }
 
-.left-item,
+.left-item {
+    width: 50%; /* 화면의 반을 차지하도록 설정 */
+    box-sizing: border-box; /* 너비가 변경되더라도 요소의 크기를 일정하게 유지 */
+    float: left; /* 요소를 좌측으로 배치 */
+    padding: 0px 170px;
+}
 .right-item {
     width: 50%; /* 화면의 반을 차지하도록 설정 */
     box-sizing: border-box; /* 너비가 변경되더라도 요소의 크기를 일정하게 유지 */
     float: left; /* 요소를 좌측으로 배치 */
 }
-
-.css-wgm2hr {
-    font-weight: 400;
-    letter-spacing: -0.3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: rgb(116, 116, 123);
-    font-size: 13px;
-    line-height: 17px;
+.profile-image {
+    float: left; /* 이미지를 왼쪽으로 배치 */
+    margin-right: 20px; /* 텍스트와 이미지 사이의 간격 조절 */
 }
-/*---모텔 2로 진행해야함 -- 작업중
+ul.css-1jr50mw {
+  display: flex;
+  justify-content: center;
+}
+li.right-item {
+    margin-right: 10px; /* 조정하고자 하는 만큼의 마진을 설정합니다 */
+}
+/*---모텔 2로 진행해야함ㄷ -- 작업중
 <div class="user-list">
     <c:forEach var="user" items="${userList}">
         <div class="user-profile">

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../../css/oneline.css">
+<link rel="stylesheet" type="text/css" href="../../css/comment/oneline.css">
 <style>
     .placeholder-text {
         color: #000; /* 텍스트 색상 */
