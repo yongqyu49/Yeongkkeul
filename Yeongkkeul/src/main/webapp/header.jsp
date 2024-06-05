@@ -16,9 +16,9 @@
 						<li class="css-omez1o-NavLogo">
 							<a href="${pageContext.request.contextPath}/index.jsp">로고 자리</a>
 						</li>
-						<li class="categories">
+						<!-- <li class="categories">
 							<a href="#" class="css-rocs30">영화</a>
-						</li>
+						</li> -->
 						<li class="search_container">
 							<div class="search_div">
 								<div class="search_box">
@@ -72,37 +72,58 @@
 								</div>
 							</div>
 						</li>
-						<c:if test="${empty sessionScope.sessionEmail}">
-							<li class="right_categories">
-								<a href="${pageContext.request.contextPath}/view/crew/login.jsp">
-									<span class="css-zrw42n">로그인</span>
-								</a>
-							</li>
-							<li class="right_categories">
-								<a href="${pageContext.request.contextPath}/view/crew/signUp.jsp">
-									<i class="fa fa-user-o"></i>회원가입
-								</a>								
-							</li>
-						</c:if>
-						<c:if test="${not empty sessionScope.sessionEmail}">
-							<li class="right_categories">
-								<a href="">
-									<span class="css-zrw42n">평가하기</span>
-								</a>
-							</li>
-							<li class="right_categories">
-								<a href="${pageContext.request.contextPath}/view/crew/wantMovie.do">
-									<span class="css-zrw42n">끌린 영화</span>
-								</a>
-							</li>
-							<li class="right_categories">
-								<a href="${pageContext.request.contextPath}/view/crew/user.do">
-									<div class="profile_container">
-										<div class="profie_img"></div>
-									</div>
-								</a>
-							</li>
-						</c:if>
+						<c:choose>
+							<c:when test="${sessionScope.sessionEmail eq 'admin@naver.com'}">
+								<li class="right_categories">
+									<a href="${pageContext.request.contextPath}/view/movie/administrator.jsp">
+										<span class="css-zrw42n">계정목록</span>
+									</a>
+								</li>
+								<li class="right_categories">
+									<a href="${pageContext.request.contextPath}/view/movie/addMovie.jsp">
+										<i class="fa fa-user-o"></i>영화목록
+									</a>								
+								</li>								
+								<li class="right_categories">
+									<a href="${pageContext.request.contextPath}/view/crew/user.do">
+										<div class="profile_container">
+											<div class="profie_img"></div>
+										</div>
+									</a>
+								</li>
+							</c:when>
+							<c:when test="${empty sessionScope.sessionEmail}">
+								<li class="right_categories">
+									<a href="${pageContext.request.contextPath}/view/crew/login.jsp">
+										<span class="css-zrw42n">로그인</span>
+									</a>
+								</li>
+								<li class="right_categories">
+									<a href="${pageContext.request.contextPath}/view/crew/signUp.jsp">
+										<i class="fa fa-user-o"></i>회원가입
+									</a>								
+								</li>
+							</c:when>
+							<c:when test="${not empty sessionScope.sessionEmail}">
+								<li class="right_categories">
+									<a href="">
+										<span class="css-zrw42n">평가하기</span>
+									</a>
+								</li>
+								<li class="right_categories">
+									<a href="${pageContext.request.contextPath}/view/crew/wantMovie.do">
+										<span class="css-zrw42n">끌린 영화</span>
+									</a>
+								</li>
+								<li class="right_categories">
+									<a href="${pageContext.request.contextPath}/view/crew/user.do">
+										<div class="profile_container">
+											<div class="profie_img"></div>
+										</div>
+									</a>
+								</li>
+							</c:when>
+						</c:choose>
 					</ul>
 				</div>
 			</div>

@@ -3,7 +3,6 @@
         display: block;
     }
 } */
-
 .css-1j05y9v {
 	display: block;
     position: fixed;
@@ -46,9 +45,10 @@
 }
 
 .header_content {
-    max-width: 1320px;
+    margin: 0 180px;
+    /* max-width: 1320px;
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 20px; */
 }
 
 .header_ul {
