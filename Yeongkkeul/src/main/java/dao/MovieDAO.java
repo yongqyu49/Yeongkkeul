@@ -72,17 +72,21 @@ public class MovieDAO {
 	}
 
 	//editmovie
-	public int editmovie(int movie_code, String movie_name, String release_date,String movie_content) {
+	public int editmovie(String movie_code, String movie_name, String release_date,String release_country,String movie_content,String genre) {
 		int result = 0;
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
+
+		System.out.println("i'm here@!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
     	try {
-    		String sql ="UPDATE movie SET movie_name=?, movie_content=?, release_date=?)"
-    				+ "WHERE movie_code=?";
+    		String sql ="UPDATE movie SET movie_name=?, movie_content=?, release_date=?,release_country=?, genre=? WHERE movie_code=?";
     		pstmt = conn.prepareStatement(sql);
     		pstmt.setString(1, movie_name);
-//     		pstmt.setDate(2, release_date);
     		pstmt.setString(2, movie_content);
+    		pstmt.setString(3, release_date);
+    		pstmt.setString(4, release_country);
+    		pstmt.setString(5, genre);
+    		pstmt.setString(6, movie_code);
     		result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

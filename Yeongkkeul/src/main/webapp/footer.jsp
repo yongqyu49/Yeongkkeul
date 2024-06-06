@@ -21,9 +21,9 @@
 						<p style="margin-left:50px;">&nbsp;</p>
 						<ul class="footer-links" >
 							<li style="margin-left:30px;"><i class="fa fa-map-marker"></i>crew member</a></li>
-							<li style="margin-left:100px;"><i class="fa fa-phone"></i> dsa</a></li>
-							<li style="margin-left:100px;"><i class="fa fa-envelope-o"></i> das</a></li>
-							<li style="margin-left:100px;"><i class="fa fa-envelope-o"></i>dsa</a></li>
+							<li style="margin-left:100px;"><i class="fa fa-phone"></i> LJS</a></li>
+							<li style="margin-left:100px;"><i class="fa fa-envelope-o"></i> CYG</a></li>
+							<li style="margin-left:100px;"><i class="fa fa-envelope-o"></i>CSH</a></li>
 						</ul>
 					</div>
 				</div>
@@ -35,9 +35,9 @@
 							<li><a href="#"></a>&nbsp;</li>
 							<li style="margin-right:100px;"><a href="#"></a>JSP Project </li>
 							<li><a href="#"></a>email </li>
-							<li><a href="#"></a>itissuperepic@gmail.com</li>
-							<li><a href="#"></a>itissuperepic@gmail.com</li>
-							<li><a href="#"></a>itissuperepic@gmail.com</li>
+							<li><a href="#"></a>itiic@gmail.com</li>
+							<li><a href="#"></a>iperepic@gmail.com</li>
+							<li><a href="#"></a>itisup@gmail.com</li>
 						</ul>
 					</div>
 				</div>
