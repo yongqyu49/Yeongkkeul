@@ -14,6 +14,9 @@
 <link type="text/css" rel="stylesheet" href="../../css/style.css" />
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/comment/comments.css"/>
 </head>
+<% 
+    String email = (String)session.getAttribute("sessionEmail");
+%>
 <body>
 	<jsp:include page="/header.jsp"/>
 	<section class="css-1br0nre">
@@ -172,7 +175,7 @@
 				<header class="modal_header">
 					<div class="modal_cancel_container">
 						<div>
-							<button class="cancel_button"></button>
+							<button class="cancel_button11"></button>
 						</div>
 						<div></div>
 					</div>
@@ -185,8 +188,8 @@
 					<div class="css-1nyrhs4">
 						<div class="css-ek159t">
 							<div>
-								<div class="">
-									<textarea rows="" cols="" class="css-1es2t5o" maxlength="10000" style="height: 292px;">									</textarea>
+								<div>
+									<textarea id="tedf" rows="" cols="" class="css-1es2t5o" maxlength="10000"  style="margin:70px 10px; height: 292px;"></textarea>
 								</div>
 							</div>
 						</div>
@@ -196,9 +199,8 @@
 					<div class="css-p3u9eh">
 						<div class="css-197dxto"></div>
 						<div class="css-197dxto">
-							<p class="css-1fd20im">임시저장됨</p>
-							<p class="css-1tsmjw">0/10000</p>
-							<button class="css-b8wy2k">저장</button>
+							<p class="css-1tsmjw">내 코멘트에 </p>
+							<button id="ted"class="css-b8wy2k">저장</button>
 						</div>
 					</div>
 				</div>
@@ -206,6 +208,9 @@
 		</div>
 	</div>
 </body>
+<script>
+    let sessionEmail = '<%= email %>';
+</script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/comment/comments.js"></script>
 </html>
