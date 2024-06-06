@@ -2,14 +2,11 @@ package service.movie;
 
 import java.io.File;
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-
 import control.CommandProcess;
 import dao.MovieDAO;
 
@@ -44,24 +41,28 @@ public class AddMovieService implements CommandProcess {
             File posterFile = multipart.getFile("poster");
             if (posterFile != null) {
                 String posterName = posterFile.getName();
-                String posterExtension = posterName.substring(posterName.lastIndexOf('.'));
-                String posterBaseName = posterName.substring(0, posterName.lastIndexOf('.'));
-                
                 File newPosterFile = new File(posterPath + posterName);
-                posterFile.renameTo(newPosterFile); // 포스터 파일 이동
-                md.addPoster(posterBaseName, posterPath, posterExtension, movie_code);
+                String webPosterPath = request.getContextPath() + "/img/poster/" + posterName; // 저장될 웹 경로
+                if (posterFile.renameTo(newPosterFile)) {
+                    System.out.println("포스터 이미지 업로드 성공: " + posterName);
+                    md.addPoster(posterName, webPosterPath, movie_code);
+                } else {
+                    throw new IOException("포스터 이미지 파일 이동 실패");
+                }
             }
 
             // 배경 이미지 파일 처리
             File backgroundFile = multipart.getFile("movie_background");
             if (backgroundFile != null) {
                 String backgroundName = backgroundFile.getName();
-                String backgroundExtension = backgroundName.substring(backgroundName.lastIndexOf('.'));
-                String backgroundBaseName = backgroundName.substring(0, backgroundName.lastIndexOf('.'));
-                
                 File newBackgroundFile = new File(backgroundPath + backgroundName);
-                backgroundFile.renameTo(newBackgroundFile); // 배경 이미지 파일 이동
-                md.addBackground(backgroundBaseName, backgroundPath, backgroundExtension, movie_code);
+                String webBackgroundPath = request.getContextPath() + "/img/background/" + backgroundName; // 저장될 웹 경로
+                if (backgroundFile.renameTo(newBackgroundFile)) {
+                    System.out.println("배경 이미지 업로드 성공: " + backgroundName);
+                    md.addBackground(backgroundName, webBackgroundPath, movie_code);
+                } else {
+                    throw new IOException("배경 이미지 파일 이동 실패");
+                }
             }
 
             // 디렉토리 내 파일 목록 가져오기

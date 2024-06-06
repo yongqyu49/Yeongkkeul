@@ -24,6 +24,9 @@ public class ShowUserService implements CommandProcess {
 		System.out.println("sessionEmail: " + sessionEmail);
 		Crew crew = cd.showUser(sessionEmail);
 		List<LikeMovie> likeMovie = cd.myLikeMoive(sessionEmail);
+		System.out.println("getFilePath: " + crew.getFilePath() );
+		System.out.println("getFileName: " + crew.getFileName());
+		System.out.println("getFileExtension: " + crew.getFileExtension());
 		request.setAttribute("crew", crew);
 		request.setAttribute("likeMovie", likeMovie);
 		System.out.println("list: " + likeMovie);

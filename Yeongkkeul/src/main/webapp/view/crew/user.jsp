@@ -34,7 +34,9 @@
 							</div>
 							<div class="profile_img">
 								<div class="profile_photo">
-									<div></div>
+									<div>
+										<img src="${crew.filePath}">
+									</div>
 								</div>
 							</div>
 							<div class="introduce_container">

@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -229,7 +230,8 @@ public class CrewDAO  {
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from crew where email = ?";
+		String sql = "select * from crew c, poster p where c.email = p.email\r\n"
+				+ "and c.email = ? order by p.file_postdate desc";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, sessionEmail);
@@ -237,6 +239,9 @@ public class CrewDAO  {
 			if(rs.next()) {
 				crew.setEmail(rs.getString(1));
 				crew.setName(rs.getString(2));
+				crew.setFileCode(rs.getString(4));
+				crew.setFileName(rs.getString(5));
+				crew.setFilePath(rs.getString(6));
 			}
 		} catch (Exception e) {
 			e.getMessage();
@@ -451,18 +456,17 @@ public class CrewDAO  {
 		return boardList;
 	}
 
-	public int chageProfile(String email, String profileBaseName, String profileExtension, String profilePath) {
+	public int changeProfile(String email, String profileName, String filePath) {
 		int result = 0;
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
     	try {
-    		String sql ="insert into poster (file_code, file_name, file_path, file_sort, file_extension, file_postdate, email)\r\n"
-    				+ "values(file_CODE_SEQUENCE.nextval, ?, ?, 'profile', ?, sysdate, ?)";
+    		String sql ="insert into poster (file_code, file_name, file_path, file_postdate, email) "
+    				+ "values(file_CODE_SEQUENCE.nextval, ?, ?, sysdate, ?)";
     		pstmt = conn.prepareStatement(sql);
-    		pstmt.setString(1, profileBaseName);
-    		pstmt.setString(2, profileExtension);
-    		pstmt.setString(3, profilePath);
-    		pstmt.setString(4, email);
+    		pstmt.setString(1, profileName);
+    		pstmt.setString(2, filePath);
+    		pstmt.setString(3, email);
     		result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -472,11 +476,26 @@ public class CrewDAO  {
 		return result;
 	}
 
-	public int chageProfileBackground(String email, String backgroundName, String backgroundExtension,
-			String backgroundBaseName) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	public int changeProfileBackground(String email, String backgroundBaseName, String filePath) {
+        int result = 0;
+        Connection conn = getConnection();
+        PreparedStatement pstmt = null;
+        System.out.println("email: " + email);
+        try {
+            String sql = "insert into poster (file_code, file_name, file_path, file_postdate, email) \"\r\n"
+            		+ "    				+ \"values(file_CODE_SEQUENCE.nextval, ?, ?, sysdate, ?)";
+            pstmt = conn.prepareStatement(sql);
+    		pstmt.setString(1, backgroundBaseName);
+    		pstmt.setString(2, filePath);
+    		pstmt.setString(3, email);
+            result = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(conn, pstmt);
+        }
+        return result;
+    }
 
 
 }
