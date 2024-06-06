@@ -6,9 +6,9 @@ $(document).ready(() => {
         $(".setting_pop").css("visibility", "visible");
     });
 
-    $(".cancel_button").on("click", () => {
-        $(".setting_pop").css("visibility", "hidden");
-    });
+    $(".cancel_button11").on("click", () => {
+		$(".setting_pop").css("visibility", "hidden");
+	});
 
     $("#like").on("click", () => {
         console.log("comment_email: " + comment_email);
@@ -48,7 +48,7 @@ $(document).ready(() => {
                         $("#like").css("color", "rgb(255, 47, 110)");
                         $('.e8utsm10').html('<svg fill="#ff2f6e" viewBox="0 0 20 20" class="css-1m6czca e9zb0ps0"><path class="fill-target" clip-rule="evenodd" d="M5.6252 7.90479H3.1252C2.6652 7.90479 2.29187 8.27812 2.29187 8.73812V17.0715C2.29187 17.5315 2.6652 17.9048 3.1252 17.9048H5.6252C6.08604 17.9048 6.45854 17.5315 6.45854 17.0715V8.73812C6.45854 8.27812 6.08604 7.90479 5.6252 7.90479Z" fill="#FF2F6E" fill-rule="evenodd"></path><path class="fill-target" clip-rule="evenodd" d="M17.2146 7.13879C16.8388 6.70796 16.2979 6.46129 15.7321 6.46129H13.8504L13.9871 5.93879C14.1013 5.49879 14.1546 5.00546 14.1546 4.38629C14.1546 2.78712 13.0088 2.07129 11.8729 2.07129C11.5029 2.07129 11.2346 2.17379 11.0513 2.38462C10.8846 2.57379 10.8163 2.82546 10.8488 3.16379L10.8738 4.18879L8.45459 6.63796C7.96043 7.13879 7.70959 7.66379 7.70959 8.19879V16.238C7.70959 16.4671 7.89626 16.6546 8.12626 16.6546H14.5321C15.5088 16.6546 16.3663 15.908 16.4888 14.9288L17.6929 8.71962C17.7646 8.14712 17.5888 7.57129 17.2146 7.13879Z" fill="#FF2F6E" fill-rule="evenodd"></path></svg>');
                     } else if(data == 0) {
-						alert("로그인 후 이용해주세요.")
+						alert("좋아요 오류")
 					}
                 },
                 error: (jqXHR, textStatus, errorThrown) => {
@@ -64,6 +64,7 @@ $(document).ready(() => {
     }*/
     
     $("#ted").on("click", () => {
+        let content = $('#tedf').val();
         $.ajax({
             url: "/Yeongkkeul/view/crew/leaveComment.do",
             type: "POST",
@@ -71,10 +72,64 @@ $(document).ready(() => {
             data: JSON.stringify({
                 "writer": comment_email,
                 "movie_code": movie_code,
+                "content": content,
             }),
             success: (data) => {
-                if (data == 1) {
-                    // 성공시 처리
+                if(data == 1) {
+                    console.log("성공");
+                    $(".setting_pop").css("visibility", "hidden");
+                    $.ajax({
+                        url: "/Yeongkkeul/view/crew/showInsertBoard.do",
+                        type: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify({
+                            "writer": comment_email,
+                            "movie_code": movie_code,
+                        }),
+                        success: (response) => {
+                            console.log("1222222222222성공");
+                            $(".setting_pop").css("visibility", "hidden");
+                            $(".css-tizfzx-StyledRepliesWrapper").empty(); // 기존 댓글 삭제
+
+                            response.forEach(comment => {
+								console.log("나와야지" + comment)
+                                let li = `
+                                    <li class="css-jwt2qd">
+                                        <div class="css-zjik7">
+                                            <a class="css-loxcdz">
+                                                <div class="css-1i7wyhn"></div>
+                                            </a>
+                                            <div class="css-4jnlg2">
+                                                <div class="css-s5xdrg">
+                                                    <a class="css-loxcdz">
+                                                        <div class="css-1vrjyd4">` + comment.writer + `</div>
+                                                    </a>
+                                                    <div class="css-ixyav0">` + comment.date + `</div>
+                                                </div>
+                                                <div class="css-1jaey0z">` + comment.content + `</div>
+                                                <div class="css-zjik7">
+                                                    <div class="css-aagp01">
+                                                        <button class="like">
+                                                            <span>좋아요</span>
+                                                        </button>
+                                                        <button class="count">
+                                                            <span>
+                                                                <svg aria-hidden="true" class="css-0" viewBox="0 0 14 14"><use xlink:href="#ic_like_fill--sprite"></use></svg>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                `;
+                                $(".css-tizfzx-StyledRepliesWrapper").append(li);
+                            });
+                        },
+                        error: (jqXHR, textStatus, errorThrown) => {
+                            console.log("Error: " + textStatus + " " + errorThrown);
+                        }
+                    });
                 }
             },
             error: (jqXHR, textStatus, errorThrown) => {

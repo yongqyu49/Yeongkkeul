@@ -132,34 +132,36 @@
 							</section>
 							<section class="css-x96ab0-StyledCommentRepliesSection">
 								<ul class="css-tizfzx-StyledRepliesWrapper">
-									<li class="css-jwt2qd">
-										<div class="css-zjik7">
-											<a class="css-loxcdz">
-												<div class="css-1i7wyhn"></div>
-											</a>
-											<div class="css-4jnlg2">
-												<div class="css-s5xdrg">
-													<a class="css-loxcdz">
-														<div class="css-1vrjyd4">MABOO</div>
-													</a>
-													<div class="css-ixyav0">1일 전</div>
-												</div>
-												<div class="css-1jaey0z">헉헉허거거거거</div>
-												<div class="css-zjik7">
-													<div class="css-aagp01">
-														<button class="like">
-															<span>좋아요</span>
-														</button>
-														<button class="count">
-															<span>
-																<svg aria-hidden="true" class="css-0" viewBox="0 0 14 14"><use xlink:href="#ic_like_fill--sprite"></use></svg>
-															</span>
-														</button>
+									<c:forEach items="${boardList}" var="boardList">
+										<li class="css-jwt2qd">
+											<div class="css-zjik7">
+												<a class="css-loxcdz">
+													<div class="css-1i7wyhn"></div>
+												</a>
+												<div class="css-4jnlg2">
+													<div class="css-s5xdrg">
+														<a class="css-loxcdz">
+															<div class="css-1vrjyd4">${boardList.name}</div>
+														</a>
+														<div class="css-ixyav0">${boardList.postdate}</div>
+													</div>
+													<div class="css-1jaey0z">${boardList.content}</div>
+													<div class="css-zjik7">
+														<div class="css-aagp01">
+															<button class="like">
+																<span>좋아요</span>
+															</button>
+															<button class="count">
+																<span>
+																	<svg aria-hidden="true" class="css-0" viewBox="0 0 14 14"><use xlink:href="#ic_like_fill--sprite"></use></svg>
+																</span>
+															</button>
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-									</li>
+										</li>
+									</c:forEach>
 								</ul>
 							</section>
 						</div>
@@ -175,7 +177,7 @@
 				<header class="modal_header">
 					<div class="modal_cancel_container">
 						<div>
-							<button class="cancel_button11"></button>
+							<button class="cancel_button11 css-1cux2o"></button>
 						</div>
 						<div></div>
 					</div>
@@ -189,7 +191,9 @@
 						<div class="css-ek159t">
 							<div>
 								<div>
-									<textarea id="tedf" rows="" cols="" class="css-1es2t5o" maxlength="10000"  style="margin:70px 10px; height: 292px;"></textarea>
+									<form>
+										<textarea id="tedf"  rows="" cols="" class="css-1es2t5o" maxlength="10000"  style="margin:70px 10px; height: 292px;"></textarea>
+									</form>
 								</div>
 							</div>
 						</div>
