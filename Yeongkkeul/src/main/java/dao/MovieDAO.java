@@ -340,4 +340,43 @@ public class MovieDAO {
 		}
 		return comment;
 	}
+
+	public int DelComment(String email, String movie_code) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		try {
+			String sql = "DELETE FROM movie_comment WHERE email=? and movie_code = ?";
+			pstmt = conn.prepareStatement(sql);
+    		pstmt.setString(1, email);
+    		pstmt.setString(2, movie_code);
+    		result = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt);
+		}
+		return result;
+	}
+
+	public int EditComment(String email, String content, String movie_code) {
+		int result =0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "UPDATE movie_comment SET content=? WHERE email=? and movie_code=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,content);
+			pstmt.setString(2,email);
+			pstmt.setString(3,movie_code);
+			rs = pstmt.executeQuery();
+			result = pstmt.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt);
+		}
+		return result;
+	}
 }
