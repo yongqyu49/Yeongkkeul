@@ -10,6 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import dto.BoardComment;
 import dto.Crew;
 import dto.EmailToken;
 import dto.LikeMovie;
@@ -396,6 +397,57 @@ public class CrewDAO  {
 	        close(pstmt, conn);
 	    }
 	    return result;
+	}
+
+	public int leaveComment(String email, String writer, String movie_code, String content) {
+		int result = 0;
+	    Connection conn = getConnection();
+	    PreparedStatement pstmt = null;
+	    String sql = "insert into board_comment "
+	    		+ "values(board_num_sequence.nextval, ?, ?, ?, ?, SYSTIMESTAMP - INTERVAL '1' minute)";
+	    try {
+	        conn = getConnection();
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, email);
+	        pstmt.setString(2, movie_code);
+	        pstmt.setString(3, writer);
+	        pstmt.setString(4, content);
+	        result = pstmt.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        close(pstmt, conn);
+	    }
+	    return result;
+	}
+
+	public List<BoardComment> showInsertBoard(String writer, String movie_code) {
+		List<BoardComment> boardList = new ArrayList<BoardComment>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from board_comment where writer = ? and movie_code = ? order by postdate desc";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, writer);
+			pstmt.setString(2, movie_code);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BoardComment bc = new BoardComment();
+				bc.setBoard_num(rs.getString(1));
+				bc.setEmail(rs.getString(2));
+				bc.setMovie_code(rs.getString(3));
+				bc.setWriter(rs.getString(4));
+				bc.setContent(rs.getString(5));
+				bc.setPostdate(rs.getTimestamp(6));
+				boardList.add(bc);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return boardList;
 	}
 
 

@@ -10,6 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import dto.BoardComment;
 import dto.LikeComment;
 import dto.MovieComment;
 
@@ -164,6 +165,38 @@ public class CommentDAO {
 			close(rs, pstmt, conn);
 		}
 		return lc;
+	}
+
+	public List<BoardComment> getBoardList(String comment_num) {
+		List<BoardComment> boardList = new ArrayList<BoardComment>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT bc.*, mc.comment_num, c.name FROM board_comment bc, movie_comment mc, crew c \r\n"
+				+ "where bc.writer = mc.email and bc.movie_code = mc.movie_code and c.email = bc.email\r\n"
+				+ "and mc.comment_num = ? order by postdate desc";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, comment_num);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BoardComment bc = new BoardComment();
+				bc.setBoard_num(rs.getString(1));
+				bc.setEmail(rs.getString(2));
+				bc.setMovie_code(rs.getString(3));
+				bc.setWriter(rs.getString(4));
+				bc.setContent(rs.getString(5));
+				bc.setPostdate(rs.getTimestamp(6));
+				bc.setComment_num(rs.getString(7));
+				bc.setName(rs.getString(8));
+				boardList.add(bc);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return boardList;
 	}
     
 }
