@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -448,6 +449,33 @@ public class CrewDAO  {
 			close(rs, pstmt, conn);
 		}
 		return boardList;
+	}
+
+	public int chageProfile(String email, String profileBaseName, String profileExtension, String profilePath) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+    	try {
+    		String sql ="insert into poster (file_code, file_name, file_path, file_sort, file_extension, file_postdate, email)\r\n"
+    				+ "values(file_CODE_SEQUENCE.nextval, ?, ?, 'profile', ?, sysdate, ?)";
+    		pstmt = conn.prepareStatement(sql);
+    		pstmt.setString(1, profileBaseName);
+    		pstmt.setString(2, profileExtension);
+    		pstmt.setString(3, profilePath);
+    		pstmt.setString(4, email);
+    		result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt);
+		}
+		return result;
+	}
+
+	public int chageProfileBackground(String email, String backgroundName, String backgroundExtension,
+			String backgroundBaseName) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

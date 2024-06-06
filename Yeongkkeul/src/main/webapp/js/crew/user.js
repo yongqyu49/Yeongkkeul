@@ -24,6 +24,12 @@ $(() => {
 		$(".modal_ul_container").css("display", "none");
 		$(".change_password_modal").css("display", "block");
 	});
+	
+	$('#change_profile').on("click", () => {
+		console.log("profile")
+		$(".modal_ul_container").css("display", "none");
+		$(".change_profile_modal").css("display", "block");
+	});
 });
 
 const checkPwd = () => {
