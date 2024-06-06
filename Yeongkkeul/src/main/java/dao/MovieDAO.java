@@ -11,6 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import dto.Comment;
 import dto.Crew;
 import dto.LikeMovie;
 import dto.Movie;
@@ -298,5 +299,45 @@ public class MovieDAO {
 			}
 			return movie;
 	}
-}
 
+	public int PostComment(String email ,String content,String movie_code) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		try {
+			String sql ="insert into movie_comment values(? ,?, SYSTIMESTAMP - INTERVAL '1' minute, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, movie_code);
+			pstmt.setString(3, content);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt);
+		}
+		return result;
+	}
+
+	public Comment SelectCommnetonMovie(String movie_code, String email) {
+		Comment comment = new Comment();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select content from movie_comment where movie_code =? and email=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,movie_code);
+			pstmt.setString(2,email);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				comment.setContent(rs.getString(1));
+			}	
+		}catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt);
+		}
+		return comment;
+	}
+}
