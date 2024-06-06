@@ -197,7 +197,7 @@
 													                 <use xlink:href="#ic_pencil_24--sprite"></use>
 													             </svg>코멘트1</button>
 													             
-													             <button  id ="commenting" class="css-13qn5n9 e15eo6m14"><svg  class="css-0"
+													             <button  id ="commenting" class="css-13qn5n9 e15eo6m14 penpenpen"><svg  class="css-0"
 													                 viewBox="0 0 24 24">
 
 													                 <use xlink:href="#ic_pencil_24--sprite"></use>
@@ -213,9 +213,43 @@
 													                         </svg>코멘트 삭제</div>
 													                 </div>
 													             </div></button></div>
+													             
 													 </section>                                              
-													                                              
-													                                              
+													    <section class="css-tj0x48 edz00v814 mycontent">
+															<div class="css-d7z9p4 edz00v80">내가 쓴 코멘트</div>
+														    <div class="css-lh8su5 e1w66cqc0">
+														        <div class="css-0 e1689zdh0">
+														            <div class="css-1saqk7d emmoxnt0">
+														                <section class="css-nhaqtx edz00v811">
+														                    <div class="css-19f2ecb edz00v88">
+														                        <div class="css-1v794iw edz00v810">
+														                            <div class="css-rolqco euge2161">
+														                                <div class="css-18jnfey-ProfilePhotoImage euge2162"></div>
+														                            </div>
+														                        </div><a class="css-1gdx2gb edz00v81" href="/ko-KR/comments/xplMdmLNmpQ4o">
+														                            <div class="css-1ba7am8 edz00v89">
+														                                <div class=" css-10yi21j eb5y16b1">
+														                                    <div id ="realcontent" class="css-8l6xbc eb5y16b0">gh</div>
+														                                </div>
+														                            </div>
+														                        </a>
+														                        <ul class="css-yn3ohi edz00v87">
+														                            <li class="css-128k57j edz00v86"><button id="delcomment" class="css-i8g5k3 edz00v85"><img
+														                                        alt="delete comment"
+														                                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0EwQTBBMCIgZD0iTTUuMjUgMTQuMjVoNy41di03LjVoMS41VjE1YS43NS43NSAwIDAgMS0uNzUuNzVoLTlhLjc1Ljc1IDAgMCAxLS43NS0uNzVWNi43NWgxLjV2Ny41ek0xMiA0LjVoMy43NVY2SDIuMjVWNC41SDZWM2EuNzUuNzUgMCAwIDEgLjc1LS43NWg0LjVBLjc1Ljc1IDAgMCAxIDEyIDN2MS41em0tMS41IDB2LS43NWgtM3YuNzVoM3pNNi43NSA2Ljc1aDEuNXY2Ljc1aC0xLjVWNi43NXptMyAwaDEuNXY2Ljc1aC0xLjVWNi43NXoiLz4KICAgIDwvZz4KPC9zdmc+Cg==">삭제</button>
+														                            </li>
+														                            <li class="css-128k57j edz00v86"><button id="editcomment "class="css-i8g5k3 edz00v85"><img alt="edit comment"
+														                                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0EwQTBBMCIgZD0iTTIuMTggMTUuMzlsLjcwMy0zLjk4IDMuNzEzIDMuNzEyLTMuOTgxLjcwMmEuMzc0LjM3NCAwIDAgMS0uNDM0LS40MzR6bTEuNDk4LTQuNzc2bDYuMzY0LTYuMzY0IDMuNzEzIDMuNzEyLTYuMzY0IDYuMzY0LTMuNzEzLTMuNzEyek0xNS42MDcgNS4wNGEuNzUuNzUgMCAwIDEgMCAxLjA2bC0xLjA2IDEuMDYxLTMuNzEzLTMuNzEyIDEuMDYtMS4wNmEuNzUuNzUgMCAwIDEgMS4wNiAwbDIuNjUzIDIuNjUxeiIvPgogICAgPC9nPgo8L3N2Zz4K">수정</button>
+														                            </li>
+														                        </ul>
+														                    </div>
+														                </section>
+														            </div>
+														        </div>
+														    </div>
+														</section>           	                               
+													
+													
                                                     <section class="css-4fn1yr-StyledContentSummarySection e1yew2865">${ld.movie_content}</section>
                                                 </div>
                                             </section>
@@ -368,13 +402,14 @@
 
 <!-- footer -->
 <jsp:include page="../../footer.jsp"/>
+
 	<div class="setting_pop">
 		<div class="modal_container">
 			<div class="modal">
 				<header class="modal_header">
 					<div class="modal_cancel_container">
 						<div>
-							<button class="cancel_button11"></button>
+							<button class="cancel_button11 css-1cux2o"></button>
 						</div>
 						<div></div>
 					</div>
@@ -388,7 +423,9 @@
 						<div class="css-ek159t">
 							<div>
 								<div>
-									<textarea id="tedf" rows="" cols="" class="css-1es2t5o" maxlength="10000"  style="margin:70px 10px; height: 292px;"></textarea>
+									<form>
+										<textarea id="tedf"  rows="" cols="" class="css-1es2t5o" maxlength="10000"  style="margin:70px 10px; height: 292px;"></textarea>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -406,6 +443,7 @@
 			</div>
 		</div>
 	</div>
+
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/movie/movie.js"></script>
 </html>
