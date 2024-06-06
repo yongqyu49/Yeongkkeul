@@ -20,6 +20,10 @@ public class MovieComment {
 	private String filePath;
 	private String fileExtension;
 	private String sort;
+	private Date filePostdate;
+	private String name;	
+	
+	private String commet_num;
 	
 	@Override
 	public String toString() {
@@ -45,11 +49,6 @@ public class MovieComment {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-
-	private Date filePostdate;
-	private String name;	
-	
-	private String commet_num;
 	
 	public String getMovie_name() {
 		return movie_name;

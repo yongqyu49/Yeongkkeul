@@ -240,6 +240,34 @@ public class MovieDAO {
 		return movielist;
 	}
 	
+	public List<LikeMovie> selectnewMovie() {
+		List<LikeMovie> newmovielist = new ArrayList<LikeMovie>();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select distinct m.movie_code, m.movie_name, m.release_date, m.release_country, m.genre, p.file_path, p.file_name, p.file_extenstion from movie m, poster p where m.movie_code = p.movie_code and m.release_date > to_char(sysdate-1, 'YYYY-MM-DD') order by movie_code asc";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				LikeMovie movie = new LikeMovie();
+				movie.setMovie_code(rs.getString(1));
+				movie.setMovie_name(rs.getString(2));
+				movie.setRelease_date(rs.getDate(3));
+				movie.setRelease_country(rs.getString(4));
+				movie.setGenre(rs.getString(5));
+				movie.setFilePath(rs.getString(6));
+				movie.setFileName(rs.getString(7));
+				movie.setFileExtension(rs.getString(8));
+				newmovielist.add(movie);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return newmovielist;
+	}
 	
 	public LikeMovie detailMovie(String movie_code) {
 		LikeMovie movie = new LikeMovie();
