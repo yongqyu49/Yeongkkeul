@@ -16,26 +16,28 @@
 			<!-- row -->
 			<div class="row">
 				<div class="col-md-3 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-title">About Us</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
-						<ul class="footer-links">
-							<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-							<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-							<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+					<div class="footer"style="margin-left:100px;">
+						<h3 class="footer-title"style="margin-left:60px;">About Us</h3>
+						<p style="margin-left:50px;">&nbsp;</p>
+						<ul class="footer-links" >
+							<li style="margin-left:30px;"><i class="fa fa-map-marker"></i>crew member</a></li>
+							<li style="margin-left:100px;"><i class="fa fa-phone"></i> dsa</a></li>
+							<li style="margin-left:100px;"><i class="fa fa-envelope-o"></i> das</a></li>
+							<li style="margin-left:100px;"><i class="fa fa-envelope-o"></i>dsa</a></li>
 						</ul>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-xs-6">
 					<div class="footer">
-						<h3 class="footer-title">Categories</h3>
+						<h3 class="footer-title"></h3>
 						<ul class="footer-links">
-							<li><a href="#">Hot deals</a></li>
-							<li><a href="#">Laptops</a></li>
-							<li><a href="#">Smartphones</a></li>
-							<li><a href="#">Cameras</a></li>
-							<li><a href="#">Accessories</a></li>
+							<li><a href="#"></a>&nbsp;</li>
+							<li style="margin-right:100px;"><a href="#"></a>JSP Project </li>
+							<li><a href="#"></a>email </li>
+							<li><a href="#"></a>itissuperepic@gmail.com</li>
+							<li><a href="#"></a>itissuperepic@gmail.com</li>
+							<li><a href="#"></a>itissuperepic@gmail.com</li>
 						</ul>
 					</div>
 				</div>
@@ -44,26 +46,22 @@
 
 				<div class="col-md-3 col-xs-6">
 					<div class="footer">
-						<h3 class="footer-title">Information</h3>
+						<h3 class="footer-title">MOVIE</h3>
 						<ul class="footer-links">
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Orders and Returns</a></li>
-							<li><a href="#">Terms & Conditions</a></li>
+							<li><a href="#">Hot Movie</a></li>
+							<li><a href="#">Movie List</a></li>
+
 						</ul>
 					</div>
 				</div>
 
 				<div class="col-md-3 col-xs-6">
 					<div class="footer">
-						<h3 class="footer-title">Service</h3>
+						<h3 class="footer-title">COMMENT</h3>
 						<ul class="footer-links">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">View Cart</a></li>
-							<li><a href="#">Wishlist</a></li>
-							<li><a href="#">Track My Order</a></li>
-							<li><a href="#">Help</a></li>
+							<li><a href="#">Hot Comment</a></li>
+							<li><a href="#">Comment List</a></li>
+
 						</ul>
 					</div>
 				</div>
