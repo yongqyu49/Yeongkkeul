@@ -14,7 +14,9 @@
 				<div class="header_content">
 					<ul class="header_ul">
 						<li class="css-omez1o-NavLogo">
-							<a href="${pageContext.request.contextPath}/index.jsp">로고 자리</a>
+							<a href="${pageContext.request.contextPath}/index.jsp" class="nav-logo-link">
+								<img src="${pageContext.request.contextPath}/img/영끌.png" class="nav-logo-img" style="width: 100px; height: 50px;">
+							</a>
 						</li>
 						<!-- <li class="categories">
 							<a href="#" class="css-rocs30">영화</a>
