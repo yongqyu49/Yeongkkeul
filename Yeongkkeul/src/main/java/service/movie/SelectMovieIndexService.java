@@ -18,9 +18,11 @@ public class SelectMovieIndexService implements CommandProcess {
 			throws ServletException, IOException {
 		MovieDAO md = MovieDAO.getInstance();
 		List<LikeMovie> ld = md.selectMovie();
-		System.out.println(ld);
+
 		request.setAttribute("ld", ld);
 
+		List<LikeMovie> nld = md.selectnewMovie();
+		request.setAttribute("nld", nld);
 		return "/index.jsp";
 	}
 

@@ -31,21 +31,21 @@ public class CommentDAO {
             DataSource ds = (DataSource)init.lookup("java:comp/env/Yeongkkeul");
             conn = ds.getConnection();
         } catch(Exception e) {
-        	e.getMessage();
+           e.getMessage();
         }
         return conn;
     }
 
     // 자원해제
- 	private void close(AutoCloseable... ac) {
- 		try {
- 			for(AutoCloseable a : ac) if(a != null) a.close();
- 		} catch (Exception e) {
- 			e.printStackTrace();
- 		}
- 	}
-
-    // 특정 영화의 댓글 목록 조회
+    private void close(AutoCloseable... ac) {
+       try {
+          for(AutoCloseable a : ac) if(a != null) a.close();
+       } catch (Exception e) {
+          e.printStackTrace();
+       }
+    }
+    
+ // 특정 영화의 댓글 목록 조회
     public List<MovieComment> getCommentsByMovie(String movie_code) {
         Connection conn = getConnection();
         PreparedStatement pstmt = null;
@@ -77,6 +77,27 @@ public class CommentDAO {
 
         return commentList;
     }
+
+   public List<MovieComment> getCommentList(String comment_num) {
+      List<MovieComment> commentList = new ArrayList<MovieComment>();
+      Connection conn = getConnection();
+      PreparedStatement pstmt = null;
+      ResultSet rs = null;
+      String sql = "select * from movie_comment where comment_num = ?";
+      try {
+         pstmt = conn.prepareStatement(sql);
+         pstmt.setString(1, comment_num);
+         rs = pstmt.executeQuery();
+         while(rs.next()) {
+            
+         }
+      } catch (Exception e) {
+         e.getMessage();
+      } finally {
+         close(rs, pstmt, conn);
+      }
+      return commentList;
+   }
 
 	public MovieComment getComment(String comment_num) {
 		MovieComment comment = new  MovieComment();
