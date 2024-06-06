@@ -12,9 +12,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import control.CommandProcess;
 import dao.MovieDAO;
+import dto.Comment;
 
-
-public class DelCommentonMovieService implements CommandProcess{
+public class SelMyCommnetonMovieService implements CommandProcess{
 
 	@Override
 	public String requestProc(HttpServletRequest request, HttpServletResponse response)
@@ -31,16 +31,17 @@ public class DelCommentonMovieService implements CommandProcess{
         System.out.println("movie_code: " + movie_code);
 
         // 데이터베이스 업데이트 (좋아요 기능)
-        int result = md.delmovie(email,movie_code);
-        System.out.println(result);
+        Comment cmt = md.SelectCommnetonMovie(movie_code, email);
+
         // 응답을 JSON 형식으로 설정
-//        response.setContentType("application/json");
-//        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
 
         // JSON 형식으로 변환하여 응답
 //        mapper.writeValue(response.getWriter(), result);
+        mapper.writeValue(response.getWriter(), cmt.getContent());
 		
-		
+		System.out.println("dflksjlkfsjlf :"+cmt.getContent());
 		
 		return null;
 	}

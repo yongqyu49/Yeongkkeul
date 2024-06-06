@@ -1502,7 +1502,7 @@ button:focus-visible {
                   <section class="css-1utdjx5-Main-setMainPaddingForXs-setMainPaddingForOverSm ed8qmey0">
                       <div class="css-lifknt-Self e8cv88g3">
                           <section
-                              class="css-1mxkig-MainSection-createMediaQuery-createMediaQuery-createMediaQuery e8cv88g1">
+                              class="css-1mxkig-MainSection-createMediaQuery-createMediaQuery-createMediaQuery e8cv88g1" style="margin-top:20px">
                               <div class="w_exposed_cell css-1s7qu40-StyledHomeListContainer-createMediaQuery-createMediaQuery ec19s3e7"
                                   data-rowindex="1">
                                   <div

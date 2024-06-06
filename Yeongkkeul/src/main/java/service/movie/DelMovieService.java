@@ -15,7 +15,7 @@ public class DelMovieService implements CommandProcess {
 	public String requestProc(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		MovieDAO dao = MovieDAO.getInstance();
-		int movie_code = Integer.parseInt(request.getParameter("movie_code"));
+		String movie_code = request.getParameter("movie_code");
 		int old = dao.delmovie(movie_code);
 		String returnPage = "/view/index.jsp";
 		

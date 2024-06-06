@@ -72,17 +72,21 @@ public class MovieDAO {
 	}
 
 	//editmovie
-	public int editmovie(int movie_code, String movie_name, String release_date,String movie_content) {
+	public int editmovie(String movie_code, String movie_name, String release_date,String release_country,String movie_content,String genre) {
 		int result = 0;
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
+
+		System.out.println("i'm here@!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
     	try {
-    		String sql ="UPDATE movie SET movie_name=?, movie_content=?, release_date=?)"
-    				+ "WHERE movie_code=?";
+    		String sql ="UPDATE movie SET movie_name=?, movie_content=?, release_date=?,release_country=?, genre=? WHERE movie_code=?";
     		pstmt = conn.prepareStatement(sql);
     		pstmt.setString(1, movie_name);
-//     		pstmt.setDate(2, release_date);
     		pstmt.setString(2, movie_content);
+    		pstmt.setString(3, release_date);
+    		pstmt.setString(4, release_country);
+    		pstmt.setString(5, genre);
+    		pstmt.setString(6, movie_code);
     		result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -93,14 +97,14 @@ public class MovieDAO {
 	}
 
 	//delmovie
-	public int delmovie(int movie_code) {
+	public int delmovie(String movie_code) {
 		int result = 0;
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		try {
 			String sql = "DELETE FROM movie WHERE movie_code = ?";
 			pstmt = conn.prepareStatement(sql);
-    		pstmt.setInt(1, movie_code);
+    		pstmt.setString(1, movie_code);
     		result = pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -338,5 +342,44 @@ public class MovieDAO {
 			close(conn, pstmt);
 		}
 		return comment;
+	}
+
+	public int DelComment(String email, String movie_code) {
+		int result = 0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		try {
+			String sql = "DELETE FROM movie_comment WHERE email=? and movie_code = ?";
+			pstmt = conn.prepareStatement(sql);
+    		pstmt.setString(1, email);
+    		pstmt.setString(2, movie_code);
+    		result = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt);
+		}
+		return result;
+	}
+
+	public int EditComment(String email, String content, String movie_code) {
+		int result =0;
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "UPDATE movie_comment SET content=? WHERE email=? and movie_code=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,content);
+			pstmt.setString(2,email);
+			pstmt.setString(3,movie_code);
+			rs = pstmt.executeQuery();
+			result = pstmt.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, pstmt);
+		}
+		return result;
 	}
 }

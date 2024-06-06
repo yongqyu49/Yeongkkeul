@@ -33,9 +33,9 @@ public class EditCommentonMovieService implements CommandProcess{
         System.out.println("content: " + content);
 
         // 데이터베이스 업데이트 (좋아요 기능)
-        int result = md.PostComment(email,content,movie_code);
+        int result = md.EditComment(email,content,movie_code);
         
-        Comment cmt = md.SelectCommnetonMovie(movie_code, email);
+        Comment cmts = md.SelectCommnetonMovie(movie_code, email);
         System.out.println(result);
         // 응답을 JSON 형식으로 설정
         response.setContentType("application/json");
@@ -43,7 +43,7 @@ public class EditCommentonMovieService implements CommandProcess{
 
         // JSON 형식으로 변환하여 응답
 //        mapper.writeValue(response.getWriter(), result);
-        mapper.writeValue(response.getWriter(), cmt.getContent());
+        mapper.writeValue(response.getWriter(), cmts.getContent());
 		
 		
 		
