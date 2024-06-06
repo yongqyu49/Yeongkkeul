@@ -93,14 +93,14 @@ public class MovieDAO {
 	}
 
 	//delmovie
-	public int delmovie(int movie_code) {
+	public int delmovie(String movie_code) {
 		int result = 0;
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		try {
 			String sql = "DELETE FROM movie WHERE movie_code = ?";
 			pstmt = conn.prepareStatement(sql);
-    		pstmt.setInt(1, movie_code);
+    		pstmt.setString(1, movie_code);
     		result = pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
