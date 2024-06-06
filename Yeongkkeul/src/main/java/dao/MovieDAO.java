@@ -172,31 +172,33 @@ public class MovieDAO {
 	}
 
 	public int addPoster(String fileName, String path, String extension, String movie_code) {
-		int result = 0;
-		Connection conn = getConnection();
-		PreparedStatement pstmt = null;
-    	try {
-    		String sql ="insert into poster values(file_CODE_SEQUENCE.nextval, ?, ?, 'poster', ?, sysdate, ?)";
-    		pstmt = conn.prepareStatement(sql);
-    		pstmt.setString(1, fileName);
-    		pstmt.setString(2, path);
-    		pstmt.setString(3, extension);
-    		pstmt.setString(4, movie_code);
-    		result = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(conn, pstmt);
-		}
-		return result;
+	    int result = 0;
+	    Connection conn = getConnection();
+	    System.out.println("filename: " + fileName + ", path: " + path + ", extension: " + extension + ", moviecodie: " + movie_code);
+	    PreparedStatement pstmt = null;
+	    try {
+	        String sql = "insert into poster (file_code, file_name, file_path, file_sort, file_extension, file_postdate, movie_code) values(file_CODE_SEQUENCE.nextval, ?, ?, 'poster', ?, sysdate, ?)";
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, fileName);
+	        pstmt.setString(2, path);
+	        pstmt.setString(3, extension);
+	        pstmt.setString(4, movie_code);
+	        result = pstmt.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        close(conn, pstmt);
+	    }
+	    return result;
 	}
+
 	
 	public int addBackground(String fileName, String path, String extension, String movie_code) {
 		int result = 0;
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		try {
-			String sql ="insert into poster values(file_CODE_SEQUENCE.nextval, ?, ?, 'background', ?, sysdate, ?)";
+			String sql ="insert into poster (file_code, file_name, file_path, file_sort, file_extension, file_postdate, movie_code) values(file_CODE_SEQUENCE.nextval, ?, ?, 'background', ?, sysdate, ?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, fileName);
 			pstmt.setString(2, path);
