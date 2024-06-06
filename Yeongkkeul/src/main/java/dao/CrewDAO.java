@@ -313,7 +313,7 @@ public class CrewDAO  {
 				MovieComment mc = new MovieComment();
 				mc.setEmail(rs.getString(1));
 				mc.setMovie_code(rs.getString(2));
-				mc.setRegi_Date(rs.getTimestamp(3));
+				mc.setRegi_date(rs.getTimestamp(3));
 				mc.setContent(rs.getString(4));
 				mc.setMovie_name(rs.getString(5));
 				mc.setFileCode(rs.getString(6));	
@@ -355,5 +355,48 @@ public class CrewDAO  {
 		}
 		return recentSearchList;
 	}
+
+	public int likeComment(String email, String writer, String movie_code) {
+		int result = 0;
+	    Connection conn = getConnection();
+	    PreparedStatement pstmt = null;
+	    String sql = "insert into like_comment "
+	    		+ "values (?, ?, ?, SYSTIMESTAMP - INTERVAL '1' minute)";
+	    try {
+	        conn = getConnection();
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, email);
+	        pstmt.setString(2, writer);
+	        pstmt.setString(3, movie_code);
+	        result = pstmt.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        close(pstmt, conn);
+	    }
+	    return result;
+	}
+
+	public int unLikeComment(String email, String writer, String movie_code) {
+		int result = 0;
+	    Connection conn = getConnection();
+	    PreparedStatement pstmt = null;
+	    String sql = "delete from like_comment "
+	    		+ "where email = ? and writer = ? and movie_code = ?";
+	    try {
+	        conn = getConnection();
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, email);
+	        pstmt.setString(2, writer);
+	        pstmt.setString(3, movie_code);
+	        result = pstmt.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        close(pstmt, conn);
+	    }
+	    return result;
+	}
+
 
 }

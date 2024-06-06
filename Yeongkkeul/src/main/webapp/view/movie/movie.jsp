@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="../../css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
 <link type="text/css" rel="stylesheet" href="../../css/added/movie.css"/>
-
 </head>
 <body>
 <!-- header -->
@@ -74,6 +73,149 @@
                                                     </div>
                                                 </div>
                                                 <div class="css-at7v9j-StyledRightColumn e1yew2866">
+												                                              
+												 <section class="css-1he5mfc e15eo6m113">
+												     <div class="css-ect8be e10lmt5b2">
+												         <div class="e10lmt5b3 css-159ed0h e1ri6xst9">
+												             <div class="css-529mci e1ri6xst8"><svg height="44" viewBox="0 0 44 44" width="44"
+												                     xmlns="http://www.w3.org/2000/svg" fill="#eee" class="css-1wu0qm1 e1ri6xst0">
+												                     <g fill-rule="evenodd">
+												                         <path
+												                             d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                         </path>
+												                     </g>
+												                 </svg><svg height="44" viewBox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg" fill="#eee"
+												                     class="css-1wu0qm1 e1ri6xst0">
+												                     <g fill-rule="evenodd">
+												                         <path
+												                             d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                         </path>
+												                     </g>
+												                 </svg><svg height="44" viewBox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg" fill="#eee"
+												                     class="css-1wu0qm1 e1ri6xst0">
+												                     <g fill-rule="evenodd">
+												                         <path
+												                             d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                         </path>
+												                     </g>
+												                 </svg><svg height="44" viewBox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg" fill="#eee"
+												                     class="css-1wu0qm1 e1ri6xst0">
+												                     <g fill-rule="evenodd">
+												                         <path
+												                             d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                         </path>
+												                     </g>
+												                 </svg><svg height="44" viewBox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg" fill="#eee"
+												                     class="css-1wu0qm1 e1ri6xst0">
+												                     <g fill-rule="evenodd">
+												                         <path
+												                             d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                         </path>
+												                     </g>
+												                 </svg>
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												                 <!-- 불들어온 별점  
+												                 <div class="css-y7iyqm e1ri6xst7"><svg height="44" viewBox="0 0 44 44" width="44"
+												                         xmlns="http://www.w3.org/2000/svg" fill="#F82C60" class="css-1wu0qm1 e1ri6xst0">
+												                         <g fill-rule="evenodd">
+												                             <path
+												                                 d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                             </path>
+												                         </g>
+												                     </svg><svg height="44" viewBox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg"
+												                         fill="#F82C60" class="css-1wu0qm1 e1ri6xst0">
+												                         <g fill-rule="evenodd">
+												                             <path
+												                                 d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                             </path>
+												                         </g>
+												                     </svg><svg height="44" viewBox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg"
+												                         fill="#F82C60" class="css-1wu0qm1 e1ri6xst0">
+												                         <g fill-rule="evenodd">
+												                             <path
+												                                 d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                             </path>
+												                         </g>
+												                     </svg><svg height="44" viewBox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg"
+												                         fill="#F82C60" class="css-1wu0qm1 e1ri6xst0">
+												                         <g fill-rule="evenodd">
+												                             <path
+												                                 d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                             </path>
+												                         </g>
+												                     </svg><svg height="44" viewBox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg"
+												                         fill="#F82C60" class="css-1wu0qm1 e1ri6xst0">
+												                         <g fill-rule="evenodd">
+												                             <path
+												                                 d="M22 33.444L9.83 42.327c-.784.572-1.842-.196-1.539-1.118l4.687-14.32L.769 18.06c-.787-.569-.383-1.812.588-1.81l15.067.033 4.624-14.34c.298-.924 1.606-.924 1.904 0l4.624 14.34 15.067-.033c.971-.002 1.375 1.241.588 1.81l-12.209 8.829 4.688 14.32c.302.922-.756 1.69-1.54 1.118L22 33.444z">
+												                             </path>
+												                         </g>
+												                     </svg></div> -->
+
+
+
+
+
+
+
+
+
+
+
+													
+													
+													             </div>
+													         </div>
+													         <div class="css-1mnoud2 e10lmt5b1">
+													             <div class="css-233int e1iiuhl30">평가하기</div>
+													         </div>
+													     </div>
+													     <div class="css-1bujjho e15eo6m112">
+													         <div class="css-xegzln e15eo6m111">
+													             <div class="css-1rqwswy e15eo6m110">2.8</div>
+													             <div class="css-1jgod02 e15eo6m19">평균 별점<br class="css-1hfk6tp e15eo6m18">(1,035명)</div>
+													         </div>
+													     </div>
+													     <button style="border=2"></button>
+													     <div class="css-ogkbq1 e15eo6m17"><button class="css-jvhgfj e15eo6m15"><svg aria-hidden="true" class="css-0"
+													                 viewBox="0 0 24 24">
+													                 <use xlink:href="#ic_pencil_24--sprite"></use>
+													             </svg>코멘트1</button>
+													             
+													             <button  id ="commenting" class="css-13qn5n9 e15eo6m14"><svg  class="css-0"
+													                 viewBox="0 0 24 24">
+
+													                 <use xlink:href="#ic_pencil_24--sprite"></use>
+													             </svg>코멘트<div class="css-1w88khr e15eo6m11">
+													                 <div class="css-zqw7ie egfd4m0">
+													                     <div class="e15eo6m10 css-lnnom0 e1pz1qav0"><svg aria-hidden="true" class="icon css-0"
+													                             viewBox="0 0 24 24">
+													                             <use xlink:href="#ic_pencil_24--sprite"></use>
+													                         </svg>코멘트 수정</div>
+													                     <div class="e15eo6m10 css-lnnom0 e1pz1qav0"><svg aria-hidden="true" class="icon css-0"
+													                             viewBox="0 0 24 24">
+													                             <use xlink:href="#ic_trash_24--sprite"></use>
+													                         </svg>코멘트 삭제</div>
+													                 </div>
+													             </div></button></div>
+													 </section>                                              
+													                                              
+													                                              
                                                     <section class="css-4fn1yr-StyledContentSummarySection e1yew2865">${ld.movie_content}</section>
                                                 </div>
                                             </section>
@@ -215,14 +357,7 @@
                     </nav>
                 </footer>
             </div>
-            <div class="backscreen css-bhengk-BackScreen e1ovmhdo1" disabled=""></div>
-            <div class="css-6bipi9-ToastContainer e1nbsqgp1">
-                <div></div>
-            </div>
-            <div class="css-1fi7low-BottomToastContainer e1nbsqgp0">
-                <div></div>
-            </div>
-        </div>
+
     </div>
     <div id="fb-root" class=" fb_reset">
         <div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
@@ -233,5 +368,44 @@
 
 <!-- footer -->
 <jsp:include page="../../footer.jsp"/>
+	<div class="setting_pop">
+		<div class="modal_container">
+			<div class="modal">
+				<header class="modal_header">
+					<div class="modal_cancel_container">
+						<div>
+							<button class="cancel_button11"></button>
+						</div>
+						<div></div>
+					</div>
+					<div class="modal_name1">
+						<div class="">댓글</div>
+					</div>
+					<div class="modal_name2">댓글</div>
+				</header>
+				<div class="css-16p1vvh">
+					<div class="css-1nyrhs4">
+						<div class="css-ek159t">
+							<div>
+								<div>
+									<textarea id="tedf" rows="" cols="" class="css-1es2t5o" maxlength="10000"  style="margin:70px 10px; height: 292px;"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="css-1we5pxa">
+					<div class="css-p3u9eh">
+						<div class="css-197dxto"></div>
+						<div class="css-197dxto">
+							<p class="css-1tsmjw">내 코멘트에 </p>
+							<button id="ted"class="css-b8wy2k">저장</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/movie/movie.js"></script>
 </html>
