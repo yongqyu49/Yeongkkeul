@@ -10,6 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import dto.LikeComment;
 import dto.MovieComment;
 
 public class CommentDAO {
@@ -63,7 +64,7 @@ public class CommentDAO {
             	MovieComment comment = new MovieComment();
 
                 comment.setEmail(rs.getString("email"));
-                comment.setRegi_Date(rs.getTimestamp("regi_date"));
+                comment.setRegi_date(rs.getTimestamp("regi_date"));
                 comment.setContent(rs.getString("content"));
 
                 commentList.add(comment);
@@ -77,25 +78,71 @@ public class CommentDAO {
         return commentList;
     }
 
-	public List<MovieComment> getCommentList(String comment_num) {
-		List<MovieComment> commentList = new ArrayList<MovieComment>();
+	public MovieComment getComment(String comment_num) {
+		MovieComment comment = new  MovieComment();
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from movie_comment where comment_num = ?";
+		String sql = "select mc.movie_code, mc.email, mc.regi_date, mc.content, m.movie_name, m.movie_content, m.genre, p.*, c.name, mc.comment_num\r\n"
+				+ "from movie_comment mc, movie m, poster p, crew c\r\n"
+				+ "where mc.movie_code = m.movie_code and m.movie_code = p.movie_code and mc.email = c.email\r\n"
+				+ "and comment_num = ?\r\n"
+				+ "and rownum = 1";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, comment_num);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				
+				comment.setMovie_code(rs.getString(1));
+				comment.setEmail(rs.getString(2));
+				comment.setRegi_date(rs.getTimestamp(3));
+				comment.setContent(rs.getString(4));
+				comment.setMovie_name(rs.getString(5));
+				comment.setMovie_content(rs.getString(6));
+				comment.setGenre(rs.getString(7));
+				comment.setFileCode(rs.getString(8));
+				comment.setFileName(rs.getString(9));
+				comment.setFilePath(rs.getString(10));
+				comment.setSort(rs.getString(11));
+				comment.setFileExtension(rs.getString(12));
+				comment.setFilePostdate(rs.getDate(13));
+				comment.setMovie_code(rs.getString(14));
+				comment.setName(rs.getString(15));
+				comment.setCommet_num(rs.getString(16));
 			}
 		} catch (Exception e) {
 			e.getMessage();
 		} finally {
 			close(rs, pstmt, conn);
 		}
-		return commentList;
+		return comment;
+	}
+
+	public LikeComment isLikedComment(String email, String comment_num) {
+		LikeComment lc = new LikeComment();
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select lc.*, mc.comment_num from like_comment lc, movie_comment mc\r\n"
+				+ "where lc.writer = mc.email and lc.movie_code = mc.movie_code\r\n"
+				+ "and comment_num = ? and lc.email = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, comment_num);
+			pstmt.setString(2, email);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				lc.setEmail(rs.getString(1));
+				lc.setWriter(rs.getString(2));
+				lc.setMovie_code(rs.getString(3));
+				lc.setLikeCommentDate(rs.getTimestamp(4));
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			close(rs, pstmt, conn);
+		}
+		return lc;
 	}
     
 }

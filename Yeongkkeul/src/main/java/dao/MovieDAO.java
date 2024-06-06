@@ -70,11 +70,6 @@ public class MovieDAO {
 		return result;
 	}
 
-//	public void addMovie(Movie movie) {
-//		String name = movie.getMovie_name();
-//	}
-//}
-
 	//editmovie
 	public int editmovie(int movie_code, String movie_name, String release_date,String movie_content) {
 		int result = 0;
@@ -180,7 +175,7 @@ public class MovieDAO {
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
     	try {
-    		String sql ="insert into poster values(file_CODE_SEQUENCE.nextval, ?, 'poster', ?, ?, sysdate, ?)";
+    		String sql ="insert into poster values(file_CODE_SEQUENCE.nextval, ?, ?, 'poster', ?, sysdate, ?)";
     		pstmt = conn.prepareStatement(sql);
     		pstmt.setString(1, fileName);
     		pstmt.setString(2, path);
@@ -200,7 +195,7 @@ public class MovieDAO {
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		try {
-			String sql ="insert into poster values(file_CODE_SEQUENCE.nextval, ?, 'background', ?, ?, sysdate, ?)";
+			String sql ="insert into poster values(file_CODE_SEQUENCE.nextval, ?, ?, 'background', ?, sysdate, ?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, fileName);
 			pstmt.setString(2, path);

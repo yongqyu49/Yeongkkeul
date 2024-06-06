@@ -13,25 +13,44 @@ public class MovieComment {
     private String movie_name;								
     private String movie_poster;
 	private String movie_content;
+	private String genre;
     private Date release_date;
     private String fileCode;
 	private String fileName;
 	private String filePath;
 	private String fileExtension;
-	private Date filePostdate;
-	private String name;	
-	
-	private String commet_num;
+	private String sort;
 	
 	@Override
 	public String toString() {
 		return "MovieComment [movie_code=" + movie_code + ", email=" + email + ", regi_date=" + regi_date + ", content="
 				+ content + ", movie_name=" + movie_name + ", movie_poster=" + movie_poster + ", movie_content="
-				+ movie_content + ", release_date=" + release_date + ", fileCode=" + fileCode + ", fileName=" + fileName
-				+ ", filePath=" + filePath + ", fileExtension=" + fileExtension + ", filePostdate=" + filePostdate
-				+ ", name=" + name + "]";
+				+ movie_content + ", genre=" + genre + ", release_date=" + release_date + ", fileCode=" + fileCode
+				+ ", fileName=" + fileName + ", filePath=" + filePath + ", fileExtension=" + fileExtension + ", sort="
+				+ sort + ", filePostdate=" + filePostdate + ", name=" + name + ", commet_num=" + commet_num + "]";
+	}
+	
+	public String getSort() {
+		return sort;
 	}
 
+	public void setSort(String sort) {
+		this.sort = sort;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	private Date filePostdate;
+	private String name;	
+	
+	private String commet_num;
+	
 	public String getMovie_name() {
 		return movie_name;
 	}
@@ -118,14 +137,6 @@ public class MovieComment {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Timestamp getRegi_Date() {
-        return regi_date;
-    }
-
-    public void setRegi_Date(Timestamp regi_date) {
-        this.regi_date = regi_date;
     }
 
     public String getContent() {

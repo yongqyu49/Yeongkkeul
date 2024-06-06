@@ -4,8 +4,8 @@ import java.sql.Timestamp;
 
 public class LikeComment {
 	private String email;
-	private String writer;
 	private String movie_code;
+	private String writer;
 	private Timestamp likeCommentDate;
 	
 	public String getEmail() {
@@ -31,6 +31,11 @@ public class LikeComment {
 	}
 	public void setLikeCommentDate(Timestamp likeCommentDate) {
 		this.likeCommentDate = likeCommentDate;
+	}
+	@Override
+	public String toString() {
+		return "LikeComment [email=" + email + ", movie_code=" + movie_code + ", writer=" + writer
+				+ ", likeCommentDate=" + likeCommentDate + "]";
 	}
 	
 	
